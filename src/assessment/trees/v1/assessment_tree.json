@@ -1,0 +1,302 @@
+{
+  "id": "kneez_assessment_v1",
+  "version": "1.0.0",
+  "title": "Kneez Initial Assessment (v1)",
+  "entry_node_id": "q_knee_region",
+  "nodes": {
+    "q_knee_region": {
+      "id": "q_knee_region",
+      "type": "question",
+      "label": "Primary knee pain region (16-region map)",
+      "description": "Localize the user's primary pain using the 16-region knee map.",
+      "prompt": "Where do you feel your knee symptoms the most?",
+      "answer_type": "choice",
+      "save_to": "knee_region",
+      "source": "./knee_regions.json",
+      "next": [
+        {
+          "condition": {
+            "type": "in",
+            "key": "knee_region",
+            "any_of": [
+              "superomedial_patellofemoral_joint",
+              "inferomedial_patellofemoral_joint",
+              "supra_patellofemoral_joint",
+              "superolateral_patellofemoral_joint",
+              "inferolateral_patellofemoral_joint",
+              "suprapatellar_pouch",
+              "patellar_tendon",
+              "patella"
+            ]
+          },
+          "next_node_id": "test_squat"
+        },
+        {
+          "condition": {
+            "type": "in",
+            "key": "knee_region",
+            "any_of": [
+              "posteromedial_tibial_plateau",
+              "posterolateral_tibial_plateau",
+              "posteromedial_femoral_condyle",
+              "posterolateral_femoral_condyle"
+            ]
+          },
+          "next_node_id": "test_hamstring_bridge"
+        },
+        {
+          "condition": { "type": "always" },
+          "next_node_id": "q_symptom_duration"
+        }
+      ]
+    },
+    "test_squat": {
+      "id": "test_squat",
+      "type": "movement_test",
+      "title": "Bodyweight Squat Test",
+      "instructions": "Stand with your feet shoulder-width apart. Slowly squat down as if sitting into a chair, then return to standing. Tell me how your knee feels (better, same, worse, or sharp in one spot).",
+      "video_id": "vid_squat_demo_v1",
+      "metric_key": "squat_pain_change",
+      "metric_type": "pain_change",
+      "next": [
+        {
+          "condition": { "type": "equals", "key": "squat_pain_change", "value": "worse" },
+          "next_node_id": "dx_patellofemoral"
+        },
+        {
+          "condition": { "type": "equals", "key": "squat_pain_change", "value": "sharp_patellar_tendon" },
+          "next_node_id": "dx_patellar_tendon"
+        },
+        {
+          "condition": { "type": "always" },
+          "next_node_id": "q_symptom_duration"
+        }
+      ]
+    },
+    "test_hamstring_bridge": {
+      "id": "test_hamstring_bridge",
+      "type": "movement_test",
+      "title": "Single-Leg Bridge Test",
+      "instructions": "Lie on your back with one knee bent and foot on the floor. Lift your hips while the other leg stays straight. Let me know if the back of the knee feels better, worse, or unchanged.",
+      "video_id": "vid_hamstring_bridge_v1",
+      "metric_key": "hamstring_bridge_response",
+      "metric_type": "pain_presence",
+      "next": [
+        {
+          "condition": { "type": "equals", "key": "hamstring_bridge_response", "value": "painful" },
+          "next_node_id": "dx_posterior_chain"
+        },
+        {
+          "condition": { "type": "equals", "key": "hamstring_bridge_response", "value": "better" },
+          "next_node_id": "dx_general_overload"
+        },
+        {
+          "condition": { "type": "always" },
+          "next_node_id": "q_symptom_duration"
+        }
+      ]
+    },
+    "q_symptom_duration": {
+      "id": "q_symptom_duration",
+      "type": "question",
+      "label": "Symptom duration",
+      "prompt": "How long have you had this knee pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_duration",
+      "options": [
+        { "value": "acute_0_6w", "label": "0-6 weeks" },
+        { "value": "subacute_6_12w", "label": "6-12 weeks" },
+        { "value": "chronic_12w_plus", "label": "More than 12 weeks" }
+      ],
+      "next": [
+        {
+          "condition": { "type": "equals", "key": "symptom_duration", "value": "chronic_12w_plus" },
+          "next_node_id": "dx_chronic_overload"
+        },
+        {
+          "condition": { "type": "always" },
+          "next_node_id": "q_pain_severity"
+        }
+      ]
+    },
+    "q_pain_severity": {
+      "id": "q_pain_severity",
+      "type": "question",
+      "label": "Pain severity",
+      "prompt": "On a scale of 0-10, how intense is your knee pain right now?",
+      "help_text": "0 = no pain, 10 = worst pain imaginable",
+      "answer_type": "scale",
+      "save_to": "pain_severity",
+      "next": [
+        {
+          "condition": { "type": "range", "key": "pain_severity", "max": 3 },
+          "next_node_id": "dx_general_overload_low"
+        },
+        {
+          "condition": { "type": "range", "key": "pain_severity", "min": 7 },
+          "next_node_id": "dx_general_overload_high"
+        },
+        {
+          "condition": { "type": "always" },
+          "next_node_id": "dx_general_overload"
+        }
+      ]
+    },
+    "dx_patellofemoral": {
+      "id": "dx_patellofemoral",
+      "type": "assessment",
+      "summary": "Likely patellofemoral overload",
+      "explanation": "Your symptoms and squat response suggest the structures around your kneecap are working overtime. Small load shifts usually calm this down quickly.",
+      "region_id": "patella",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "mod_sit_to_stand_hip_dominant",
+          "title": "Shift load to your hips when standing",
+          "type": "movement_mod",
+          "description": "Lean your chest slightly forward and push through your heels to use your hips and glutes more, taking pressure off the front of the knee.",
+          "video_id": "mod_sit_to_stand_v1"
+        },
+        {
+          "id": "edu_patellofemoral_load",
+          "title": "Why the front of the knee gets cranky",
+          "type": "education",
+          "description": "Patellofemoral pain is often about volume and load tolerance. Gradual changes usually help within weeks."
+        }
+      ]
+    },
+    "dx_patellar_tendon": {
+      "id": "dx_patellar_tendon",
+      "type": "assessment",
+      "summary": "Likely patellar tendon overload",
+      "explanation": "A sharp, localized response under the kneecap during squats points to the patellar tendon working harder than it likes right now.",
+      "region_id": "patellar_tendon",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "mod_box_squat",
+          "title": "Use a box or chair to limit squat depth",
+          "type": "movement_mod",
+          "description": "Squat to a box that keeps pain at or below 3/10. This reduces tendon compression while you rebuild tolerance.",
+          "video_id": "mod_box_squat_v1"
+        },
+        {
+          "id": "ex_iso_quad_lean",
+          "title": "Isometric quad lean",
+          "type": "exercise",
+          "description": "Stand with your back to a wall, feet forward, and hold a shallow sit for 30-45 seconds at a pain level you can tolerate." 
+        }
+      ]
+    },
+    "dx_posterior_chain": {
+      "id": "dx_posterior_chain",
+      "type": "assessment",
+      "summary": "Posterior knee sensitization",
+      "explanation": "Tenderness at the back of the knee that worsens with a bridge suggests the posterior capsule or hamstring attachments are sensitized.",
+      "region_id": "posteromedial_tibial_plateau",
+      "confidence": "low",
+      "recommendations": [
+        {
+          "id": "mod_short_range_bridge",
+          "title": "Short-range bridge with support",
+          "type": "exercise",
+          "description": "Perform bridges with a smaller lift and hands supporting your hips to ease pressure on the back of the knee."
+        },
+        {
+          "id": "edu_slow_progression",
+          "title": "Ease back into loading",
+          "type": "education",
+          "description": "Keep intensity low for a few days, then gradually reintroduce deep bending and hamstring work as symptoms settle."
+        }
+      ]
+    },
+    "dx_chronic_overload": {
+      "id": "dx_chronic_overload",
+      "type": "assessment",
+      "summary": "Chronic knee overload",
+      "explanation": "Symptoms lasting more than 12 weeks point to a long-term sensitivity. A slower, steady progression usually wins here.",
+      "region_id": "suprapatellar_pouch",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "edu_consistency",
+          "title": "Consistency beats intensity",
+          "type": "education",
+          "description": "Short, frequent sessions with pain kept below 3/10 are better than occasional hard efforts for longer-term symptoms."
+        },
+        {
+          "id": "ex_step_down_low",
+          "title": "Low step-down with control",
+          "type": "exercise",
+          "description": "Use a low step to practice controlled lowering, focusing on even weight through both feet."
+        }
+      ]
+    },
+    "dx_general_overload": {
+      "id": "dx_general_overload",
+      "type": "assessment",
+      "summary": "Knee tissue sensitivity after recent loading",
+      "explanation": "Your answers suggest a general overload without a clear single structure. Calming things down briefly and rebuilding gradually should help.",
+      "region_id": "anteromedial_tibial_plateau",
+      "confidence": "low",
+      "recommendations": [
+        {
+          "id": "mod_activity_dial",
+          "title": "Dial down but keep moving",
+          "type": "movement_mod",
+          "description": "Scale back the activities that spike pain, but keep easy cycling or walking to maintain blood flow."
+        },
+        {
+          "id": "edu_pain_scale",
+          "title": "Use pain as a guide",
+          "type": "education",
+          "description": "Keep pain during activity at 3/10 or below and back off the next day if soreness lingers above that."
+        }
+      ]
+    },
+    "dx_general_overload_low": {
+      "id": "dx_general_overload_low",
+      "type": "assessment",
+      "summary": "Low-irritability knee overload",
+      "explanation": "Mild pain suggests your knee will tolerate gradual loading. You can start progressing sooner as long as pain stays mild.",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "ex_partial_squat",
+          "title": "Pain-guided partial squats",
+          "type": "exercise",
+          "description": "Perform 2-3 sets of 10 shallow squats daily, keeping pain at or below 3/10."
+        },
+        {
+          "id": "edu_warm_up",
+          "title": "Warm up before loading",
+          "type": "education",
+          "description": "A short warm-up (bike or brisk walk) before stairs or lifting keeps symptoms predictable."
+        }
+      ]
+    },
+    "dx_general_overload_high": {
+      "id": "dx_general_overload_high",
+      "type": "assessment",
+      "summary": "High-irritability knee pain",
+      "explanation": "Higher pain levels mean the knee needs a calmer phase before building. Short, low-load work is the priority now.",
+      "region_id": "superomedial_patellofemoral_joint",
+      "confidence": "low",
+      "recommendations": [
+        {
+          "id": "mod_reduce_depth",
+          "title": "Limit deep knee bend for a few days",
+          "type": "movement_mod",
+          "description": "Skip deep squats or lunges temporarily and choose motions that keep pain under 3/10."
+        },
+        {
+          "id": "ex_isometric_hold",
+          "title": "Wall sit holds",
+          "type": "exercise",
+          "description": "Hold a gentle wall sit for 20-30 seconds, 3-5 reps, resting fully between reps to calm symptoms."
+        }
+      ]
+    }
+  }
+}
