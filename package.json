@@ -1,0 +1,17 @@
+{
+  "name": "neez-backend",
+  "version": "1.0.0",
+  "description": "Backend assessment engine for the Kneez app",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "node --loader ts-node/esm src/server.ts",
+    "lint": "tsc --noEmit",
+    "test": "echo \"No automated tests yet\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module"
+}
