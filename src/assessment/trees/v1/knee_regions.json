@@ -1,0 +1,396 @@
+```json
+{
+  "id": "q_knee_region",
+  "type": "question",
+  "label": "Primary knee pain region (16-region map)",
+  "description": "Localize the user's primary pain using the 16-region knee map. Works for voice/text now and chips/cards later.",
+  "prompt": "Where do you feel your knee symptoms the most? You can answer in your own words (for example: “just below the kneecap” or “back-inside of my knee”).",
+  "help_text": "Pick the closest match. If it’s hard to choose one spot, choose the area where it feels most intense.",
+  "answer_type": "choice",
+  "save_to": "knee_region",
+
+  "ui": {
+    "presentation": "cards",
+    "allow_free_text": true,
+    "auto_advance_on_select": true,
+    "group_by": "surface"
+  },
+
+  "options": [
+    {
+      "value": "superomedial_patellofemoral_joint",
+      "label": "Upper-inner front of the knee (above/inside kneecap)",
+      "anatomical_name": "Superomedial patellofemoral joint",
+      "layman_descriptions": [
+        "Just above and to the inside of the kneecap",
+        "Upper inner corner of the front of the knee",
+        "Inner thigh side just above the kneecap"
+      ],
+      "symptom_descriptions": [
+        "Pain just above and to the inside of my kneecap",
+        "Hurts near the top-inner part of my knee",
+        "Feels tight or swollen above the kneecap on the inner side"
+      ],
+      "synonyms": [
+        "upper inner kneecap",
+        "top inner kneecap",
+        "inside above kneecap",
+        "front inner above kneecap",
+        "superomedial",
+        "medial above patella"
+      ],
+      "ui": { "surface": "front", "zone": "upper-inner" }
+    },
+    {
+      "value": "inferomedial_patellofemoral_joint",
+      "label": "Lower-inner front of the knee (below/inside kneecap)",
+      "anatomical_name": "Inferomedial patellofemoral joint",
+      "layman_descriptions": [
+        "Just below and to the inside of the kneecap",
+        "Lower inner front part of the knee",
+        "Inside corner where shin meets kneecap"
+      ],
+      "symptom_descriptions": [
+        "Pain below and to the inside of my kneecap",
+        "Inner lower front of my knee hurts",
+        "Sharp pain when kneeling or going downstairs"
+      ],
+      "synonyms": [
+        "lower inner kneecap",
+        "inside below kneecap",
+        "inner front below kneecap",
+        "medial below patella",
+        "inferomedial"
+      ],
+      "ui": { "surface": "front", "zone": "lower-inner" }
+    },
+    {
+      "value": "supra_patellofemoral_joint",
+      "label": "Directly above the kneecap (front-center)",
+      "anatomical_name": "Supra patellofemoral joint",
+      "layman_descriptions": [
+        "Directly above the kneecap in the middle",
+        "Front center of the thigh just before it meets the kneecap",
+        "Top of the kneecap area"
+      ],
+      "symptom_descriptions": [
+        "Pain directly above my kneecap",
+        "Achy or tight feeling at the top front of my knee",
+        "Pressure above the kneecap when squatting"
+      ],
+      "synonyms": [
+        "top of kneecap",
+        "above kneecap middle",
+        "front center above kneecap",
+        "suprapatellar area",
+        "supra patella"
+      ],
+      "ui": { "surface": "front", "zone": "upper-center" }
+    },
+    {
+      "value": "superolateral_patellofemoral_joint",
+      "label": "Upper-outer front of the knee (above/outside kneecap)",
+      "anatomical_name": "Superolateral patellofemoral joint",
+      "layman_descriptions": [
+        "Just above and to the outside of the kneecap",
+        "Upper outer edge of the front of the knee",
+        "Outside thigh side just above the kneecap"
+      ],
+      "symptom_descriptions": [
+        "Pain above and to the outside of my kneecap",
+        "Outside top part of my knee hurts",
+        "Feels sore after running, especially uphill"
+      ],
+      "synonyms": [
+        "upper outer kneecap",
+        "outside above kneecap",
+        "outer top kneecap",
+        "lateral above patella",
+        "superolateral"
+      ],
+      "ui": { "surface": "front", "zone": "upper-outer" }
+    },
+    {
+      "value": "inferolateral_patellofemoral_joint",
+      "label": "Lower-outer front of the knee (below/outside kneecap)",
+      "anatomical_name": "Inferolateral patellofemoral joint",
+      "layman_descriptions": [
+        "Just below and to the outside of the kneecap",
+        "Lower outer front part of the knee",
+        "Spot where the outer shin meets the bottom of the kneecap"
+      ],
+      "symptom_descriptions": [
+        "Pain just below and to the outside of my kneecap",
+        "Outer lower front of my knee hurts",
+        "Pain with lateral movement or quick pivots"
+      ],
+      "synonyms": [
+        "lower outer kneecap",
+        "outside below kneecap",
+        "outer front below kneecap",
+        "lateral below patella",
+        "inferolateral"
+      ],
+      "ui": { "surface": "front", "zone": "lower-outer" }
+    },
+    {
+      "value": "suprapatellar_pouch",
+      "label": "Soft area directly above the kneecap (feels swollen/full)",
+      "anatomical_name": "Suprapatellar pouch",
+      "layman_descriptions": [
+        "Directly above the kneecap, under the thigh muscle",
+        "Front of the thigh just before it reaches the kneecap",
+        "Soft pocket above the kneecap"
+      ],
+      "symptom_descriptions": [
+        "Feels swollen or full above my kneecap",
+        "Pain or pressure above the kneecap",
+        "Puffiness above the front of the knee"
+      ],
+      "synonyms": [
+        "swollen above kneecap",
+        "puffy above kneecap",
+        "fluid above kneecap",
+        "soft pocket above patella",
+        "suprapatellar swelling"
+      ],
+      "ui": { "surface": "front", "zone": "upper-center" }
+    },
+    {
+      "value": "anteromedial_tibial_plateau",
+      "label": "Inner-front shin just below the knee",
+      "anatomical_name": "Anteromedial tibial plateau",
+      "layman_descriptions": [
+        "Front inner edge of the shin bone, right below the knee",
+        "Inner front corner below the kneecap",
+        "Bony area under the inside of the knee"
+      ],
+      "symptom_descriptions": [
+        "Pain just below and to the inside of my knee joint",
+        "Sore spot on the inner front of my shin bone near the knee",
+        "Tender when pressing just under the inner knee"
+      ],
+      "synonyms": [
+        "inner shin below knee",
+        "inside of shin near knee",
+        "front inner below joint line",
+        "anteromedial tibia",
+        "medial tibial plateau front"
+      ],
+      "ui": { "surface": "front", "zone": "lower-inner" }
+    },
+    {
+      "value": "posteromedial_tibial_plateau",
+      "label": "Back-inside of the knee near the shin",
+      "anatomical_name": "Posteromedial tibial plateau",
+      "layman_descriptions": [
+        "Back inner part of the knee near the shin",
+        "Inner side behind the knee joint",
+        "Rear inner knee near where the shin starts"
+      ],
+      "symptom_descriptions": [
+        "Pain behind and to the inside of my knee",
+        "Deep ache or tightness on the back-inside part of my knee",
+        "Hurts when bending the knee all the way"
+      ],
+      "synonyms": [
+        "back inside knee",
+        "inner back knee",
+        "behind knee inside",
+        "posteromedial",
+        "back inner joint line"
+      ],
+      "ui": { "surface": "back", "zone": "inner" }
+    },
+    {
+      "value": "anterolateral_tibial_plateau",
+      "label": "Outer-front shin just below the knee",
+      "anatomical_name": "Anterolateral tibial plateau",
+      "layman_descriptions": [
+        "Front outer edge of the shin bone, just below the knee",
+        "Outside front part below the kneecap",
+        "Outer corner where shin meets knee"
+      ],
+      "symptom_descriptions": [
+        "Pain below and to the outside of my knee",
+        "Outer front part of my knee hurts near the shin bone",
+        "Tender spot on outer side just under the knee"
+      ],
+      "synonyms": [
+        "outer shin below knee",
+        "outside of shin near knee",
+        "front outer below joint line",
+        "anterolateral tibia",
+        "lateral tibial plateau front"
+      ],
+      "ui": { "surface": "front", "zone": "lower-outer" }
+    },
+    {
+      "value": "posterolateral_tibial_plateau",
+      "label": "Back-outside of the knee near the shin",
+      "anatomical_name": "Posterolateral tibial plateau",
+      "layman_descriptions": [
+        "Back outer part of the knee near the shin",
+        "Outer side behind the knee joint",
+        "Rear outer knee near where the shin starts"
+      ],
+      "symptom_descriptions": [
+        "Pain in the back and outside of my knee",
+        "Feels pinchy or stiff when twisting",
+        "Discomfort behind the knee on the outer side"
+      ],
+      "synonyms": [
+        "back outside knee",
+        "outer back knee",
+        "behind knee outside",
+        "posterolateral",
+        "back outer joint line"
+      ],
+      "ui": { "surface": "back", "zone": "outer" }
+    },
+    {
+      "value": "anteromedial_femoral_condyle",
+      "label": "Inner-front of the knee joint (above the kneecap area)",
+      "anatomical_name": "Anteromedial femoral condyle",
+      "layman_descriptions": [
+        "Front inner part of the thigh bone near the knee",
+        "Inside front of the knee joint above the kneecap",
+        "Upper inner knee area, close to midline"
+      ],
+      "symptom_descriptions": [
+        "Pain on the front-inner part of my thigh bone near the knee",
+        "Aching inside my knee joint when walking downhill",
+        "Sore with pressure on the inner knee while kneeling"
+      ],
+      "synonyms": [
+        "upper inner knee",
+        "inner knee above joint line",
+        "front inner knee joint",
+        "anteromedial femur",
+        "medial femoral condyle front"
+      ],
+      "ui": { "surface": "front", "zone": "upper-inner" }
+    },
+    {
+      "value": "posteromedial_femoral_condyle",
+      "label": "Deep inner-back corner of the knee",
+      "anatomical_name": "Posteromedial femoral condyle",
+      "layman_descriptions": [
+        "Back inner part of the thigh bone near the knee",
+        "Inside back of the knee joint",
+        "Deep inner rear corner of the knee"
+      ],
+      "symptom_descriptions": [
+        "Deep pain inside and behind my knee",
+        "Back-inner knee hurts when squatting low",
+        "Feels like a tug or pinch in the inner back of my knee"
+      ],
+      "synonyms": [
+        "deep inner back knee",
+        "inner rear knee",
+        "posteromedial femur",
+        "medial femoral condyle back",
+        "back inner corner"
+      ],
+      "ui": { "surface": "back", "zone": "inner" }
+    },
+    {
+      "value": "anterolateral_femoral_condyle",
+      "label": "Outer-front of the knee joint (upper outside)",
+      "anatomical_name": "Anterolateral femoral condyle",
+      "layman_descriptions": [
+        "Front outer part of the thigh bone near the knee",
+        "Outside front of the knee joint above the kneecap",
+        "Upper outer knee area toward the side"
+      ],
+      "symptom_descriptions": [
+        "Pain on the front-outside of my knee joint",
+        "Feels sore at the outer edge of my thigh bone near the kneecap",
+        "Outside of my knee hurts when I straighten my leg fully"
+      ],
+      "synonyms": [
+        "upper outer knee",
+        "outer knee above joint line",
+        "front outer knee joint",
+        "anterolateral femur",
+        "lateral femoral condyle front"
+      ],
+      "ui": { "surface": "front", "zone": "upper-outer" }
+    },
+    {
+      "value": "posterolateral_femoral_condyle",
+      "label": "Deep outer-back corner of the knee",
+      "anatomical_name": "Posterolateral femoral condyle",
+      "layman_descriptions": [
+        "Back outer part of the thigh bone near the knee",
+        "Outside rear corner of the knee joint",
+        "Deep outer rear part of the knee"
+      ],
+      "symptom_descriptions": [
+        "Pain behind and to the outside of my knee",
+        "Feels sharp or pinchy during twisting motions",
+        "Outer back of my knee hurts during deep bends or pivots"
+      ],
+      "synonyms": [
+        "deep outer back knee",
+        "outer rear knee",
+        "posterolateral femur",
+        "lateral femoral condyle back",
+        "back outer corner"
+      ],
+      "ui": { "surface": "back", "zone": "outer" }
+    },
+    {
+      "value": "patellar_tendon",
+      "label": "Directly below the kneecap (center)",
+      "anatomical_name": "Patellar tendon",
+      "layman_descriptions": [
+        "Directly below the center of the kneecap",
+        "Front of the knee where the tendon connects to the shin",
+        "Spot under the kneecap in the middle"
+      ],
+      "symptom_descriptions": [
+        "Pain directly below the kneecap",
+        "Hurts when jumping or running (jumper’s knee)",
+        "Stiffness or tightness when going downstairs or squatting"
+      ],
+      "synonyms": [
+        "below kneecap",
+        "under kneecap",
+        "jumper's knee",
+        "patellar tendon",
+        "front center below patella"
+      ],
+      "ui": { "surface": "front", "zone": "lower-center" }
+    },
+    {
+      "value": "patella",
+      "label": "The kneecap itself (or directly beneath it)",
+      "anatomical_name": "Patella",
+      "layman_descriptions": [
+        "The kneecap and any pain directly beneath or inferior to it"
+      ],
+      "symptom_descriptions": [
+        "Pain directly beneath or inferior to the kneecap",
+        "Sharp pain directly beneath the knee cap when bending the knee",
+        "Popping when walking"
+      ],
+      "synonyms": [
+        "kneecap",
+        "patella",
+        "front of knee cap",
+        "on the kneecap",
+        "pain on kneecap"
+      ],
+      "ui": { "surface": "front", "zone": "center" }
+    }
+  ],
+
+  "next": [
+    {
+      "condition": { "type": "always" },
+      "next_node_id": "q_trigger_activity"
+    }
+  ]
+}
+```
