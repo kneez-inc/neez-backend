@@ -59,13 +59,13 @@ export const loadKneeRegionQuestion = (): QuestionNode => {
   return node;
 };
 
-export const createSession = (tree: AssessmentTree): SessionState => {
+export const createSession = (tree: AssessmentTree, treeVersionOverride?: string): SessionState => {
   const sessionId = crypto.randomUUID();
   const now = new Date().toISOString();
   return {
     sessionId,
     treeId: tree.id,
-    treeVersion: tree.version,
+    treeVersion: treeVersionOverride ?? tree.version,
     currentNodeId: tree.entry_node_id,
     answers: {},
     history: [],
