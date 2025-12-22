@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "dev": "node --loader ts-node/esm src/server.ts",
     "lint": "tsc --noEmit",
-    "test": "echo \"No automated tests yet\""
+    "test": "npm run lint && tsc -p tsconfig.test.json && node --test dist-tests/tests/**/*.test.js"
   },
   "keywords": [],
   "author": "",

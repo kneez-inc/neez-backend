@@ -63,7 +63,7 @@ export const handleAssessmentRequest = async (req: IncomingMessage, res: ServerR
     const body = await parseBody(req);
     const version = typeof body?.version === 'string' ? body.version : 'v1';
     const tree = getTree(version);
-    const session = createSession(tree);
+    const session = createSession(tree, version);
     sessionStore.set(session.sessionId, session);
     sendJson(res, 200, { session_id: session.sessionId, node: tree.nodes[tree.entry_node_id] });
     return;
@@ -117,4 +117,11 @@ export const handleAssessmentRequest = async (req: IncomingMessage, res: ServerR
   }
 
   notFound(res);
+};
+
+export const __testing = {
+  resetState: () => {
+    treeCache.clear();
+    sessionStore.clear();
+  }
 };
