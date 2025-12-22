@@ -5,6 +5,12 @@ Backend assessment engine for the Kneez app. The service exposes lightweight HTT
 ## Development
 
 - Install Node.js 18+ (the project currently targets ES modules).
+- Install dependencies (includes the local TypeScript compiler used by the test scripts):
+
+```
+npm install
+```
+
 - Build the project with:
 
 ```
