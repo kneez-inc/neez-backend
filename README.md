@@ -33,4 +33,4 @@ Run all tests:
 npm test
 ```
 
-This command performs a type check (`npm run lint`), compiles the test sources (`tsc -p tsconfig.test.json`), and then executes the compiled tests with `node --test`.
+This command performs a type check (`npm run lint`), compiles the test sources (`tsc -p tsconfig.test.json`), and then executes the compiled tests with `node --test dist-tests/tests/*.test.js` (the shell expands the glob to the compiled test files).
