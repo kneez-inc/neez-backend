@@ -9,9 +9,8 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*", "types/**/*.d.ts"],
+  "include": ["src/**/*"],
   "exclude": ["dist", "node_modules"]
 }

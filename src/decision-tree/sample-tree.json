@@ -1,0 +1,350 @@
+{
+  "id": "neez_sample_v1",
+  "version": "1.0.0",
+  "title": "neez Sample Assessment Tree (dev/test)",
+  "entry_node_id": "q_activity",
+  "nodes": {
+    "q_activity": {
+      "id": "q_activity",
+      "type": "question",
+      "label": "Triggering activity",
+      "prompt": "Which activity triggers your knee pain the most?",
+      "answer_type": "choice",
+      "save_to": "triggering_activity",
+      "options": [
+        { "value": "squatting", "label": "Squatting" },
+        { "value": "stairs_descending", "label": "Going down stairs" },
+        { "value": "running", "label": "Running" }
+      ],
+      "next": [
+        {
+          "condition": { "type": "equals", "key": "triggering_activity", "value": "squatting" },
+          "next_node_id": "q_location_squat"
+        },
+        {
+          "condition": { "type": "equals", "key": "triggering_activity", "value": "stairs_descending" },
+          "next_node_id": "q_location_stairs"
+        },
+        {
+          "condition": { "type": "equals", "key": "triggering_activity", "value": "running" },
+          "next_node_id": "q_location_running"
+        }
+      ]
+    },
+
+    "q_location_squat": {
+      "id": "q_location_squat",
+      "type": "question",
+      "label": "Pain location during squats",
+      "prompt": "Where does your knee hurt most when squatting?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        { "value": "anterior", "label": "Front of the knee" },
+        { "value": "medial", "label": "Inner side of the knee" },
+        { "value": "lateral", "label": "Outer side of the knee" }
+      ],
+      "next": [
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "anterior" },
+          "next_node_id": "dx_squat_anterior"
+        },
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "medial" },
+          "next_node_id": "dx_squat_medial"
+        },
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "lateral" },
+          "next_node_id": "dx_squat_lateral"
+        }
+      ]
+    },
+
+    "q_location_stairs": {
+      "id": "q_location_stairs",
+      "type": "question",
+      "label": "Pain location on stairs",
+      "prompt": "Where does your knee hurt most when going down stairs?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        { "value": "anterior", "label": "Front of the knee" },
+        { "value": "medial", "label": "Inner side of the knee" },
+        { "value": "lateral", "label": "Outer side of the knee" }
+      ],
+      "next": [
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "anterior" },
+          "next_node_id": "dx_stairs_anterior"
+        },
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "medial" },
+          "next_node_id": "dx_stairs_medial"
+        },
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "lateral" },
+          "next_node_id": "dx_stairs_lateral"
+        }
+      ]
+    },
+
+    "q_location_running": {
+      "id": "q_location_running",
+      "type": "question",
+      "label": "Pain location when running",
+      "prompt": "Where does your knee hurt most when running?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        { "value": "anterior", "label": "Front of the knee" },
+        { "value": "medial", "label": "Inner side of the knee" },
+        { "value": "lateral", "label": "Outer side of the knee" }
+      ],
+      "next": [
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "anterior" },
+          "next_node_id": "dx_running_anterior"
+        },
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "medial" },
+          "next_node_id": "dx_running_medial"
+        },
+        {
+          "condition": { "type": "equals", "key": "symptom_location", "value": "lateral" },
+          "next_node_id": "dx_running_lateral"
+        }
+      ]
+    },
+
+    "dx_squat_anterior": {
+      "id": "dx_squat_anterior",
+      "type": "assessment",
+      "summary": "Anterior knee load during squats",
+      "explanation": "Front-of-knee pain during squats usually means the patellofemoral joint is taking more load than it can tolerate right now.",
+      "region_id": "patella",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "mod_box_squat",
+          "title": "Limit squat depth with a box or chair",
+          "type": "movement_mod",
+          "description": "Squat to a box that keeps pain at or below 3/10. This reduces compression on the front of the knee."
+        },
+        {
+          "id": "mod_heel_elevate_squat",
+          "title": "Elevate heels during squats",
+          "type": "movement_mod",
+          "description": "Place a small wedge or plate under your heels to shift load away from the kneecap."
+        },
+        {
+          "id": "edu_squat_load",
+          "title": "Why squats aggravate the front of the knee",
+          "type": "education",
+          "description": "Deep knee flexion increases patellofemoral compression. Reducing depth temporarily lets the area calm down."
+        }
+      ]
+    },
+
+    "dx_squat_medial": {
+      "id": "dx_squat_medial",
+      "type": "assessment",
+      "summary": "Medial knee stress during squats",
+      "explanation": "Inner knee pain during squats often comes from the medial compartment being loaded unevenly, especially if the knees drift inward.",
+      "region_id": "anteromedial_tibial_plateau",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "mod_band_squat",
+          "title": "Use a band around the knees",
+          "type": "movement_mod",
+          "description": "Place a light resistance band just above the knees and push outward during squats to reduce medial collapse."
+        },
+        {
+          "id": "mod_stance_width",
+          "title": "Widen your squat stance slightly",
+          "type": "movement_mod",
+          "description": "A slightly wider stance with toes turned out can reduce stress on the inner knee."
+        }
+      ]
+    },
+
+    "dx_squat_lateral": {
+      "id": "dx_squat_lateral",
+      "type": "assessment",
+      "summary": "Lateral knee stress during squats",
+      "explanation": "Outer knee pain during squats can indicate IT band tension or lateral compartment loading.",
+      "region_id": "anterolateral_tibial_plateau",
+      "confidence": "low",
+      "recommendations": [
+        {
+          "id": "mod_narrow_stance_squat",
+          "title": "Narrow your squat stance slightly",
+          "type": "movement_mod",
+          "description": "Bring your feet slightly closer together to reduce lateral compartment load."
+        },
+        {
+          "id": "ex_lateral_hip_strength",
+          "title": "Side-lying hip abduction",
+          "type": "exercise",
+          "description": "Lie on your side and slowly lift the top leg 15-20 times. Strengthening the hip abductors reduces lateral knee stress."
+        }
+      ]
+    },
+
+    "dx_stairs_anterior": {
+      "id": "dx_stairs_anterior",
+      "type": "assessment",
+      "summary": "Anterior knee pain on stairs",
+      "explanation": "Going downstairs loads the front of the knee heavily because your quad has to control the descent. The patellofemoral joint absorbs most of that force.",
+      "region_id": "patellar_tendon",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "mod_sideways_stairs",
+          "title": "Go downstairs sideways",
+          "type": "movement_mod",
+          "description": "Turn sideways and step down leading with the less painful leg. This reduces the quad demand on the sore knee."
+        },
+        {
+          "id": "mod_rail_offload",
+          "title": "Use the railing to offload",
+          "type": "movement_mod",
+          "description": "Press lightly on the handrail as you descend to take 10-20% of the load off your knee."
+        },
+        {
+          "id": "edu_stairs_load",
+          "title": "Why stairs hurt the front of the knee",
+          "type": "education",
+          "description": "Descending stairs produces up to 3.5x bodyweight through the patellofemoral joint. Temporary modifications let it settle."
+        }
+      ]
+    },
+
+    "dx_stairs_medial": {
+      "id": "dx_stairs_medial",
+      "type": "assessment",
+      "summary": "Medial knee pain on stairs",
+      "explanation": "Inner knee pain on stairs can come from the medial meniscus or collateral ligament being loaded during the twisting motion of each step.",
+      "region_id": "anteromedial_tibial_plateau",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "mod_step_alignment",
+          "title": "Keep your knee over your second toe",
+          "type": "movement_mod",
+          "description": "Focus on tracking your knee directly over your foot rather than letting it collapse inward on each step."
+        },
+        {
+          "id": "ex_single_leg_balance",
+          "title": "Single-leg balance holds",
+          "type": "exercise",
+          "description": "Stand on the affected leg for 30 seconds, 3 times daily. This improves the stability that protects the inner knee."
+        }
+      ]
+    },
+
+    "dx_stairs_lateral": {
+      "id": "dx_stairs_lateral",
+      "type": "assessment",
+      "summary": "Lateral knee pain on stairs",
+      "explanation": "Outer knee pain on stairs may involve the IT band or lateral structures being compressed during the descent phase.",
+      "region_id": "anterolateral_tibial_plateau",
+      "confidence": "low",
+      "recommendations": [
+        {
+          "id": "mod_slower_descent",
+          "title": "Slow your stair descent",
+          "type": "movement_mod",
+          "description": "Take stairs one at a time at a slower pace. Rushing increases lateral knee forces."
+        },
+        {
+          "id": "ex_hip_abductor_stairs",
+          "title": "Lateral band walks",
+          "type": "exercise",
+          "description": "Place a band around your ankles and take 10 steps sideways each direction. This strengthens the muscles that stabilize the outer knee."
+        }
+      ]
+    },
+
+    "dx_running_anterior": {
+      "id": "dx_running_anterior",
+      "type": "assessment",
+      "summary": "Anterior knee pain while running",
+      "explanation": "Front-of-knee pain during running is commonly runner's knee (patellofemoral syndrome). It often responds well to cadence and load adjustments.",
+      "region_id": "patella",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "mod_increase_cadence",
+          "title": "Increase your step rate by 5-10%",
+          "type": "movement_mod",
+          "description": "Shorter, quicker steps reduce the braking force on each stride and lower patellofemoral load."
+        },
+        {
+          "id": "mod_reduce_downhill",
+          "title": "Reduce downhill running temporarily",
+          "type": "movement_mod",
+          "description": "Downhill running increases kneecap compression. Stick to flat routes until pain settles."
+        },
+        {
+          "id": "edu_runners_knee",
+          "title": "Understanding runner's knee",
+          "type": "education",
+          "description": "Patellofemoral pain in runners usually resolves with load management. You often don't need to stop running — just adjust."
+        }
+      ]
+    },
+
+    "dx_running_medial": {
+      "id": "dx_running_medial",
+      "type": "assessment",
+      "summary": "Medial knee pain while running",
+      "explanation": "Inner knee pain during running can stem from foot mechanics, hip weakness, or medial compartment overload.",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "low",
+      "recommendations": [
+        {
+          "id": "mod_shorten_stride",
+          "title": "Shorten your stride slightly",
+          "type": "movement_mod",
+          "description": "A slightly shorter stride reduces the rotational forces through the inner knee."
+        },
+        {
+          "id": "ex_clamshell",
+          "title": "Clamshell exercise",
+          "type": "exercise",
+          "description": "Lie on your side with knees bent. Open the top knee like a clamshell, 15 reps x 3 sets. This strengthens the hip rotators that protect the inner knee."
+        }
+      ]
+    },
+
+    "dx_running_lateral": {
+      "id": "dx_running_lateral",
+      "type": "assessment",
+      "summary": "Lateral knee pain while running",
+      "explanation": "Outer knee pain when running often involves the iliotibial band. It typically flares at a specific distance and responds well to load modification.",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "medium",
+      "recommendations": [
+        {
+          "id": "mod_reduce_mileage",
+          "title": "Run below your flare-up distance",
+          "type": "movement_mod",
+          "description": "If pain starts at 3 km, run 2 km for a week, then add 10% weekly. Stay below the pain threshold."
+        },
+        {
+          "id": "mod_avoid_camber",
+          "title": "Avoid cambered road surfaces",
+          "type": "movement_mod",
+          "description": "Running on a sloped road tilts your pelvis and increases IT band tension. Choose flat paths or alternate sides."
+        },
+        {
+          "id": "ex_hip_strength_lateral",
+          "title": "Standing hip abduction",
+          "type": "exercise",
+          "description": "Stand on one leg and slowly lift the other leg out to the side, 12 reps x 3 sets. Hip strength reduces IT band load."
+        }
+      ]
+    }
+  }
+}
