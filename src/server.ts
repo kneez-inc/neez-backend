@@ -1,6 +1,7 @@
 import http from 'node:http';
 import { URL } from 'node:url';
 import { handleAssessmentRequest } from './routes/assessment.js';
+import { handleNluRequest } from './routes/nlu.js';
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 
@@ -15,6 +16,11 @@ const server = http.createServer(async (req, res) => {
 
   if (url.pathname.startsWith('/assessment')) {
     await handleAssessmentRequest(req, res);
+    return;
+  }
+
+  if (url.pathname.startsWith('/nlu')) {
+    await handleNluRequest(req, res);
     return;
   }
 
