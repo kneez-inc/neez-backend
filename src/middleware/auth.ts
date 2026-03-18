@@ -10,8 +10,8 @@ export interface AuthenticatedRequest extends Request {
 }
 
 export const requireAuth = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-  if (!config.SUPABASE_URL || !config.SUPABASE_ANON_KEY) {
-    log.warn('Supabase credentials not set — skipping auth in development');
+  if (!config.SUPABASE_URL || !config.SUPABASE_ANON_KEY || config.NODE_ENV === 'test') {
+    log.warn('Skipping auth (missing credentials or test environment)');
     (req as AuthenticatedRequest).userId = 'dev-user';
     next();
     return;

@@ -93,18 +93,27 @@ neez-backend/
       llm-adapter.ts       # LLM-agnostic interface + Gemini implementation
       state-machine.ts     # Conversation state management
     middleware/
-      auth.ts              # JWT validation (not auth routes)
+      auth.ts              # Supabase JWT validation via auth.getUser()
+      rate-limit.ts        # 30 req/min per-user rate limiter
+    db/
+      client.ts            # Supabase client init (singleton)
+      users.ts             # neez_users CRUD
+      sessions.ts          # neez_chat_sessions CRUD
+      messages.ts          # neez_chat_messages CRUD
     types/
       entities.ts          # Extracted entity types + Zod schemas
       messages.ts          # Conversation message types
       api.ts               # Request/response types
       decision-tree.ts     # Tree structure types + Zod schema
+      database.ts          # Supabase table types + Zod schemas + AppError
       controlled-vocabulary.ts  # Valid entity values (single source of truth)
     decision-tree/
       sample-tree.json     # Dev/test tree (Jabari provides production tree)
   tests/
   supabase/
     migrations/            # SQL migration files (run manually in Supabase dashboard)
+  Dockerfile               # Multi-stage Node 20 Alpine build
+  docker-compose.yml       # Local dev container
 ```
 
 ## Key paths
@@ -117,7 +126,11 @@ neez-backend/
 - `src/engine/traversal.ts` — deterministic tree traversal
 - `src/engine/state-machine.ts` — session lifecycle + tree loading
 - `src/engine/llm-adapter.ts` — LLM interface (Gemini implementation)
-- `src/middleware/auth.ts` — Supabase JWT validation
+- `src/middleware/auth.ts` — Supabase JWT validation via auth.getUser()
+- `src/middleware/rate-limit.ts` — 30 req/min per-user rate limiter
+- `src/db/client.ts` — Supabase client singleton
+- `src/db/users.ts`, `sessions.ts`, `messages.ts` — typed CRUD with AppError wrapping
+- `src/types/database.ts` — Supabase table types + Zod schemas
 - `src/decision-tree/` — tree JSON files
 
 ## Commands

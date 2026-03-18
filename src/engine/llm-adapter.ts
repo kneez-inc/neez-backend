@@ -194,25 +194,32 @@ export class GeminiAdapter implements LLMAdapter {
 
     const prompt = `Extract entities from this message:${historyText}\n\nUser message: "${userMessage}"`;
 
-    const { text, tokensUsed } = await withRetry(
-      () => this.call(ENTITY_EXTRACTION_SYSTEM_PROMPT, prompt),
-      1,
-      1000,
-    );
+    try {
+      const { text, tokensUsed } = await withRetry(
+        () => this.call(ENTITY_EXTRACTION_SYSTEM_PROMPT, prompt),
+        1,
+        1000,
+      );
 
-    const jsonStr = extractJson(text);
-    const raw = JSON.parse(jsonStr);
-    const parsed = ExtractedEntitiesSchema.safeParse(raw);
+      const jsonStr = extractJson(text);
+      const raw = JSON.parse(jsonStr);
+      const parsed = ExtractedEntitiesSchema.safeParse(raw);
 
-    if (!parsed.success) {
-      log.warn('Entity extraction returned invalid shape, returning nulls', {
-        raw: jsonStr,
-        errors: parsed.error.flatten().fieldErrors,
+      if (!parsed.success) {
+        log.warn('Entity extraction returned invalid shape, returning nulls', {
+          raw: jsonStr,
+          errors: parsed.error.flatten().fieldErrors,
+        });
+        return { entities: { ...NULL_ENTITIES }, tokensUsed };
+      }
+
+      return { entities: parsed.data, tokensUsed };
+    } catch (err) {
+      log.error('Entity extraction failed (timeout or LLM error), returning nulls', {
+        error: (err as Error).message,
       });
-      return { entities: { ...NULL_ENTITIES }, tokensUsed };
+      return { entities: { ...NULL_ENTITIES }, tokensUsed: { ...ZERO_TOKENS } };
     }
-
-    return { entities: parsed.data, tokensUsed };
   }
 
   async generateClarification(
@@ -225,11 +232,19 @@ export class GeminiAdapter implements LLMAdapter {
 
     const prompt = `The following information is still needed: ${missingEntities.join(', ')}.${historyText}\nGenerate a brief follow-up question to gather this information.`;
 
-    return withRetry(
-      () => this.call(CLARIFICATION_SYSTEM_PROMPT, prompt),
-      1,
-      1000,
-    );
+    try {
+      return await withRetry(
+        () => this.call(CLARIFICATION_SYSTEM_PROMPT, prompt),
+        1,
+        1000,
+      );
+    } catch (err) {
+      log.error('Clarification generation failed, using fallback', { error: (err as Error).message });
+      return {
+        text: `Could you tell me more about your ${missingEntities.join(' and ')}?`,
+        tokensUsed: { ...ZERO_TOKENS },
+      };
+    }
   }
 
   async generateWrapper(
@@ -242,11 +257,20 @@ export class GeminiAdapter implements LLMAdapter {
 
     const prompt = `Wrap this recommendation in friendly language:${historyText}\nRecommendation: ${JSON.stringify(recommendation)}`;
 
-    return withRetry(
-      () => this.call(WRAPPER_SYSTEM_PROMPT, prompt),
-      1,
-      1000,
-    );
+    try {
+      return await withRetry(
+        () => this.call(WRAPPER_SYSTEM_PROMPT, prompt),
+        1,
+        1000,
+      );
+    } catch (err) {
+      log.error('Wrapper generation failed, using fallback', { error: (err as Error).message });
+      const title = (recommendation.title as string) ?? 'this modification';
+      return {
+        text: `Here's something that might help: ${title}. ${(recommendation.description as string) ?? ''}`,
+        tokensUsed: { ...ZERO_TOKENS },
+      };
+    }
   }
 
   async suggestAlternatives(
@@ -255,11 +279,20 @@ export class GeminiAdapter implements LLMAdapter {
   ): Promise<{ text: string; tokensUsed: TokenUsage }> {
     const prompt = `The user described: ${JSON.stringify(entities)}\n\nWe don't have specific corrections for their activity yet. Available activities we DO cover: ${availableActivities.join(', ')}.\n\nGenerate a friendly message suggesting they try one of the available activities.`;
 
-    return withRetry(
-      () => this.call(ALTERNATIVES_SYSTEM_PROMPT, prompt),
-      1,
-      1000,
-    );
+    try {
+      return await withRetry(
+        () => this.call(ALTERNATIVES_SYSTEM_PROMPT, prompt),
+        1,
+        1000,
+      );
+    } catch (err) {
+      log.error('Alternatives generation failed, using fallback', { error: (err as Error).message });
+      const activity = entities.triggering_activity ?? 'that activity';
+      return {
+        text: `I don't have specific corrections for ${activity} yet, but I can help with ${availableActivities.join(', ')} — do any of those also cause knee pain for you?`,
+        tokensUsed: { ...ZERO_TOKENS },
+      };
+    }
   }
 }
 

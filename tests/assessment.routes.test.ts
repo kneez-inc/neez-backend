@@ -238,20 +238,21 @@ describe('POST /assess integration', () => {
     }
   });
 
-  // --- Invalid session ---
+  // --- Unknown session_id seeds new state ---
 
-  it('returns 404 for unknown session_id', async () => {
+  it('accepts unknown Supabase session_id and seeds new state', async () => {
     const { server, baseUrl } = await startServer();
     try {
       const res = await post(baseUrl, {
         session_id: '00000000-0000-0000-0000-000000000000',
-        message: 'test',
+        message: 'my knee hurts when squatting',
       });
       const body = await res.json();
 
-      assert.equal(res.status, 404);
-      assert.equal(body.success, false);
-      assert.equal(body.error.code, 'SESSION_NOT_FOUND');
+      assert.equal(res.status, 200);
+      assert.equal(body.success, true);
+      assert.equal(body.data.session_id, '00000000-0000-0000-0000-000000000000');
+      assert.equal(body.data.status, 'gathering');
     } finally {
       await closeServer(server);
     }

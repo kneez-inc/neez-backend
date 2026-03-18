@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { AssessRequestSchema } from '../types/api.js';
+import { AppError } from '../types/database.js';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
 import {
   loadTree,
@@ -133,6 +134,14 @@ assessRouter.post('/', async (req: Request, res: Response) => {
       },
     });
   } catch (err) {
+    if (err instanceof AppError) {
+      log.error('Database error', { userId, code: err.code, error: err.message });
+      res.status(err.statusCode).json({
+        success: false,
+        error: { code: err.code, message: err.message },
+      });
+      return;
+    }
     log.error('Unhandled assessment error', { userId, error: (err as Error).message, stack: (err as Error).stack });
     res.status(500).json({
       success: false,
