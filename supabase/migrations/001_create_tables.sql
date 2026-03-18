@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS neez_chat_sessions (
   latitude           double precision,
   longitude          double precision,
   feedback_score     int CHECK (feedback_score BETWEEN 1 AND 5),
-  closed_at          timestamptz
+  closed_at          timestamptz,
+  created_at         timestamptz NOT NULL DEFAULT now()
 );
 
 CREATE INDEX idx_neez_chat_sessions_user_id ON neez_chat_sessions (user_id);

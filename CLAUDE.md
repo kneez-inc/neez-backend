@@ -127,6 +127,13 @@ neez-backend/
 - `npm start` — run compiled output
 - `npm test` — lint + run tests
 
+## Schema Source of Truth
+
+- Supabase table types are generated from the live schema
+- Frontend: run `npx supabase gen types typescript --project-id wiqvfnbfmhtzdpfwasyd > src/types/supabase.ts` to regenerate
+- Never hand-write Supabase column names — always reference src/types/supabase.ts
+- Backend session IDs come from Supabase — the in-memory Map is a cache only
+
 ## Key Technical Decisions
 
 - **LLM**: gemini-2.0-flash (entity extraction + normalization, no diagnosis)
