@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
+import { createClient } from '@supabase/supabase-js';
 import { config } from '../config.js';
 import { createLogger } from '../logger.js';
 
@@ -9,9 +9,9 @@ export interface AuthenticatedRequest extends Request {
   userId: string;
 }
 
-export const requireAuth = (req: Request, res: Response, next: NextFunction): void => {
-  if (!config.SUPABASE_ANON_KEY) {
-    log.warn('SUPABASE_ANON_KEY not set — skipping auth in development');
+export const requireAuth = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  if (!config.SUPABASE_URL || !config.SUPABASE_ANON_KEY) {
+    log.warn('Supabase credentials not set — skipping auth in development');
     (req as AuthenticatedRequest).userId = 'dev-user';
     next();
     return;
@@ -27,24 +27,27 @@ export const requireAuth = (req: Request, res: Response, next: NextFunction): vo
   }
 
   const token = header.slice(7);
+
   try {
-    const payload = jwt.verify(token, config.SUPABASE_ANON_KEY, {
-      algorithms: ['HS256'],
+    const supabase = createClient(config.SUPABASE_URL, config.SUPABASE_ANON_KEY, {
+      global: { headers: { Authorization: `Bearer ${token}` } },
     });
 
-    const sub = typeof payload === 'object' && payload !== null ? (payload as Record<string, unknown>).sub : undefined;
-    if (typeof sub !== 'string') {
+    const { data: { user }, error } = await supabase.auth.getUser(token);
+
+    if (error || !user) {
+      log.warn('Token validation failed', { error: error?.message });
       res.status(401).json({
         success: false,
-        error: { code: 'INVALID_TOKEN', message: 'Token missing user ID' },
+        error: { code: 'INVALID_TOKEN', message: 'Invalid or expired token' },
       });
       return;
     }
 
-    (req as AuthenticatedRequest).userId = sub;
+    (req as AuthenticatedRequest).userId = user.id;
     next();
   } catch (err) {
-    log.warn('JWT verification failed', { error: (err as Error).message });
+    log.error('Auth middleware error', { error: (err as Error).message });
     res.status(401).json({
       success: false,
       error: { code: 'INVALID_TOKEN', message: 'Invalid or expired token' },
