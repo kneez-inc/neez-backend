@@ -2,12 +2,40 @@
 
 Assessment engine for the neez app. Express/Node.js API with a deterministic decision tree and LLM entity extraction. This repo handles assessment only — auth, user data, sessions, and messages are managed by the frontend talking to Supabase directly.
 
+## Full Local Setup (New Developer)
+
+Both repos are needed to run neez locally: `neez-backend` (this repo) and `neez` (frontend).
+
+```bash
+# 1. Clone and checkout develop
+git clone https://github.com/kneez-inc/neez-backend.git
+cd neez-backend && git checkout develop
+
+# 2. Install dependencies
+npm install
+
+# 3. Create .env from example
+cp .env.example .env
+# Fill in SUPABASE_URL, SUPABASE_ANON_KEY, and GEMINI_API_KEY
+
+# 4. Run the three Supabase migrations in order
+#    Go to Supabase Dashboard > SQL Editor and paste/run each file:
+#      supabase/migrations/001_create_tables.sql
+#      supabase/migrations/002_rls_policies.sql
+#      supabase/migrations/003_auth_trigger.sql
+
+# 5. Start the backend
+npm run dev    # http://localhost:3000
+```
+
+Then set up the frontend repo (`neez`) — see its README for instructions.
+
 ## Prerequisites
 
 - Node.js 20+
 - npm
 
-## Setup
+## Setup (Backend Only)
 
 ```bash
 npm install
