@@ -109,10 +109,10 @@ const sessionStore = new Map<string, AssessmentState>();
 
 // --- Session management ---
 
-export function createSession(treeVersion: string): AssessmentState {
-  const sessionId = crypto.randomUUID();
+export function createSession(treeVersion: string, sessionId?: string): AssessmentState {
+  const id = sessionId ?? crypto.randomUUID();
   const state: AssessmentState = {
-    sessionId,
+    sessionId: id,
     treeVersion,
     entities: { ...NULL_ENTITIES },
     resolvedEntities: { ...NULL_ENTITIES },
@@ -123,8 +123,17 @@ export function createSession(treeVersion: string): AssessmentState {
     consecutiveLowRatings: 0,
     status: 'gathering',
   };
-  sessionStore.set(sessionId, state);
+  sessionStore.set(id, state);
+  log.info('Session state initialised', { sessionId: id, treeVersion });
   return state;
+}
+
+export function getOrCreateSession(sessionId: string, treeVersion: string): AssessmentState {
+  const existing = sessionStore.get(sessionId);
+  if (existing) return existing;
+
+  log.info('Session not in cache, seeding from Supabase session_id', { sessionId });
+  return createSession(treeVersion, sessionId);
 }
 
 export function getSession(sessionId: string): AssessmentState | undefined {

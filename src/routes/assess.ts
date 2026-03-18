@@ -4,7 +4,7 @@ import type { AuthenticatedRequest } from '../middleware/auth.js';
 import {
   loadTree,
   createSession,
-  getSession,
+  getOrCreateSession,
   processMessage,
   processFeedback,
 } from '../engine/state-machine.js';
@@ -74,16 +74,8 @@ assessRouter.post('/', async (req: Request, res: Response) => {
       return;
     }
 
-    // --- Existing session ---
-    const state = getSession(session_id);
-    if (!state) {
-      log.warn('Session not found', { userId, sessionId: session_id });
-      res.status(404).json({
-        success: false,
-        error: { code: 'SESSION_NOT_FOUND', message: 'Session not found' },
-      });
-      return;
-    }
+    // --- Existing session (seed in-memory state on first use) ---
+    const state = getOrCreateSession(session_id, version);
 
     // --- Feedback path ---
     if (feedback !== undefined) {
