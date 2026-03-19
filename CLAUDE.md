@@ -147,6 +147,13 @@ neez-backend/
 - Never hand-write Supabase column names — always reference src/types/supabase.ts
 - Backend session IDs come from Supabase — the in-memory Map is a cache only
 
+## Agent Usage
+
+- Make extensive use of agents (subagents) for research, exploration, search, and multi-step tasks.
+- Prefer delegating to agents over doing work inline to keep the main context window small and reduce token usage.
+- Run multiple agents in parallel when tasks are independent.
+- Use the Explore agent for codebase search and discovery. Use general-purpose agents for complex multi-step work.
+
 ## Key Technical Decisions
 
 - **LLM**: gemini-2.0-flash (entity extraction + normalization, no diagnosis)
