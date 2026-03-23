@@ -22,7 +22,7 @@ describe('ExtractedEntitiesSchema', () => {
   it('accepts valid entities with all fields', () => {
     const result = ExtractedEntitiesSchema.safeParse({
       symptom_side: 'left',
-      triggering_activity: 'squatting',
+      triggering_activity: 'squatting_bodyweight',
       symptom_location: 'patella',
       symptom_description: 'sharp',
     });
@@ -94,7 +94,7 @@ describe('AssessRequestSchema', () => {
   it('accepts empty body (new session, no message)', () => {
     const result = AssessRequestSchema.safeParse({});
     assert.ok(result.success);
-    assert.equal(result.data.version, 'sample-tree');
+    assert.equal(result.data.version, 'v1-tree');
   });
 
   it('accepts message only', () => {
@@ -143,10 +143,10 @@ describe('AssessRequestSchema', () => {
     assert.ok(!result.success);
   });
 
-  it('defaults version to sample-tree', () => {
+  it('defaults version to v1-tree', () => {
     const result = AssessRequestSchema.safeParse({});
     assert.ok(result.success);
-    assert.equal(result.data.version, 'sample-tree');
+    assert.equal(result.data.version, 'v1-tree');
   });
 
   it('accepts custom version', () => {

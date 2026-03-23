@@ -21,25 +21,11 @@ describe('traverseTree', () => {
   });
 
   it('happy path: squatting + anterior reaches dx_squat_anterior', () => {
-    const entities: ExtractedEntities = {
-      ...nullEntities,
-      triggering_activity: 'squatting',
-      symptom_location: 'patella', // mapped to "anterior" via tree conditions
-    };
-
-    // The sample tree uses "anterior" as the option value, so we need to match that
-    // Let's use the raw value the tree expects
-    const entitiesRaw: ExtractedEntities = {
-      ...nullEntities,
-      triggering_activity: 'squatting',
-    };
-
-    // First traverse with just activity to see what happens — the tree expects
-    // "symptom_location" as save_to, matching condition values "anterior", "medial", "lateral"
-    // We need to provide the value the tree conditions check for
+    // Sample tree uses its own activity/location values that don't match
+    // the production controlled vocabulary — cast to satisfy types
     const result = traverseTree(sampleTree, {
       ...nullEntities,
-      triggering_activity: 'squatting',
+      triggering_activity: 'squatting' as ExtractedEntities['triggering_activity'],
       symptom_location: 'anterior' as ExtractedEntities['symptom_location'],
     });
 
@@ -53,7 +39,7 @@ describe('traverseTree', () => {
   it('happy path: running + medial reaches dx_running_medial', () => {
     const result = traverseTree(sampleTree, {
       ...nullEntities,
-      triggering_activity: 'running',
+      triggering_activity: 'running' as ExtractedEntities['triggering_activity'],
       symptom_location: 'medial' as ExtractedEntities['symptom_location'],
     });
 
@@ -100,7 +86,7 @@ describe('traverseTree', () => {
   it('determinism: 100 identical runs produce identical results', () => {
     const entities: ExtractedEntities = {
       ...nullEntities,
-      triggering_activity: 'squatting',
+      triggering_activity: 'squatting' as ExtractedEntities['triggering_activity'],
       symptom_location: 'anterior' as ExtractedEntities['symptom_location'],
     };
 
@@ -209,7 +195,7 @@ describe('traverseTree', () => {
     };
 
     // Specific match
-    const specific = traverseTree(treeWithDefault, { ...nullEntities, triggering_activity: 'running' });
+    const specific = traverseTree(treeWithDefault, { ...nullEntities, triggering_activity: 'running' as ExtractedEntities['triggering_activity'] });
     assert.ok(specific !== null);
     assert.deepEqual(specific.path, ['q1', 'dx_specific']);
 
@@ -222,7 +208,7 @@ describe('traverseTree', () => {
   it('returns recommendations from the assessment node', () => {
     const result = traverseTree(sampleTree, {
       ...nullEntities,
-      triggering_activity: 'squatting',
+      triggering_activity: 'squatting' as ExtractedEntities['triggering_activity'],
       symptom_location: 'anterior' as ExtractedEntities['symptom_location'],
     });
 
