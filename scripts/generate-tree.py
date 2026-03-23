@@ -95,6 +95,30 @@ def extract_mod_title(mod_text: str) -> str:
     return title
 
 
+def parse_steps(steps_str: str) -> list[dict]:
+    """Parse a steps string into structured [{title, text}] objects.
+
+    Input:  "Setup: Stand with feet apart\\nThe Movement: Lower your hips back"
+    Output: [{"title": "Setup", "text": "Stand with feet apart"},
+             {"title": "The Movement", "text": "Lower your hips back"}]
+    """
+    result = []
+    for line in steps_str.split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        # Split on first colon to separate title from text
+        colon_idx = line.find(":")
+        if colon_idx > 0:
+            title = line[:colon_idx].strip()
+            text = line[colon_idx + 1:].strip()
+            result.append({"title": title, "text": text})
+        else:
+            # No colon — treat the whole line as text with a generic title
+            result.append({"title": "Tip", "text": line})
+    return result
+
+
 def parse_spreadsheet(filepath: str) -> list[dict]:
     """Parse the Excel spreadsheet into a list of row dicts."""
     wb = openpyxl.load_workbook(filepath)
@@ -195,9 +219,9 @@ def build_tree(rows: list[dict]) -> dict:
             if mod["video_id"]:
                 rec["video_id"] = mod["video_id"]
             if mod["steps"]:
-                rec["steps"] = mod["steps"]
+                rec["steps"] = parse_steps(mod["steps"])
             if mod["why"]:
-                rec["why"] = mod["why"]
+                rec["why_it_works"] = mod["why"]
             if mod["tags"]:
                 rec["tags"] = mod["tags"]
 
