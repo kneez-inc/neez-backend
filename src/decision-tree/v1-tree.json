@@ -1,0 +1,2556 @@
+{
+  "id": "neez_v1",
+  "version": "1.0.0",
+  "title": "neez Movement Modification Decision Tree v1",
+  "description": "Production decision tree generated from Jabari's Movement Modifications spreadsheet",
+  "entry_node_id": "q_activity",
+  "nodes": {
+    "dx_split_squats_anteromedial_femoral_condyle": {
+      "id": "dx_split_squats_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Split Squats - anteromedial knee pain (loaded LE)",
+      "summary": "Assessment for Split Squats with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_anteromedial_femoral_condyle_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall. (While in position, slightly turn the toes and knee of your front foot slightly outward. Keep them turned outward at this angle throughout the entire movement, try not to let your knee collapse inward towards midline.)",
+          "video_id": "squat_with_knees_pointed_out"
+        },
+        {
+          "id": "dx_split_squats_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let your knee move past your toes, or move the front foot slightly forward. (While in position, keep your back leg perpendicular to the ground by sinking your knee downward in a straight line without pushing your hips forward.\nPay attention to your front knee so that it does not move forward past your toes, by keeping your shin vertical/perpendicular to the ground.\nIf you notice your knee on the front leg moving beyond your toes as you drop down after making adjustments, you may need to move the front foot slightly forward.)"
+        },
+        {
+          "id": "dx_split_squats_anteromedial_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic ti...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic tilt/core engagement* (While in position, engage your core by tilting/rotating your pelvis backward (pull your belly button towards your spine), then slightly lean your trunk forward by hinging at your hips (don’t round your back))"
+        }
+      ]
+    },
+    "dx_split_squats_patellar_tendon": {
+      "id": "dx_split_squats_patellar_tendon",
+      "type": "assessment",
+      "label": "Split Squats - Anterior knee pain (loaded LE); patellar tendon/ligament and posterior patella",
+      "summary": "Assessment for Split Squats with patellar tendon pain",
+      "explanation": "anterior knee translation, over activation of quads, patellar tracking",
+      "region_id": "patellar_tendon",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_patellar_tendon_mod1",
+          "title": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let your knee move past your toes, moe the front foot slightly fforward. (While in position, keep your back leg perpendicular to the ground by sinking your knee downward in a straight line without pushing your hips forward.\nPay attention to your front knee so that it does not move forward past your toes, by keeping your shin vertical/perpendicular to the ground.\nIf you notice your knee on the front leg moving beyond your toes as you drop down after making adjustments, you may need to move the front foot slightly forward.)"
+        },
+        {
+          "id": "dx_split_squats_patellar_tendon_mod2",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic ti...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic tilt/core engagement* (While in position, engage your core by tilting/rotating your pelvis backward (pull your belly button towards your spine), then slightly lean your trunk forward by hinging at your hips (don’t round your back))"
+        }
+      ]
+    },
+    "dx_split_squats_anterolateral_femoral_condyle": {
+      "id": "dx_split_squats_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Split Squats - Lateral knee pain (loaded LE)",
+      "summary": "Assessment for Split Squats with anterolateral femoral condyle pain",
+      "explanation": "ITB impairment, increased ER, varus, patellar tracking, lateral patellar retinaculum, LCL impairment",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_mod1",
+          "title": "Align hip and knee joint: make sure your knee and hip are in one line",
+          "type": "movement_mod",
+          "description": "Align hip and knee joint: make sure your knee and hip are in one line (your knee is not pointed outward or inward). (While in starting position, make sure your knee and hip joint are in one line, meaning the knee is not pointed outward or inward. Think about pointing your knee over your 2nd and 3rd toes. Try to maintain this alignment throughout entire motion)"
+        },
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_mod2",
+          "title": "Increase Hip IR: If you noticed your knee is pointing outward when you lunge, make sure your hip and knee stay in one...",
+          "type": "movement_mod",
+          "description": "Increase Hip IR: If you noticed your knee is pointing outward when you lunge, make sure your hip and knee stay in one line throughout the full motion. (While in starting position, if you notice your knee is pointing outwards, bring your knee inward so it make a straight line with your hip joint, Make sure your knee and hip stay in one line throughout the entire motion.)"
+        },
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic ti...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic tilt/core engagement* (While in position, engage your core by tilting/rotating your pelvis backward (pull your belly button towards your spine), then slightly lean your trunk forward about 10-20 degrees by hinging at your hips)"
+        },
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_mod4",
+          "title": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge",
+          "type": "movement_mod",
+          "description": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge. (After you’ve tried aligning your hip and knee joint (as well as the other modifications) and there is still pain or discomfort, try performing the movement in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_split_squats_anterolateral_femoral_condyle_2": {
+      "id": "dx_split_squats_anterolateral_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Split Squats - Anterolateral",
+      "summary": "Assessment for Split Squats with anterolateral femoral condyle pain",
+      "explanation": "ITB impairment, increase ER or varus, patellar tracking, lateral patellar retinaculum, meniscus",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_2_mod1",
+          "title": "Align hip and knee joint:make sure your knee and hip are in one line",
+          "type": "movement_mod",
+          "description": "Align hip and knee joint:make sure your knee and hip are in one line (your knee is not pointed outward or inward). (While in starting position, make sure your knee and hip joint are in one line, meaning the knee is not pointed outward or inward, and maintain this alignment throughout entire motion)"
+        },
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_2_mod2",
+          "title": "Increase Hip IR: If you noticed your knee is pointing outward when you lunge, make sure your hip and knee stay in one...",
+          "type": "movement_mod",
+          "description": "Increase Hip IR: If you noticed your knee is pointing outward when you lunge, make sure your hip and knee stay in one line throughout the full motion. (While in the starting position, if you notice your knee is pointing outwards, bring your knee inward so it makes a straight line with your hip joint. Think about pointing your knee over your 2nd and 3rd toes. Make sure your knee and hip stay in one line throughout the entire motion.)"
+        },
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_2_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic ti...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic tilt/core engagement* (While in position, engage your core by tilting/rotating your pelvis backward (pull your belly button towards your spine), then slightly lean your trunk forward by hinging at your hips (don’t round your back)"
+        },
+        {
+          "id": "dx_split_squats_anterolateral_femoral_condyle_2_mod4",
+          "title": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge",
+          "type": "movement_mod",
+          "description": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge. (After you’ve tried aligning your hip and knee joint (as well as the other modifications) and there is still pain or discomfort, try performing the movement in a pain free range of motion by decreasing how far down you perform the split squat.)"
+        }
+      ]
+    },
+    "dx_split_squats_anteromedial_femoral_condyle_2": {
+      "id": "dx_split_squats_anteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Split Squats - Medial knee pain (loaded LE)",
+      "summary": "Assessment for Split Squats with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus, MCL; adductor",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_anteromedial_femoral_condyle_2_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall througho...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall throughout the motion. *always cue for pelvic tilt/core engagement* (While in position, slightly turn the toes and knee of your front foot slightly outward. Keep them turned outward at this angle throughout the entire movement, try not to let your knee collapse inward towards midline.)"
+        }
+      ]
+    },
+    "dx_split_squats_posteromedial_femoral_condyle": {
+      "id": "dx_split_squats_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Split Squats - Posterior knee pain (loaded LE)",
+      "summary": "Assessment for Split Squats with posteromedial femoral condyle pain",
+      "explanation": "Hamstrings, gastroc, popliteus, meniscus; increased posterior chain activation",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_posteromedial_femoral_condyle_mod1",
+          "title": "Decrease posterior chain activatoin: if you find you are leaning mor forward, adjust your trunk so that your torso is...",
+          "type": "movement_mod",
+          "description": "Decrease posterior chain activatoin: if you find you are leaning mor forward, adjust your trunk so that your torso is upright, perpendicular to the ground, and make sure your front foot is also perpendicular to the ground. (While performing the split squat, if you notice your trunk/torso is leaned forward (your nose is over your knees or toes), bring your trunk backward so that it is almost perpendicular to the ground.)"
+        },
+        {
+          "id": "dx_split_squats_posteromedial_femoral_condyle_mod2",
+          "title": "Deccreases ROM: perform the movement in a pain free range. *always cue for pelvic tilt/core engagement*",
+          "type": "movement_mod",
+          "description": "Deccreases ROM: perform the movement in a pain free range. *always cue for pelvic tilt/core engagement* (After you’ve tried aligning your hip and knee joint (as well as the other modifications) and there is still pain or discomfort, try performing the movement in a pain free range of motion by decreasing how far down you perform the split squat.)"
+        }
+      ]
+    },
+    "dx_split_squats_patella": {
+      "id": "dx_split_squats_patella",
+      "type": "assessment",
+      "label": "Split Squats - Central/deep pain (joint)",
+      "summary": "Assessment for Split Squats with patellofemoral joint (patella) pain",
+      "explanation": "Anterior knee translation, OA, Meniscus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_patella_mod1",
+          "title": "Overall alignment: Make sure your front shin is perpendicualr to the ground during the while movement, make sure the ...",
+          "type": "movement_mod",
+          "description": "Overall alignment: Make sure your front shin is perpendicualr to the ground during the while movement, make sure the back knee sinks straight down, you may need to move the front foot forward. (While in position, keep your back leg perpendicular to the ground by sinking your knee downward in a straight line without pushing your hips forward.\nPay attention to your front knee so that it does not move forward past your toes, by keeping your shin vertical/perpendicular to the ground.\nIf you notice your knee on the front leg moving beyond your toes as you drop down after making adjustments, you may need to move the front foot slightly forward. )"
+        },
+        {
+          "id": "dx_split_squats_patella_mod2",
+          "title": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion. *always cue for ...",
+          "type": "movement_mod",
+          "description": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion. *always cue for pelvic tilt/core engagement* After you’ve tried aligning your hip and knee joint (as well as the other modifications) and there is still pain or discomfort, try performing the movement in a pain free range of motion by decreasing how far down you perform the split squat."
+        }
+      ]
+    },
+    "dx_split_squats_posteromedial_femoral_condyle_2": {
+      "id": "dx_split_squats_posteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Split Squats - Back knee (unloaded LE)",
+      "summary": "Assessment for Split Squats with posterior femoral condyle (medial) pain",
+      "explanation": "dynamic valgus, increased WB, ankle PF",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_split_squats_posteromedial_femoral_condyle_2_mod1",
+          "title": "Dynamic valgus: slightly turn your toe and knee outward and pretenf you're pushing your knee against a wall, try not ...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toe and knee outward and pretenf you're pushing your knee against a wall, try not to let the knee come inward. (While in position, slightly turn the toes and knee of your back foot outward. Keep them turned outward throughout the entire movement, try not to let your knee collapse inward towards the midline.)"
+        },
+        {
+          "id": "dx_split_squats_posteromedial_femoral_condyle_2_mod2",
+          "title": "WB: shift your weight forward onto the front leg/or lean forward, and try to initiate the movement by pushing through...",
+          "type": "movement_mod",
+          "description": "WB: shift your weight forward onto the front leg/or lean forward, and try to initiate the movement by pushing through the front leg. *always cue for pelvic tilt/core engagement* (While performing the movement, if you notice you are pushing through the back leg more, focus on pushing through the front leg by shifting your weight forward.)"
+        }
+      ]
+    },
+    "dx_forward_lunge_anteromedial_femoral_condyle": {
+      "id": "dx_forward_lunge_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Forward lunge - anterior/anteromedial knee pain",
+      "summary": "Assessment for Forward lunge with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation; too much forward momentum, adductors",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_forward_lunge_anteromedial_femoral_condyle_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall. (When you lunge forward, land with your toes and knee of your front foot turned slightly outward. Try not to let your knee collapse inward towards the midline.)"
+        },
+        {
+          "id": "dx_forward_lunge_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let your knee move past your toes, move the front foot slightly forward when lunging (maybe add in instructions for external cues for optimal lunge distance). *always cue for pelvic tilt/core engagement* (When lunging forward, make sure your knee does not move past your toes by keeping your shin vertical. Keep the back thigh perpendicular to the ground by dropping the knee down in a straight line without pushing your hips forward. If you notice this is difficult, you may need to move the front foot forward slightly when lunging.)"
+        }
+      ]
+    },
+    "dx_forward_lunge_anterolateral_femoral_condyle": {
+      "id": "dx_forward_lunge_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Forward lunge - Lateral/anterolateral knee pain",
+      "summary": "Assessment for Forward lunge with anterolateral femoral condyle pain",
+      "explanation": "ITB friction; varus stress; patellar tracking, increased ER, lateral patellar retinaculum, LCL impairment",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_forward_lunge_anterolateral_femoral_condyle_mod1",
+          "title": "Keep your front knee lined up with your second toe; don't let it bow outward, while making sure your knee doesnt move...",
+          "type": "movement_mod",
+          "description": "Keep your front knee lined up with your second toe; don't let it bow outward, while making sure your knee doesnt move forward past your toes (keep your shin perpendicular to the ground); . (When lunging forward, try to keep your front knee aligned with your 2nd and 3rd toes throughout the movement.\nMake sure your knee does not move past your toes by keeping your shin vertical. Keep the back thigh perpendicular to the ground by dropping the knee down in a straight line without pushing your hips forward. If you notice this is difficult, you may need to move the front foot forward slightly when lunging.)"
+        },
+        {
+          "id": "dx_forward_lunge_anterolateral_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let your knee move past your toes, moe the front foot slightly fforward (When lunging forward, make sure your knee does not move past your toes by keeping your shin vertical. Keep the back thigh perpendicular to the ground by dropping the knee down in a straight line without pushing your hips forward. If you notice this is difficult, you may need to move the front foot forward slightly when lunging.)"
+        },
+        {
+          "id": "dx_forward_lunge_anterolateral_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic ti...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic tilt/core engagement* (In the starting position, engage your core by tucking your pelvis (pulling your belly button towards your spine). While lunging, focus on slightly leaning your trunk forward by hinging at your hips (don't round your back). Maintain this trunk position throughout the movement.)"
+        }
+      ]
+    },
+    "dx_forward_lunge_anteromedial_femoral_condyle_2": {
+      "id": "dx_forward_lunge_anteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Forward lunge - Medial knee pain",
+      "summary": "Assessment for Forward lunge with anteromedial femoral condyle pain",
+      "explanation": "Dynamic valgus; MCL strain; adductor",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_forward_lunge_anteromedial_femoral_condyle_2_mod1",
+          "title": "Slightly turn your front toes out and push your knee outward to prevent it from collapsing inward. *always cue for pe...",
+          "type": "movement_mod",
+          "description": "Slightly turn your front toes out and push your knee outward to prevent it from collapsing inward. *always cue for pelvic tilt/core engagement* (When you lunge forward, land with your toes and knee of your front foot turned slightly outward. Try not to let your knee collapse inward towards the midline.)"
+        },
+        {
+          "id": "dx_forward_lunge_anteromedial_femoral_condyle_2_mod2",
+          "title": "Make sure your knee does not move past your toes by keeping your shin vertical. Keep the back thigh perpendicular to ...",
+          "type": "movement_mod",
+          "description": "Make sure your knee does not move past your toes by keeping your shin vertical. Keep the back thigh perpendicular to the ground by dropping the knee down in a straight line without pushing your hips forward. If you notice this is difficult, you may need to move the front foot forward slightly when lunging."
+        }
+      ]
+    },
+    "dx_forward_lunge_patella": {
+      "id": "dx_forward_lunge_patella",
+      "type": "assessment",
+      "label": "Forward lunge - Central/deep pain (joint)",
+      "summary": "Assessment for Forward lunge with patellofemoral joint (patella) pain",
+      "explanation": "Anterior knee translation/excessive flexion, OA, Meniscus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_forward_lunge_patella_mod1",
+          "title": "Make sure your hip and knee are in a stright line, and your shin stays perpendicular to the ground, then slightly lea...",
+          "type": "movement_mod",
+          "description": "Make sure your hip and knee are in a stright line, and your shin stays perpendicular to the ground, then slightly lean your trunk forward before lunging. If you still have pain after aligning your form, decrease range of motion and perform in a range that is pain free. *always cue for pelvic tilt/core engagement* (When lunging forward, try to keep your front knee aligned with your 2nd and 3rd toes throughout the movement.\nMake sure your knee does not move past your toes by keeping your shin vertical. Keep the back thigh perpendicular to the ground by dropping the knee down in a straight line without pushing your hips forward. If you notice this is difficult, you may need to move the front foot forward slightly when lunging.)"
+        },
+        {
+          "id": "dx_forward_lunge_patella_mod2",
+          "title": "After trying previous modifications, if you’re still having knee pain, perform the movement in a pain free range of m...",
+          "type": "movement_mod",
+          "description": "After trying previous modifications, if you’re still having knee pain, perform the movement in a pain free range of motion."
+        }
+      ]
+    },
+    "dx_forward_lunge_posteromedial_femoral_condyle": {
+      "id": "dx_forward_lunge_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Forward lunge - Posterior knee pain",
+      "summary": "Assessment for Forward lunge with posteromedial femoral condyle pain",
+      "explanation": "Hamstrings, gastroc, popliteus, meniscus; increased posterior chain activation",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_forward_lunge_posteromedial_femoral_condyle_mod1",
+          "title": "while lunging, keep your trunk upright",
+          "type": "movement_mod",
+          "description": "while lunging, keep your trunk upright (try not to lean too far forward), if pain still persists after form has been algined than perform in a pain free range of motion. *always cue for pelvic tilt/core engagement* (When lunging, if you notice you're leaning forward too much, try to keep your trunk more upright or almost perpendicular to the ground.)"
+        },
+        {
+          "id": "dx_forward_lunge_posteromedial_femoral_condyle_mod2",
+          "title": "After trying previous modifications, if you’re still having knee pain, perform the movement in a pain free range of m...",
+          "type": "movement_mod",
+          "description": "After trying previous modifications, if you’re still having knee pain, perform the movement in a pain free range of motion."
+        }
+      ]
+    },
+    "dx_forward_lunge_posteromedial_femoral_condyle_2": {
+      "id": "dx_forward_lunge_posteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Forward lunge - Back knee",
+      "summary": "Assessment for Forward lunge with posterior femoral condyle (medial) pain",
+      "explanation": "dynamic valgus, increased WB, ankle PF",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_forward_lunge_posteromedial_femoral_condyle_2_mod1",
+          "title": "If you're having pain on the back knee, try pointing the knee outward and maintaing that posion while lunging",
+          "type": "movement_mod",
+          "description": "If you're having pain on the back knee, try pointing the knee outward and maintaing that posion while lunging. (If your pain is in the back knee, make sure the knee does not collapse inward by making sure it stays slightly pointed out during the movement. Try turning your toes slightly outward to assist with this.)",
+          "video_id": "split_squat_rear_leg_to_side"
+        },
+        {
+          "id": "dx_forward_lunge_posteromedial_femoral_condyle_2_mod2",
+          "title": "WB: make sure you are shifting your weihgt forward when you lunge, and are pushing through the front foot when return...",
+          "type": "movement_mod",
+          "description": "WB: make sure you are shifting your weihgt forward when you lunge, and are pushing through the front foot when returning to stnading position. *always cue for pelvic tilt/core engagement* (If you notice more weight on the back leg when lunging, try pushing through the front foot more by shifting your weight forward.)"
+        },
+        {
+          "id": "dx_forward_lunge_posteromedial_femoral_condyle_2_mod3",
+          "title": "After trying previous modifications, if you’re still having knee pain, perform the movement in a pain free range of m...",
+          "type": "movement_mod",
+          "description": "After trying previous modifications, if you’re still having knee pain, perform the movement in a pain free range of motion."
+        }
+      ]
+    },
+    "dx_backward_lunge_anteromedial_femoral_condyle": {
+      "id": "dx_backward_lunge_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Backward lunge - anterior/anteromedial knee pain",
+      "summary": "Assessment for Backward lunge with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking/compression",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_backward_lunge_anteromedial_femoral_condyle_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall. (On your front leg, slightly turn your front toes and knee outward and try to maintain this position throughout the entire movement. Imagine there’s a wall on the outside of your knee—keep light pressure against that \"wall\" as you move.)"
+        },
+        {
+          "id": "dx_backward_lunge_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink the back knee straight down to the ground without pushing your hips forward, dont let your knee move past your toes, move the front foot slightly fforward\n*always cue for pelvic tilt/core engagement* (While lunging, keep your shin on the front leg vertical or perpendicular to the ground and avoid letting your knee move past your toes, and think about dropping your back knee down in a straight line. \nIf still uncomfortable you may need to increase your lunge distance slightly.)"
+        }
+      ]
+    },
+    "dx_backward_lunge_anterolateral_femoral_condyle": {
+      "id": "dx_backward_lunge_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Backward lunge - lateral/anterolateral knee pain",
+      "summary": "Assessment for Backward lunge with anterolateral femoral condyle pain",
+      "explanation": "ITB impairment, increased ER, varus, patellar tracking, lateral patellar retinaculum, LCL impairment, meniscus",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_backward_lunge_anterolateral_femoral_condyle_mod1",
+          "title": "Align hip and knee joint:make sure your knee and hip are in one line",
+          "type": "movement_mod",
+          "description": "Align hip and knee joint:make sure your knee and hip are in one line (your knee is not pointed outward or inward).. (While lunging, keep your front knee in line with your 2nd and 3rd toes, making sure to maintain this alignment throughout the entire movement.\nBe sure to keep your shin on the front leg vertical or perpendicular to the ground and avoid letting your knee move past your toes, and think about dropping your back knee down in a straight line. \nIf still uncomfortable you may need to increase your lunge distance slightly.)"
+        },
+        {
+          "id": "dx_backward_lunge_anterolateral_femoral_condyle_mod2",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic ti...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic tilt/core engagement* (In the starting position be sure to engage your core by bringing your belly button towards your spine. While lunging, slightly lean your trunk forward by hinging at your hips (do not round your back)"
+        },
+        {
+          "id": "dx_backward_lunge_anterolateral_femoral_condyle_mod3",
+          "title": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge",
+          "type": "movement_mod",
+          "description": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge. (After making the previous modifications, if you still experience pain or discomfort perform the movement in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_backward_lunge_anteromedial_femoral_condyle_2": {
+      "id": "dx_backward_lunge_anteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Backward lunge - Medial knee pain",
+      "summary": "Assessment for Backward lunge with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus, MCL",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_backward_lunge_anteromedial_femoral_condyle_2_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall througho...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall throughout the motion. *always cue for pelvic tilt/core engagement* (On your front leg, slightly turn your front toes and knee outward and try to maintain this position throughout the entire movement. Imagine there’s a wall on the outside of your knee—keep light pressure against that \"wall\" as you move.)"
+        }
+      ]
+    },
+    "dx_backward_lunge_patella": {
+      "id": "dx_backward_lunge_patella",
+      "type": "assessment",
+      "label": "Backward lunge - Central/deep pain (joint)",
+      "summary": "Assessment for Backward lunge with patellofemoral joint (patella) pain",
+      "explanation": "Anterior knee translation, OA, Meniscus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_backward_lunge_patella_mod1",
+          "title": "Overall alignment: Make sure your front shin is perpendicualr to the ground during the while movement, make sure the ...",
+          "type": "movement_mod",
+          "description": "Overall alignment: Make sure your front shin is perpendicualr to the ground during the while movement, make sure the back knee sinks straight down, you may need to move the front foot forward/or increase posterior stepping. (While lunging, keep your front knee in line with your 2nd and 3rd toes, making sure to maintain this alignment throughout the entire movement.\nBe sure to keep your shin on the front leg vertical or perpendicular to the ground and avoid letting your knee move past your toes, and think about dropping your back knee down in a straight line. \nIf still uncomfortable you may need to increase your lunge distance slightly.)"
+        },
+        {
+          "id": "dx_backward_lunge_patella_mod2",
+          "title": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion. *always cue for ...",
+          "type": "movement_mod",
+          "description": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion. *always cue for pelvic tilt/core engagement* (After making the previous modifications, if you still experience pain or discomfort perform the movement in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_backward_lunge_posteromedial_femoral_condyle": {
+      "id": "dx_backward_lunge_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Backward lunge - posterior knee pain",
+      "summary": "Assessment for Backward lunge with posteromedial femoral condyle pain",
+      "explanation": "Hamstrings, gastroc, popliteus, meniscus; increased posterior chain activation",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_backward_lunge_posteromedial_femoral_condyle_mod1",
+          "title": "Decrease posterior chain activatoin: if you find you are leaning mor forward, adjust your trunk so that your torso is...",
+          "type": "movement_mod",
+          "description": "Decrease posterior chain activatoin: if you find you are leaning mor forward, adjust your trunk so that your torso is upright, perpendicular to the ground, and make sure your front foot is also perpendicular to the ground. (If you notice you are leaning too far forward, keep your trunk more tall and upright by bringing your trunk slightly backward to be more perpendicular to the ground.)"
+        },
+        {
+          "id": "dx_backward_lunge_posteromedial_femoral_condyle_mod2",
+          "title": "Deccreases ROM: perform the movement in a pain free range. *always cue for pelvic tilt/core engagement*",
+          "type": "movement_mod",
+          "description": "Deccreases ROM: perform the movement in a pain free range. *always cue for pelvic tilt/core engagement* (After making the previous modifications, if you still experience pain or discomfort perform the movement in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_backward_lunge_posteromedial_femoral_condyle_2": {
+      "id": "dx_backward_lunge_posteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Backward lunge - back knee",
+      "summary": "Assessment for Backward lunge with posterior femoral condyle (medial) pain",
+      "explanation": "dynamic valgus, increased WB, ankle PF",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_backward_lunge_posteromedial_femoral_condyle_2_mod1",
+          "title": "If you're having pain on the back knee, try pointing the knee outward and maintaing that posion while lunging",
+          "type": "movement_mod",
+          "description": "If you're having pain on the back knee, try pointing the knee outward and maintaing that posion while lunging. (If you’re noticing pain/discomfort in the back knee, as you land the foot after lunging backward, focus on slightly turning your toes and knee outward without letting it collapse inward throughout the movement. )",
+          "video_id": "split_squat_rear_leg_to_side"
+        },
+        {
+          "id": "dx_backward_lunge_posteromedial_femoral_condyle_2_mod2",
+          "title": "WB: make sure you are shifting your weihgt forward when you lunge, and are pushing through the front foot when return...",
+          "type": "movement_mod",
+          "description": "WB: make sure you are shifting your weihgt forward when you lunge, and are pushing through the front foot when returning to stnading position. *always cue for pelvic tilt/core engagement* (If you're pushing through the back foot during the lunge, focus on pushing through the front foot by shifting your weight forward and engaging through the heel on the front foot. )"
+        }
+      ]
+    },
+    "dx_side_lunge_anteromedial_femoral_condyle": {
+      "id": "dx_side_lunge_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Side lunge - anterior/anteromedial knee pain",
+      "summary": "Assessment for Side lunge with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_side_lunge_anteromedial_femoral_condyle_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall. \n*alway...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall. \n*always cue for pelvic tilt/core engagement* (On the stable/non-moving leg leg, turn your toes and knee slightly outward and maintain this position throughout the entire movement. Imagine you are pushing the outside of your knee against a wall to maintain this position. )"
+        },
+        {
+          "id": "dx_side_lunge_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Sink your butt backwards by hinging your hips, dont let your knee move past your toes, sli...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink your butt backwards by hinging your hips, dont let your knee move past your toes, slightly increase lateral step (maybe add in instructions for external cues for optimal lunge distance) (When lunging sideways, sink your butt backwards (as if you were to sit in a chair) by hinging at your hips\nSink your butt backward as if sitting into a chair behind you. Don't let your knee travel past your toes. To find your \"sweet spot,\" step out about one-and-a-half times your shoulder width.)"
+        }
+      ]
+    },
+    "dx_side_lunge_anterolateral_femoral_condyle": {
+      "id": "dx_side_lunge_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Side lunge - lateral/anterolateral knee pain",
+      "summary": "Assessment for Side lunge with anterolateral femoral condyle pain",
+      "explanation": "ITB impairment, increased ER, varus, patellar tracking, lateral patellar retinaculum, LCL impairment, meniscus",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_side_lunge_anterolateral_femoral_condyle_mod1",
+          "title": "Align hip and knee joint:make sure your knee and hip are in one line",
+          "type": "movement_mod",
+          "description": "Align hip and knee joint:make sure your knee and hip are in one line (your knee is not pointed outward or inward). . (Your hip, and knee on the stable leg should stay in one straight line. Try to keep your knee pointed over your 2nd-3rd toes to help with maintaining alignment. Don't let the knee \"peek\" inward or outward from that line.)"
+        },
+        {
+          "id": "dx_side_lunge_anterolateral_femoral_condyle_mod2",
+          "title": "Increase Hip IR: If you noticed your knee is pointing outward when you lunge, make sure your hip and knee stay in one...",
+          "type": "movement_mod",
+          "description": "Increase Hip IR: If you noticed your knee is pointing outward when you lunge, make sure your hip and knee stay in one line throughout the full motion. (If your knee is pointing too far out on your stable leg, adjust until your knee and hip are perfectly aligned, think about keeping your knee in line with your 2nd and 3rd toes)"
+        },
+        {
+          "id": "dx_side_lunge_anterolateral_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly (On your stable leg, sit your butt backwards by hinging at your hips and leaning your chest forward slightly as you are lunging.)"
+        },
+        {
+          "id": "dx_side_lunge_anterolateral_femoral_condyle_mod4",
+          "title": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge",
+          "type": "movement_mod",
+          "description": "Reduce ROM: If you have tried aigning your hip and knee joint and still have discomfort, decrease how far you lunge. (If your alignment is perfect but you still feel pain or discomfort, don't go as low and perform the movement in a pain free ROM.)"
+        }
+      ]
+    },
+    "dx_side_lunge_anteromedial_femoral_condyle_2": {
+      "id": "dx_side_lunge_anteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Side lunge - Medial knee pain",
+      "summary": "Assessment for Side lunge with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus, MCL, adductor impairment",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_side_lunge_anteromedial_femoral_condyle_2_mod1",
+          "title": "Don't step out too wide. Make sure your knee points the same direction as your toes",
+          "type": "movement_mod",
+          "description": "Don't step out too wide. Make sure your knee points the same direction as your toes. (Avoid stepping out too wide, which can pull on the joint. Ensure your knee is always pointing in the exact same direction as your toes.)"
+        },
+        {
+          "id": "dx_side_lunge_anteromedial_femoral_condyle_2_mod2",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall througho...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall throughout the motion. *always cue for pelvic tilt/core engagement* (On the stable/non-moving leg leg, turn your toes and knee slightly outward and maintain this position throughout the entire movement. Imagine you are pushing the outside of your knee against a wall to maintain this position.)"
+        }
+      ]
+    },
+    "dx_side_lunge_patella": {
+      "id": "dx_side_lunge_patella",
+      "type": "assessment",
+      "label": "Side lunge - Central/deep pain (joint)",
+      "summary": "Assessment for Side lunge with patellofemoral joint (patella) pain",
+      "explanation": "Anterior knee translation, OA, Meniscus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_side_lunge_patella_mod1",
+          "title": "Overall alignment: Make sure your front shin is perpendicualr to the ground during the while movement, make sure you ...",
+          "type": "movement_mod",
+          "description": "Overall alignment: Make sure your front shin is perpendicualr to the ground during the while movement, make sure you are sinking your butt backwards by performing a hip hings (use a wall for external cue), you may need to slightly increase laterl step width. (While lunging, be sure to sink your butt/hips backwards, keep your chest upright. In addition, keep your front shin vertical (perpendicular to the floor). Try this near a wall: push your hips back as if trying to tap the wall with your glutes while stepping out.)"
+        },
+        {
+          "id": "dx_side_lunge_patella_mod2",
+          "title": "ROM: If you've already corrected your alignmens, perform the exercise in a pain free range of motion. *always cue for...",
+          "type": "movement_mod",
+          "description": "ROM: If you've already corrected your alignmens, perform the exercise in a pain free range of motion. *always cue for pelvic tilt/core engagement* (If your alignment is perfect but you still feel pain or discomfort, don't go as low and perform the movement in a pain free ROM.)"
+        }
+      ]
+    },
+    "dx_side_lunge_posteromedial_femoral_condyle": {
+      "id": "dx_side_lunge_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Side lunge - posterior knee pain",
+      "summary": "Assessment for Side lunge with posteromedial femoral condyle pain",
+      "explanation": "Hamstrings, gastroc, popliteus, meniscus; increased posterior chain activation",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_side_lunge_posteromedial_femoral_condyle_mod1",
+          "title": "Decrease posterior chain activatoin: if you find you are leaning mor forward, adjust your trunk so that your torso is...",
+          "type": "movement_mod",
+          "description": "Decrease posterior chain activatoin: if you find you are leaning mor forward, adjust your trunk so that your torso is upright, perpendicular to the ground, and make sure your front foot is also perpendicular to the ground. (If you feel too much strain in your back or glutes, or notice you are leaning too far forward (nose goes way past your toes) keep your torso more upright. Keep your foot firmly planted and your core tight to stay balanced.)"
+        },
+        {
+          "id": "dx_side_lunge_posteromedial_femoral_condyle_mod2",
+          "title": "Deccreases ROM: perform the movement in a pain free range. *always cue for pelvic tilt/core engagement*",
+          "type": "movement_mod",
+          "description": "Deccreases ROM: perform the movement in a pain free range. *always cue for pelvic tilt/core engagement* (After making the previous modifications, if you still experience pain or discomfort perform the movement in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_side_lunge_patella_2": {
+      "id": "dx_side_lunge_patella_2",
+      "type": "assessment",
+      "label": "Side lunge - contralateral knee",
+      "summary": "Assessment for Side lunge with patella pain",
+      "explanation": "dynamic valgus, increased WB, ankle PF",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_side_lunge_patella_2_mod1",
+          "title": "If you're having pain on the back knee, try pointing the knee outward and maintaing that posion while lunging. WB: ma...",
+          "type": "movement_mod",
+          "description": "If you're having pain on the back knee, try pointing the knee outward and maintaing that posion while lunging. WB: make sure you are shifting your weihgt forward when you lunge, and are pushing through the front foot when returning to stnading position. *always cue for pelvic tilt/core engagement* *always cue for pelvic tilt/core engagement* (If you notice you are shifting too much weight onto the lunging knee when it hits the ground to push off, try shifting your weight onto the stable leg and be sure to drive through that foot to return to standing.\nThink about gently landing or taping the foot on the ground when you lunge.)",
+          "video_id": "split_squat_rear_leg_to_side"
+        }
+      ]
+    },
+    "dx_running_level_anteromedial_femoral_condyle": {
+      "id": "dx_running_level_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Running (level ground) - anterior/anteromedial knee pain",
+      "summary": "Assessment for Running (level ground) with anteromedial femoral condyle pain",
+      "explanation": "High impact; over-striding; understriding; quad dominance; increased \"bounce\"; improper strike (not using forefoot)",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_running_level_anteromedial_femoral_condyle_mod1",
+          "title": "Foot strike: with each stride you should be landing on the ball sof your feet to push off into the next stride",
+          "type": "movement_mod",
+          "description": "Foot strike: with each stride you should be landing on the ball sof your feet to push off into the next stride. (If you notice you land each stride with your heel, aim to land more towards the \"ball\" or middle of your foot. )"
+        },
+        {
+          "id": "dx_running_level_anteromedial_femoral_condyle_mod2",
+          "title": "High impact: adjusting running surfaces",
+          "type": "movement_mod",
+          "description": "High impact: adjusting running surfaces (If your knees feel rattled or unstable, try moving off the concrete. Run on softer surfaces like grass, a flat dirt trail, or a rubberized track to reduce the force hitting your joints.)"
+        },
+        {
+          "id": "dx_running_level_anteromedial_femoral_condyle_mod3",
+          "title": "Over striding/under strdiing: every time your foot hits the ground make sure your shin is perpendicular to the ground...",
+          "type": "movement_mod",
+          "description": "Over striding/under strdiing: every time your foot hits the ground make sure your shin is perpendicular to the ground, and focus on landing your foot closer to your body right under your hip/where your foot lands should be right below your center of mass. (During the moment your foot hits the ground, make sure your shin is perpendicular/vertical to the ground by landing your foot right under your center of mass or directly under your hip.)"
+        },
+        {
+          "id": "dx_running_level_anteromedial_femoral_condyle_mod4",
+          "title": "Quad dominance: if you find you're leaning back while running, bring your trunk slightly forward and maintain with ea...",
+          "type": "movement_mod",
+          "description": "Quad dominance: if you find you're leaning back while running, bring your trunk slightly forward and maintain with each stride. (While running, if you notice you tend to lean back, slightly bring your trunk forward by hinging at your hips and shifting your weight forward.)"
+        },
+        {
+          "id": "dx_running_level_anteromedial_femoral_condyle_mod5",
+          "title": "Bounce",
+          "type": "movement_mod",
+          "description": "Bounce (overall form): once you've leaned forward, incerased your cadence to correct your stride - when landing on the ball of your foot focus on puhsing the ground backward (instead of pushing up) - tightening your core and squeezing your glute to push can help with this. (If you notice you tend to “bounce” or move up and down a lot while running, increase your cadence (slightly shorten your stride length and increase the frequency of your steps) by making sure you’ve shifted your weight forward and push the ground backwards as you push off.)"
+        },
+        {
+          "id": "dx_running_level_anteromedial_femoral_condyle_mod6",
+          "title": "Flat feet - insole with medial arch support or chane in shoes that have incerase medial arch support. Supincated feet...",
+          "type": "movement_mod",
+          "description": "Flat feet - insole with medial arch support or chane in shoes that have incerase medial arch support. Supincated feet - lateral foot support recommended. (If you have flat or notice your arch collapses when your foot hits the ground, focus on equally distributing your weight more towards the middle of your foot (try to equally distribute your eight throughout the entire foot)\nAfter making the corrections/modifications and you are having pain or discomfort, you may need to try an insole with medial arch support to prevent your arch from collapsing and/or your knee from caving in.)"
+        },
+        {
+          "id": "dx_running_level_anteromedial_femoral_condyle_mod7",
+          "title": "Supinated feet",
+          "type": "movement_mod",
+          "description": "Supinated feet (If you notice you land with your weight on the outside of your foot, focus on shifting your weight more towards the middle of your foot to equally distribute your weight. \nAfter making the previous modifications and you're still having pain or discomfort, you may need to look for shoes or insoles that have lateral foot support to help with your foot positioning while running.)"
+        }
+      ]
+    },
+    "dx_running_uneven_patella": {
+      "id": "dx_running_uneven_patella",
+      "type": "assessment",
+      "label": "Running (level, uneven ground) - focus on form instead of pain location",
+      "summary": "Assessment for Running (level, uneven ground) with patella pain",
+      "explanation": "heel or midfoot strike, dynamic valgus, increased \"bounce,\" anterior knee translation, quad over activation, rectus femoris shortness",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_running_uneven_patella_mod1",
+          "title": "Foot strike: with each stride you should be landing on the ball sof your feet to push off into the next stride",
+          "type": "movement_mod",
+          "description": "Foot strike: with each stride you should be landing on the ball sof your feet to push off into the next stride. (If you notice you land each stride with your heel, aim to land more towards the \"ball\" or middle of your foot. )"
+        },
+        {
+          "id": "dx_running_uneven_patella_mod2",
+          "title": "Over striding/under strdiing: every time your foot hits the ground make sure your shin is perpendicular to the ground...",
+          "type": "movement_mod",
+          "description": "Over striding/under strdiing: every time your foot hits the ground make sure your shin is perpendicular to the ground, and focus on landing your foot closer to your body right under your hip/where your foot lands should be right below your center of mass. (During the moment your foot hits the ground, make sure your shin is perpendicular/vertical to the ground by landing your foot right under your center of mass or directly under your hip.)"
+        },
+        {
+          "id": "dx_running_uneven_patella_mod3",
+          "title": "Quad dominance: if you find you're leaning back while running, bring your trunk slightly forward and maintain with ea...",
+          "type": "movement_mod",
+          "description": "Quad dominance: if you find you're leaning back while running, bring your trunk slightly forward and maintain with each stride. (While running, if you notice you tend to lean back, slightly bring your trunk forward by hinging at your hips and shifting your weight forward.)"
+        },
+        {
+          "id": "dx_running_uneven_patella_mod4",
+          "title": "Bounce",
+          "type": "movement_mod",
+          "description": "Bounce (overall form): once you've leaned forward, incerased your cadence to correct your stride - when landing on the ball of your foot focus on puhsing the ground backward (instead of pushing up) - tightening your core and squeezing your glute to push can help with this. (If you notice you tend to “bounce” or move up and down a lot while running, increase your cadence (slightly shorten your stride length and increase the frequency of your steps) by making sure you’ve shifted your weight forward and push the ground backwards as you push off.)"
+        },
+        {
+          "id": "dx_running_uneven_patella_mod5",
+          "title": "Flat feet - insole with medial arch support or chane in shoes that have incerase medial arch support. Supincated feet...",
+          "type": "movement_mod",
+          "description": "Flat feet - insole with medial arch support or chane in shoes that have incerase medial arch support. Supincated feet - lateral foot support recommended. (If you have flat or notice your arch collapses when your foot hits the ground, focus on equally distributing your weight more towards the middle of your foot (try to equally distribute your eight throughout the entire foot)\nAfter making the corrections/modifications and you are having pain or discomfort, you may need to try an insole with medial arch support to prevent your arch from collapsing and/or your knee from caving in.)"
+        },
+        {
+          "id": "dx_running_uneven_patella_mod6",
+          "title": "supinated feet",
+          "type": "movement_mod",
+          "description": "supinated feet (If you notice you land with your weight on the outside of your foot, focus on shifting your weight more towards the middle of your foot to equally distribute your weight. \nAfter making the previous modifications and you're still having pain or discomfort, you may need to look for shoes or insoles that have lateral foot support to help with your foot positioning while running.)"
+        }
+      ]
+    },
+    "dx_running_uphill_patella": {
+      "id": "dx_running_uphill_patella",
+      "type": "assessment",
+      "label": "Running (uphill) - focus on form instead of pain location",
+      "summary": "Assessment for Running (uphill) with patella pain",
+      "explanation": "heel or midfoot strike, dynamic valgus, increased \"bounce,\" anterior knee translation, quad over activation",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_running_uphill_patella_mod1",
+          "title": "Over striding",
+          "type": "movement_mod",
+          "description": "Over striding (probably has heel strike as well): Lean slightly forward and try taking quicker, shorter steps—aim to move your feet at a slightly quicker pace than usual, make sure you land on the balls of your feet to push through the stride, when you push through think about squeezing your glutes. This helps reduce how much impact and force goes through your knees with each step, which can ease pain, especially going uphill. Think of it like turning a bike pedal faster with less push—it’s smoother and gentler on your joints.\n(Lean your trunk and shift your weight slightly forward into the hill and take shorter, faster steps. \nFocus on landing on the balls of your feet with each stride. Think about pushing yourself up the hill by giving your glutes a firm squeeze to push the ground backwards. While doing this and you notice your knees tend to collapse inward, think about pushing your knees outward against an invisible wall to help maintain alignment. )",
+          "video_id": "running_on_balls_of_feet"
+        }
+      ]
+    },
+    "dx_running_downhill_patella": {
+      "id": "dx_running_downhill_patella",
+      "type": "assessment",
+      "label": "Running (downhill) - focus on form instead of pain location",
+      "summary": "Assessment for Running (downhill) with patella pain",
+      "explanation": "heel or midfoot strike, dynamic valgus, increased \"bounce,\"",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_running_downhill_patella_mod1",
+          "title": "When running downhill, try taking shorter, quicker steps",
+          "type": "movement_mod",
+          "description": "When running downhill, try taking shorter, quicker steps (and slightly decerase your speed)—almost like you're gently tapping the ground with each foot (land on the balls of your feet). Do this while pushing your hips back and keeping your chest upright. This helps you stay more upright and in control, instead of pounding down hard on your knees with each stride. By keeping your steps light and quick, you reduce the impact on your knees and avoid overbending them with every step. Make sure you are landing on the ball sof your feet and keeping your shins vertical. (Slow down and take shorter, quicker steps. Aim for light, gentle foot landings rather than landing heavily on your feet. \nIf you notice you're landing on your heels, focus on landing on the balls of your feet, and be sure to keep your shin vertical/upright. \nIf you notice you are leaning forward or feeling uncontrolled, slightly push your hips back while keeping your chest tall and upright. )",
+          "video_id": "running_on_balls_of_feet"
+        }
+      ]
+    },
+    "dx_walking_level_anteromedial_femoral_condyle": {
+      "id": "dx_walking_level_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Hiking/walking (level ground) - anterior/anteromedial",
+      "summary": "Assessment for Hiking/walking (level ground) with anteromedial femoral condyle pain",
+      "explanation": "Repetitive impact; fatigue-related valgus; dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_walking_level_anteromedial_femoral_condyle_mod1",
+          "title": "During the phase of walking where your'e balncing on 1 leg, if you noitce your knee collapsing inward try to push it ...",
+          "type": "movement_mod",
+          "description": "During the phase of walking where your'e balncing on 1 leg, if you noitce your knee collapsing inward try to push it outwards. (When you are mid-stride and balancing on one leg, don't let your knee collapse inward toward your other leg. Keep it pointed straight ahead, directly over your 2nd to 3rd toes. )"
+        },
+        {
+          "id": "dx_walking_level_anteromedial_femoral_condyle_mod2",
+          "title": "Glut activation: during the phase of walking when pushing through your foot to move forward, think about engaing your...",
+          "type": "movement_mod",
+          "description": "Glut activation: during the phase of walking when pushing through your foot to move forward, think about engaing your glute muscle to intiate pushging you forward. (As you push through your foot to move your body forward, give your glutes a firm squeeze and think about pushing the ground backwards.)"
+        },
+        {
+          "id": "dx_walking_level_anteromedial_femoral_condyle_mod3",
+          "title": "Foot posture: most people need support in there shoe if they have anatomical flat feet ot dynamic pronation",
+          "type": "movement_mod",
+          "description": "Foot posture: most people need support in there shoe if they have anatomical flat feet ot dynamic pronation (If your feet tend to roll inward or your arches look flat, your knee often follows that inward curve. Adding a supportive insole or wearing \"stability\" shoes can help keep your foundation level and your knees aligned.\nIf you have flat or notice your arch collapses when your foot hits the ground, focus on equally distributing your weight more towards the middle of your foot (try to equally distribute your eight throughout the entire foot)\nAfter making the corrections/modifications and you are having pain or discomfort, you may need to try an insole with medial arch support to prevent your arch from collapsing and/or your knee from caving in.)"
+        }
+      ]
+    },
+    "dx_walking_uphill_anteromedial_femoral_condyle": {
+      "id": "dx_walking_uphill_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Hiking/walking (uphill) - anterior/anteromedial",
+      "summary": "Assessment for Hiking/walking (uphill) with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_walking_uphill_anteromedial_femoral_condyle_mod1",
+          "title": "When hiking uphill, try taking shorter steps instead of big ones so you don’t have to bend your knees as sharply",
+          "type": "movement_mod",
+          "description": "When hiking uphill, try taking shorter steps instead of big ones so you don’t have to bend your knees as sharply. \n(Lean your trunk and shift your weight slightly forward into the hill and take shorter, faster steps. \nFocus on landing on the balls of your feet with each stride. Think about pushing yourself up the hill by giving your glutes a firm squeeze to push the ground backwards to push yourself forward.)",
+          "video_id": "running_on_balls_of_feet"
+        },
+        {
+          "id": "dx_walking_uphill_anteromedial_femoral_condyle_mod2",
+          "title": "Trunk lean: lean your trunk slighly forward, make sure you land each step on the balls of your feet and push by squee...",
+          "type": "movement_mod",
+          "description": "Trunk lean: lean your trunk slighly forward, make sure you land each step on the balls of your feet and push by squeezing your glutes to push you up the hill. (Lean your chest slightly forward. Land each step on the ball or middle of your foot and squeeze your glute (butt muscle) to drive yourself up the hill. )"
+        },
+        {
+          "id": "dx_walking_uphill_anteromedial_femoral_condyle_mod3",
+          "title": "Instruct to take seated breaks before onset of pain. Increase glute activation: slghtly lean forward and squeeze your...",
+          "type": "movement_mod",
+          "description": "Instruct to take seated breaks before onset of pain. Increase glute activation: slghtly lean forward and squeeze your glutes with each step pushing up the hill. (If you have chronic pain that is aggravated with prolonged walking, don't wait for your knees to start \"talking\" to you. If possible, take a quick seated break before you feel any discomfort. This helps manage joint fatigue and keeps you moving longer.)"
+        },
+        {
+          "id": "dx_walking_uphill_anteromedial_femoral_condyle_mod4",
+          "title": "equipment",
+          "type": "movement_mod",
+          "description": "equipment (Use walking or trekking sticks to help share the load. Engaging your arms and shoulders through the poles takes a significant amount of weight and pressure off your knees with every single step.)"
+        }
+      ]
+    },
+    "dx_squatting_bodyweight_anteromedial_femoral_condyle": {
+      "id": "dx_squatting_bodyweight_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Squatting/deep squatting (light or no weight) - anterior/anteromedial",
+      "summary": "Assessment for Squatting/deep squatting (light or no weight) with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking.",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_bodyweight_anteromedial_femoral_condyle_mod1",
+          "title": "Try standing with your feet a bit wider than your hips and pointing your toes slightly outwards, and as you go down, ...",
+          "type": "movement_mod",
+          "description": "Try standing with your feet a bit wider than your hips and pointing your toes slightly outwards, and as you go down, push your hips back like you're reaching your butt toward a low chair. Keep your chest up and let your knees stay slightly behind your toes while slightly pushing them outwards to avoid inward collapse. This shift helps take the strain off your knees by getting your hips and thighs to do more of the work. It often feels more stable and comfortable, especially if deep bending bothers your knees. ."
+        },
+        {
+          "id": "dx_squatting_bodyweight_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Sink your butt directly backwards as if you were sitting in a chair, keep your shins as ve...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink your butt directly backwards as if you were sitting in a chair, keep your shins as vertical as possible (Sink your butt straight back as if you’re reaching for a low chair. Try to keep your shins as vertical as possible (straight up and down) and don't let your knees slide forward past your toes.)"
+        },
+        {
+          "id": "dx_squatting_bodyweight_anteromedial_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly, and make sure you push up...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly, and make sure you push up through your heels. *always cue for pelvic tilt/core engagement* (While squatting, lean your chest forward slightly by hinging at the hips. When you're ready to stand back up, drive firmly through your heels and squeeze your glutes)"
+        }
+      ]
+    },
+    "dx_squatting_bodyweight_anterolateral_femoral_condyle": {
+      "id": "dx_squatting_bodyweight_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Squatting/deep squatting (light or no weight) - Lateral/anterolatera knee pain (loaded LE)",
+      "summary": "Assessment for Squatting/deep squatting (light or no weight) with anterolateral femoral condyle pain",
+      "explanation": "ITB impairment, increased ER, varus, patellar tracking, lateral patellar retinaculum, LCL impairment",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_bodyweight_anterolateral_femoral_condyle_mod1",
+          "title": "Align hip and knee joint/IR: before sqautting, make sure your feet are directly underneath your hips, and make sure y...",
+          "type": "movement_mod",
+          "description": "Align hip and knee joint/IR: before sqautting, make sure your feet are directly underneath your hips, and make sure your knee stays aligned with your second/3rd toe thrghout the entire motion, dont let it bow outward to far. (Start with your feet hip-width apart or slightly wider. Make sure your knees stay perfectly aimed over your second or third toes—don't let them wobble inward or flare too far out.)"
+        },
+        {
+          "id": "dx_squatting_bodyweight_anterolateral_femoral_condyle_mod2",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic ti...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. *always cue for pelvic tilt/core engagement* (While squatting, lean your chest forward slightly by hinging at the hips. When you're ready to stand back up, drive firmly through your heels and squeeze your glutes)"
+        },
+        {
+          "id": "dx_squatting_bodyweight_anterolateral_femoral_condyle_mod3",
+          "title": "Reduce ROM: If you have tried aligning your hip and knee joint and still have discomfort, decrease how far you squat ...",
+          "type": "movement_mod",
+          "description": "Reduce ROM: If you have tried aligning your hip and knee joint and still have discomfort, decrease how far you squat down, pain free range of motion. (After trying the previous modifications and you're still having pain or discomfort, complete the squat in a pain free range of motion)"
+        }
+      ]
+    },
+    "dx_squatting_bodyweight_anteromedial_femoral_condyle_2": {
+      "id": "dx_squatting_bodyweight_anteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Squatting/deep squatting (light or no weight) - Medial knee pain (loaded LE)",
+      "summary": "Assessment for Squatting/deep squatting (light or no weight) with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus, MCL; adductor",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_bodyweight_anteromedial_femoral_condyle_2_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knees against a wall through...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knees against a wall throughout the entire squat motion. *always cue for pelvic tilt/core engagement* (Try standing with your feet a bit wider than your hips and pointing your toes and knees slightly outwards, and as you go down, push your hips back like you're reaching your butt toward a low chair. Keep your chest up and let your knees stay slightly behind your toes.)"
+        },
+        {
+          "id": "dx_squatting_bodyweight_anteromedial_femoral_condyle_2_mod2",
+          "title": "Anterior knee translation",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: (Sink your butt straight back as if you’re reaching for a low chair. Try to keep your shins as vertical as possible (straight up and down) and don't let your knees slide forward past your toes.)"
+        }
+      ]
+    },
+    "dx_squatting_bodyweight_posteromedial_femoral_condyle": {
+      "id": "dx_squatting_bodyweight_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Squatting/deep squatting (light or no weight) - Posterior knee pain (loaded LE)",
+      "summary": "Assessment for Squatting/deep squatting (light or no weight) with posteromedial femoral condyle pain",
+      "explanation": "Hamstrings, gastroc, popliteus, meniscus; increased posterior chain activation",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_bodyweight_posteromedial_femoral_condyle_mod1",
+          "title": "Decrease posterior chain activatoin: if you find you are leaning more or too far forward, adjust your trunk so that y...",
+          "type": "movement_mod",
+          "description": "Decrease posterior chain activatoin: if you find you are leaning more or too far forward, adjust your trunk so that your torso is more upright (but not fully straight). (If you feel like you are falling too far forward, lift your chest slightly by bring your trunk more upright, but not fully perpendicular to the ground)"
+        },
+        {
+          "id": "dx_squatting_bodyweight_posteromedial_femoral_condyle_mod2",
+          "title": "Narrow stance",
+          "type": "movement_mod",
+          "description": "Narrow stance (quad focused squat): make sure your feet are no wider than the width of your hips, or can be slighlty more inward. *always cue for pelvic tilt/core engagement* (Bring your feet closer together so they are hip-width apart or even slightly narrower. Keep your feet parallel or only slightly turned out to keep the focus on the front of your legs.)"
+        },
+        {
+          "id": "dx_squatting_bodyweight_posteromedial_femoral_condyle_mod3",
+          "title": "Deccreases ROM: perform the movement in a pain free range",
+          "type": "movement_mod",
+          "description": "Deccreases ROM: perform the movement in a pain free range. (After trying the previous modifications and you're still having pain or discomfort, complete the squat in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_squatting_bodyweight_patella": {
+      "id": "dx_squatting_bodyweight_patella",
+      "type": "assessment",
+      "label": "Squatting/deep squatting (light or no weight) - Central/deep pain (joint)",
+      "summary": "Assessment for Squatting/deep squatting (light or no weight) with patellofemoral joint (patella) pain",
+      "explanation": "Anterior knee translation, OA, Meniscus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_bodyweight_patella_mod1",
+          "title": "Overall alignment: make sure your feet are hip width appart or slighlty wider, point your toes slightly outward, tuck...",
+          "type": "movement_mod",
+          "description": "Overall alignment: make sure your feet are hip width appart or slighlty wider, point your toes slightly outward, tuck your peliv to engae your core, sit your butt backwards to decease your knees moving forward, push through your heels to return to standing. (Make sure your feet are positioned hip width, or slightly wider. Keep your toes pointed slightly outward about 20-30 degrees..\nBefore you start your descent, tuck your pelvis slightly to engage your core by pulling your belly button towards your spine. \nAs you descend, sit your butt backward and hinge at your hips, keep your chest upright, and keep your knees pointed outward. \nWhen coming back up, think about reversing the movement. )"
+        },
+        {
+          "id": "dx_squatting_bodyweight_patella_mod2",
+          "title": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion. *always cue for ...",
+          "type": "movement_mod",
+          "description": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion. *always cue for pelvic tilt/core engagement* (After trying the previous modifications and you're still having pain or discomfort, complete the squat in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_squatting_barbell_anteromedial_femoral_condyle": {
+      "id": "dx_squatting_barbell_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Squatting (heavy weight, barbell) - anterior/anteromedial",
+      "summary": "Assessment for Squatting (heavy weight, barbell) with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking.",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_barbell_anteromedial_femoral_condyle_mod1",
+          "title": "Try standing with your feet a bit wider than your hips and pointing your toes slightly outwards, and as you go down, ...",
+          "type": "movement_mod",
+          "description": "Try standing with your feet a bit wider than your hips and pointing your toes slightly outwards, and as you go down, push your hips back like you're reaching your butt toward a low chair. Keep your chest up and let your knees stay slightly behind your toes. This shift helps take the strain off your knees by getting your hips and thighs to do more of the work. It often feels more stable and comfortable, especially if deep bending bothers your knees. (Try standing with your feet a bit wider than your hips and pointing your toes slightly outwards, and as you go down, push your hips back like you're reaching your butt toward a low chair, and pretend you're pushing your knees against a wall. Keep your chest up and let your knees stay slightly behind your toes. )",
+          "video_id": "barbell_squat"
+        },
+        {
+          "id": "dx_squatting_barbell_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Sink your butt directly backwards as if you were sitting in a chair, keep your shins as ve...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Sink your butt directly backwards as if you were sitting in a chair, keep your shins as vertical as possible. (As you start to lower the weight, sink your butt directly backward as if reaching for a chair. Keep your shins as vertical as possible by not letting them move forward past your toes. )"
+        },
+        {
+          "id": "dx_squatting_barbell_anteromedial_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly, and make sure you push up...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly, and make sure you push up through your heels. Weight adjustment: decrase weight and readjust. *always cue for pelvic tilt/core engagement* (While squatting if you notice your trunk is too upright, lean your chest slightly more forward by increasing the hinge at your hips. As you stand up, drive through your heels to power the lift.)"
+        }
+      ]
+    },
+    "dx_squatting_barbell_anterolateral_femoral_condyle": {
+      "id": "dx_squatting_barbell_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Squatting (heavy weight, barbell) - Lateral/anterolatera knee pain (loaded LE)",
+      "summary": "Assessment for Squatting (heavy weight, barbell) with anterolateral femoral condyle pain",
+      "explanation": "ITB impairment, increased ER, varus, patellar tracking, lateral patellar retinaculum, LCL impairment",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_barbell_anterolateral_femoral_condyle_mod1",
+          "title": "Align hip and knee joint/IR: before sqautting, make sure your feet are directly underneath your hips, and make sure y...",
+          "type": "movement_mod",
+          "description": "Align hip and knee joint/IR: before sqautting, make sure your feet are directly underneath your hips, and make sure your knee stays aligned with your second/3rd toe thrghout the entire motion, dont let it bow outward to far. (Set your feet directly under your hips, or slightly wider before you start, and turn your toes slightly outward 20-30 degrees. As you squat, keep your knees aimed perfectly over your second and third toes, and pointed slightly outwards. Don't let your knees wobble inward or flare out too far. )",
+          "video_id": "barbell_squat"
+        },
+        {
+          "id": "dx_squatting_barbell_anterolateral_femoral_condyle_mod2",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. Weight adjustment: decras...",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. Weight adjustment: decrase weight and readjust. *always cue for pelvic tilt/core engagement* (While squatting if you notice your trunk is too upright, lean your chest slightly more forward by increasing the hinge at your hips. As you stand up, drive through your heels to power the lift.)"
+        },
+        {
+          "id": "dx_squatting_barbell_anterolateral_femoral_condyle_mod3",
+          "title": "Reduce ROM: If you have tried aligning your hip and knee joint and still have discomfort, decrease how far you squat ...",
+          "type": "movement_mod",
+          "description": "Reduce ROM: If you have tried aligning your hip and knee joint and still have discomfort, decrease how far you squat down, pain free range of motion. (After making the previous modifications and you are still having pain or discomfort, perform the squat in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_squatting_barbell_anteromedial_femoral_condyle_2": {
+      "id": "dx_squatting_barbell_anteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Squatting (heavy weight, barbell) - Medial knee pain (loaded LE)",
+      "summary": "Assessment for Squatting (heavy weight, barbell) with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus, MCL; adductor",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_barbell_anteromedial_femoral_condyle_2_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall througho...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knee outward and pretend you're pushing your knee against a wall throughout the motion. *always cue for pelvic tilt/core engagement* Weight adjustment: decrase weight and readjust. (Try standing with your feet a bit wider than your hips and pointing your toes slightly outwards, and as you go down, push your hips back like you're reaching your butt toward a low chair, and pretend you're pushing your knees against a wall. Keep your chest up and let your knees stay slightly behind your toes. )",
+          "video_id": "barbell_squat"
+        },
+        {
+          "id": "dx_squatting_barbell_anteromedial_femoral_condyle_2_mod2",
+          "title": "Anterior knee translation",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: (As you start to lower the weight, sink your butt directly backward as if reaching for a chair. Keep your shins as vertical as possible by not letting them move forward past your toes.)"
+        }
+      ]
+    },
+    "dx_squatting_barbell_posteromedial_femoral_condyle": {
+      "id": "dx_squatting_barbell_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Squatting (heavy weight, barbell) - Posterior knee pain (loaded LE)",
+      "summary": "Assessment for Squatting (heavy weight, barbell) with posteromedial femoral condyle pain",
+      "explanation": "Hamstrings, gastroc, popliteus, meniscus; increased posterior chain activation",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_barbell_posteromedial_femoral_condyle_mod1",
+          "title": "Decrease posterior chain activatoin: if you find you are leaning more or too far forward, adjust your trunk so that y...",
+          "type": "movement_mod",
+          "description": "Decrease posterior chain activatoin: if you find you are leaning more or too far forward, adjust your trunk so that your torso is more upright (but not fully straight). (If you find your chest is pointing toward the floor as you squat, lift your torso to a more upright position. You don't need to be perfectly vertical, but keep your chest tall. Tuck your pelvis and engage your core to stay stable and balanced under the weight.)",
+          "video_id": "barbell_squat"
+        },
+        {
+          "id": "dx_squatting_barbell_posteromedial_femoral_condyle_mod2",
+          "title": "Narrow stance",
+          "type": "movement_mod",
+          "description": "Narrow stance (quad focused squat): make sure your feet are no wider than the width of your hips, or can be slighlty more inward. Weight adjustment: decrase weight and readjust. *always cue for pelvic tilt/core engagement* (If you’re noticing discomfort in the back of your knee, place your feet in a narrower stance (slightly narrower than hip width) to complete the squat.)"
+        },
+        {
+          "id": "dx_squatting_barbell_posteromedial_femoral_condyle_mod3",
+          "title": "Deccreases ROM: perform the movement in a pain free range",
+          "type": "movement_mod",
+          "description": "Deccreases ROM: perform the movement in a pain free range. (After making the previous modifications and you are still having pain or discomfort, perform the squat in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_squatting_barbell_patella": {
+      "id": "dx_squatting_barbell_patella",
+      "type": "assessment",
+      "label": "Squatting (heavy weight, barbell) - Central/deep pain (joint)",
+      "summary": "Assessment for Squatting (heavy weight, barbell) with patellofemoral joint (patella) pain",
+      "explanation": "Anterior knee translation, OA, Meniscus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_squatting_barbell_patella_mod1",
+          "title": "Overall alignment: make sure your feet are hip width appart or slighlty wider, point your toes slightly outward, tuck...",
+          "type": "movement_mod",
+          "description": "Overall alignment: make sure your feet are hip width appart or slighlty wider, point your toes slightly outward, tuck your peliv to engae your core, sit your butt backwards to decease your knees moving forward, push through your heels to return to standing. (While in starting position, make sure your feet are hip width apart, or slightly wider, and slightly turn your toes outward to about 20-30 degrees. When squatting down, keep your knees pointed out like you’re pushing them against a wall, and make sure your chest/trunk remains upright.)",
+          "video_id": "barbell_squat"
+        },
+        {
+          "id": "dx_squatting_barbell_patella_mod2",
+          "title": "Weight adjustment: decrase weight and readjust. *always cue for pelvic tilt/core engagement*",
+          "type": "movement_mod",
+          "description": "Weight adjustment: decrase weight and readjust. *always cue for pelvic tilt/core engagement* (After making the previous modifications and you still have pain or discomfort, decrease the amount of weight you’re squatting with and see if that alleviates the pain.)"
+        },
+        {
+          "id": "dx_squatting_barbell_patella_mod3",
+          "title": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion",
+          "type": "movement_mod",
+          "description": "ROM: If you've already corrected your alignmens, perform te exercise in a pain free range of motion. (After making the previous modifications and you are still having pain or discomfort, perform the squat in a pain free range of motion.)"
+        }
+      ]
+    },
+    "dx_stairs_up_patella": {
+      "id": "dx_stairs_up_patella",
+      "type": "assessment",
+      "label": "Ascending stairs - focus on addressing form, will be similar to hiking uphill",
+      "summary": "Assessment for Ascending stairs with patella pain",
+      "explanation": "dynamic valgus and/or anterior knee translation, over activation of quads, patellar tracking",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_stairs_up_patella_mod1",
+          "title": "Increase glute activation: slghtly lean forward, push your butt slightly backwards and squeeze your glutes as",
+          "type": "movement_mod",
+          "description": "Increase glute activation: slghtly lean forward, push your butt slightly backwards and squeeze your glutes as (and push through your heel) you push your self up after each step. (Lean your chest forward slightly and push your hips back as you step up. Drive firmly through your heel and squeeze your glute (butt muscle) to lift yourself.)"
+        },
+        {
+          "id": "dx_stairs_up_patella_mod2",
+          "title": "UE support: if there is a railing nearby, use it to help decrease pressure on your knees",
+          "type": "movement_mod",
+          "description": "UE support: if there is a railing nearby, use it to help decrease pressure on your knees. (If there is a railing, use it to place some weight through your arm(s) to help offload your knees.)"
+        },
+        {
+          "id": "dx_stairs_up_patella_mod3",
+          "title": "Lateral apporach: if pain still persits, go up the steps side ways which decreases presuure on your knees",
+          "type": "movement_mod",
+          "description": "Lateral apporach: if pain still persits, go up the steps side ways which decreases presuure on your knees. (If facing forward still feels uncomfortable, try turning sideways and use the side step technique. If a railing is available, use that to help with your balance. )"
+        },
+        {
+          "id": "dx_stairs_up_patella_mod4",
+          "title": "If you notice your knees collapsing inward, focus on pointing your knees outward and pretend you’re pushing them agai...",
+          "type": "movement_mod",
+          "description": "If you notice your knees collapsing inward, focus on pointing your knees outward and pretend you’re pushing them against an imaginary wall."
+        },
+        {
+          "id": "dx_stairs_up_patella_mod5",
+          "title": "If your knee pain is more prominent in one knee, use the rule “up with the good,” by leading with the leg that has le...",
+          "type": "movement_mod",
+          "description": "If your knee pain is more prominent in one knee, use the rule “up with the good,” by leading with the leg that has less pain while ascending stairs."
+        },
+        {
+          "id": "dx_stairs_up_patella_mod6",
+          "title": "If you’ve tried the previous modifications and still have some discomfort, try turning your body sideways and use the...",
+          "type": "movement_mod",
+          "description": "If you’ve tried the previous modifications and still have some discomfort, try turning your body sideways and use the side step technique. If a railing is available, use that to help with your balance."
+        }
+      ]
+    },
+    "dx_stairs_down_patella": {
+      "id": "dx_stairs_down_patella",
+      "type": "assessment",
+      "label": "Descending stairs - focus on addressing form instead of pain location (most of the time will be anterio/anteromedial)",
+      "summary": "Assessment for Descending stairs with patella pain",
+      "explanation": "PF impairments, OA, valgus, anterio knee translation",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_stairs_down_patella_mod1",
+          "title": "Anterior knee translation/decrease quag activation: push your hips back and slightly lean forward while descenind the...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation/decrease quag activation: push your hips back and slightly lean forward while descenind the steps. Make sure you're landing your foot softly, as if you were tapping it on the step, instead of slamming it down quickly. (Push your hips back slightly and lean your chest forward to stay balanced to help with keeping your shins as vertical as possible. Try not to let your knees move forward past your toes. As you reach for the next step, imagine you are gently tapping the surface with your foot rather than slamming it down.)"
+        },
+        {
+          "id": "dx_stairs_down_patella_mod2",
+          "title": "UE support: If necessary, use the railing to help decrease pressure on your knees",
+          "type": "movement_mod",
+          "description": "UE support: If necessary, use the railing to help decrease pressure on your knees. (If you’ve tried the previous modifications and still have some pain or discomfort, try using a railing if one is available to help take some weight off of your knees.)"
+        },
+        {
+          "id": "dx_stairs_down_patella_mod3",
+          "title": "Lateral appraoch: if the above does not help, turn sideways and side step to help deceased pressure on your knees",
+          "type": "movement_mod",
+          "description": "Lateral appraoch: if the above does not help, turn sideways and side step to help deceased pressure on your knees. (If you’ve tried the previous modifications and still have some discomfort, try turning your body sideways and use the side step technique. If a railing is available, use that to help with your balance.)"
+        },
+        {
+          "id": "dx_stairs_down_patella_mod4",
+          "title": "If you notice your knee is collapsing inward as you land your foot on each step, try pointing your toes and knees sli...",
+          "type": "movement_mod",
+          "description": "If you notice your knee is collapsing inward as you land your foot on each step, try pointing your toes and knees slightly outward and imagine you're pushing your knee against an imaginary wall throughout the entire movement."
+        },
+        {
+          "id": "dx_stairs_down_patella_mod5",
+          "title": "Down with the bad: If one knee tends to be more painful than the other, when descending stairs use the “down with the...",
+          "type": "movement_mod",
+          "description": "Down with the bad: If one knee tends to be more painful than the other, when descending stairs use the “down with the bad rule.” When going down stairs, lead with the knee that is more painful."
+        },
+        {
+          "id": "dx_stairs_down_patella_mod6",
+          "title": "overall control: If you notice you have heavy foot steps and are slapping your foot on the step, try to make your des...",
+          "type": "movement_mod",
+          "description": "overall control: If you notice you have heavy foot steps and are slapping your foot on the step, try to make your descent as silent as possible. Try to gently land your foot with each step."
+        }
+      ]
+    },
+    "dx_half_kneeling_patella": {
+      "id": "dx_half_kneeling_patella",
+      "type": "assessment",
+      "label": "Half kneeling (focus on overall positioning/comfort) - pain in WB knee",
+      "summary": "Assessment for Half kneeling (focus on overall positioning/comfort) with patella pain",
+      "explanation": "pressure of WB",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_half_kneeling_patella_mod1",
+          "title": "Cushioning: place a rolled towel or another soft item underneath the knee to provide imorpved comfort",
+          "type": "movement_mod",
+          "description": "Cushioning: place a rolled towel or another soft item underneath the knee to provide imorpved comfort (If you're having discomfort with the pressure on the front of your knee contacting the surface, place a rolled towel, pillow or other soft time underneath your knee to provide cushioning for improved comfort. )"
+        },
+        {
+          "id": "dx_half_kneeling_patella_mod2",
+          "title": "Make sure your hip is directly over your bottom knee, and your front shin is vertical like a pillar. Think about keep...",
+          "type": "movement_mod",
+          "description": "Make sure your hip is directly over your bottom knee, and your front shin is vertical like a pillar. Think about keeping your legs in a 90-90 position while half kneeling."
+        },
+        {
+          "id": "dx_half_kneeling_patella_mod3",
+          "title": "Toe/ankle positoin: If your knee feels unstable, try tucking your toes under so the balls of your feet touch the grou...",
+          "type": "movement_mod",
+          "description": "Toe/ankle positoin: If your knee feels unstable, try tucking your toes under so the balls of your feet touch the ground which provides stability by shifting weight off of your knee onto your foot.\nIf tucking your toes is uncomfortable, place a rolled up towel right under the ankle joint."
+        },
+        {
+          "id": "dx_half_kneeling_patella_mod4",
+          "title": "Weight shift: If the pain persists and you notice you’re leaned back, shift a little more of your weight onto your fr...",
+          "type": "movement_mod",
+          "description": "Weight shift: If the pain persists and you notice you’re leaned back, shift a little more of your weight onto your front foot by bringing your body forward."
+        },
+        {
+          "id": "dx_half_kneeling_patella_mod5",
+          "title": "If you've tried the previous modifications and are still having some pain or discomfort, try using hand support by gr...",
+          "type": "movement_mod",
+          "description": "If you've tried the previous modifications and are still having some pain or discomfort, try using hand support by grabbing onto a sturdy surface like a chair, or the wall for balance and support."
+        }
+      ]
+    },
+    "dx_half_kneeling_patella_2": {
+      "id": "dx_half_kneeling_patella_2",
+      "type": "assessment",
+      "label": "Half kneeling (focus on overall positioning/comfort) - pain in non-WB knee",
+      "summary": "Assessment for Half kneeling (focus on overall positioning/comfort) with patella pain",
+      "explanation": "misalignment",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_half_kneeling_patella_2_mod1",
+          "title": "Make sure your hip and knee are in a stright line, and your shin is perpendicular tot he gorund",
+          "type": "movement_mod",
+          "description": "Make sure your hip and knee are in a stright line, and your shin is perpendicular tot he gorund (Make sure your hip is directly over your bottom knee, and your front shin is vertical like a pillar. Think about keeping your legs in a 90-90 position while half kneeling.)"
+        }
+      ]
+    },
+    "dx_tall_kneeling_anteromedial_femoral_condyle": {
+      "id": "dx_tall_kneeling_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Tall kneeling - pain in B knees from WB",
+      "summary": "Assessment for Tall kneeling with anteromedial femoral condyle pain",
+      "explanation": "pressure from WB",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_tall_kneeling_anteromedial_femoral_condyle_mod1",
+          "title": "Cushioning: place a rolled towel or another soft item underneath the knees to provide imorpved comfort",
+          "type": "movement_mod",
+          "description": "Cushioning: place a rolled towel or another soft item underneath the knees to provide imorpved comfort (If you're having discomfort with the pressure on the front of your knees contacting the surface, place a rolled towel, pillow or other soft time underneath your knees to provide cushioning for improved comfort.)"
+        },
+        {
+          "id": "dx_tall_kneeling_anteromedial_femoral_condyle_mod2",
+          "title": "Jiont alignement",
+          "type": "movement_mod",
+          "description": "Jiont alignement: (Make sure your hips are directly over your knees by creating a straight line between the joints and trunk, and your front shins are vertical/perpendicular to the ground. Think about keeping your legs in a 90 degree position.)"
+        },
+        {
+          "id": "dx_tall_kneeling_anteromedial_femoral_condyle_mod3",
+          "title": "Toe/ankle positoining",
+          "type": "movement_mod",
+          "description": "Toe/ankle positoining: (If your knees feel unstable or you feel too much pressure, try tucking your toes under so the balls of your feet touch the ground which provides stability by shifting weight off of your knee onto your foot\nIf tucking your toes is uncomfortable, place a rolled up towel right under the ankle joint.)"
+        },
+        {
+          "id": "dx_tall_kneeling_anteromedial_femoral_condyle_mod4",
+          "title": "After trying the previous modifications and are still having pain or discomfort, try moving your knees slightly wider...",
+          "type": "movement_mod",
+          "description": "After trying the previous modifications and are still having pain or discomfort, try moving your knees slightly wider than your hips."
+        },
+        {
+          "id": "dx_tall_kneeling_anteromedial_femoral_condyle_mod5",
+          "title": "If you've tried the previous modifications and are still having some pain or discomfort, try using hand support by gr...",
+          "type": "movement_mod",
+          "description": "If you've tried the previous modifications and are still having some pain or discomfort, try using hand support by grabbing onto a sturdy surface like a chair, or the wall for balance and support."
+        }
+      ]
+    },
+    "dx_full_kneeling_anterolateral_femoral_condyle": {
+      "id": "dx_full_kneeling_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Full kneeling - focus on overall positioning/comfort",
+      "summary": "Assessment for Full kneeling with anterolateral femoral condyle pain",
+      "explanation": "excessive flexion, meniscus, OA, patellar tendon impairment",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_full_kneeling_anterolateral_femoral_condyle_mod1",
+          "title": "Cushioning: place a rolled towel or another soft item underneath the knees to provide imorpved comfort. If you're sit...",
+          "type": "movement_mod",
+          "description": "Cushioning: place a rolled towel or another soft item underneath the knees to provide imorpved comfort. If you're sitting on the underside of your feet, tuck your toes and sit on your heels to decerase your knee bend. If sitting on your heels hurts, put a rolled-up towel behind your knees. (If you're having discomfort with the pressure on the front of your knees contacting the surface, place a rolled towel, pillow or other soft time underneath your knees to provide cushioning for improved comfort.)"
+        },
+        {
+          "id": "dx_full_kneeling_anterolateral_femoral_condyle_mod2",
+          "title": "Posterior knee compression",
+          "type": "movement_mod",
+          "description": "Posterior knee compression: (If sitting on your heels feels like a \"pinch\" in the back of your knee, place a rolled-up towel deep into the crease of your knees before sitting back. This creates a tiny bit of space in the joint and reduces pressure.)"
+        },
+        {
+          "id": "dx_full_kneeling_anterolateral_femoral_condyle_mod3",
+          "title": "If you're sitting on the underside of your feet, tuck your toes and sit on your heels to decrease your knee bend.\nIf ...",
+          "type": "movement_mod",
+          "description": "If you're sitting on the underside of your feet, tuck your toes and sit on your heels to decrease your knee bend.\nIf tucking your toes is uncomfortable, place a rolled up towel right under the ankle joint.\nIf you can't reach your heels without pain, place a yoga block or a thick firm pillow between your feet. Sit your butt onto the block instead of your heels to reduce how sharply your knees have to bend."
+        }
+      ]
+    },
+    "dx_bending_down_anteromedial_femoral_condyle": {
+      "id": "dx_bending_down_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Bending down (focus on teaching bending mechancis as a whole) - Anterior/anteromedial",
+      "summary": "Assessment for Bending down (focus on teaching bending mechancis as a whole) with anteromedial femoral condyle pain",
+      "explanation": "Anterior knee translation, valgus",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_bending_down_anteromedial_femoral_condyle_mod1",
+          "title": "Instead of bending your knees forward, hinge at your hips by pushing your hips back like you're reaching for a chair ...",
+          "type": "movement_mod",
+          "description": "Instead of bending your knees forward, hinge at your hips by pushing your hips back like you're reaching for a chair to bend down. When returning to standing, think about reversing the motion. If you are bending to lift up a heavy object, keep the object close to your center of gravity. (Try not to bend at your back while keeping your knees straight/locking out your knees\nIf you’re bending down and notice your knees move forward past your toes, try to hinge at your hips by pushing your hips backwards as if you were reaching for a chair (essentially like performing a squat), and think about keeping your shins as vertical as possible. Keep your chest upright as well. \nWhen returning to standing, think about reversing the movement.\nIf you're attempting to lift a heavy object, make sure to keep it closer to your body.)"
+        },
+        {
+          "id": "dx_bending_down_anteromedial_femoral_condyle_mod2",
+          "title": "If you notice your knees collapsing inward during this movement while in starting position, point your toes outward a...",
+          "type": "movement_mod",
+          "description": "If you notice your knees collapsing inward during this movement while in starting position, point your toes outward about 20-30 degrees. While bending, keep your knees pointed outward by imagining you’re pushing them against an imaginary wall to maintain this position."
+        }
+      ]
+    },
+    "dx_sitting_down_anterolateral_femoral_condyle": {
+      "id": "dx_sitting_down_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Sitting down (essentially take from squatting) - Anterior/anteromedial",
+      "summary": "Assessment for Sitting down (essentially take from squatting) with anterolateral femoral condyle pain",
+      "explanation": "anterior knee translation",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_sitting_down_anterolateral_femoral_condyle_mod1",
+          "title": "Sitting down: Make sure your feet are hip width apart or slightly wider, hine your hips and sit your butt backwards t...",
+          "type": "movement_mod",
+          "description": "Sitting down: Make sure your feet are hip width apart or slightly wider, hine your hips and sit your butt backwards to maintain a vertical shin position (do this slowly and controlled to avoid plopping - think about keeping your nose over your toes), as you keep pushing your butt back and down keep your knees pointed outward (dont let them collapse inward). Control the descent until you've softly landed in the chair. . (Before sitting, make sure you feet are hip width apart or slightly wider, then hinge at your hips to sit your butt backwards towards the seat in a slow and controlled manner (don't plop down)\nWhile descending think about keeping your nose over your toes to keep your weight balanced\nWhile descending, keep your knees pointed outward throughout the whole movement, don't let them collapse inward)"
+        },
+        {
+          "id": "dx_sitting_down_anterolateral_femoral_condyle_mod2",
+          "title": "UE support: if it is na arm chiar, use the arm rest to help support you",
+          "type": "movement_mod",
+          "description": "UE support: if it is na arm chiar, use the arm rest to help support you (if you’re using an arm chair, use one or both armrests to help support you, while keeping the same form as previosuly demsontrted)"
+        },
+        {
+          "id": "dx_sitting_down_anterolateral_femoral_condyle_mod3",
+          "title": "Chair height: low chairs can cause inceased pressure on your knees, if possible sit in a higher chair",
+          "type": "movement_mod",
+          "description": "Chair height: low chairs can cause inceased pressure on your knees, if possible sit in a higher chair. (low chairs can cause increased pressure on your knees, if possible sit in a higher chair and maintain the same form modifications previously provided)"
+        }
+      ]
+    },
+    "dx_standing_up_anteromedial_femoral_condyle": {
+      "id": "dx_standing_up_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Standing up - focus on overall neuromusclular coordinatoin rather than pain location",
+      "summary": "Assessment for Standing up with anteromedial femoral condyle pain",
+      "explanation": "anterior knee translation, valgus, varus, ITB impairemnt, OA, meniscus",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_standing_up_anteromedial_femoral_condyle_mod1",
+          "title": "Sequencing: scoot forward ont he chair towards the edge, make sure your feet are hip widht apart or slightly wider. L...",
+          "type": "movement_mod",
+          "description": "Sequencing: scoot forward ont he chair towards the edge, make sure your feet are hip widht apart or slightly wider. Lean your trunk forward (nose over toes), then push through your heels to stand stright up. (Before you stand up. Scoot your butt towards the edge of the chair\nMake sure your feet are hip width apart or slightly wider\nLean your trunk forward (thin about bringing your nose over your toes) by hinging at your hips, do not round your back\nThen push the ground away from you to stand straight up\nThink about reversing the sitting sequence )"
+        },
+        {
+          "id": "dx_standing_up_anteromedial_femoral_condyle_mod2",
+          "title": "UE support: if it is na arm chiar, use the arm rest to help support you to push you into standing",
+          "type": "movement_mod",
+          "description": "UE support: if it is na arm chiar, use the arm rest to help support you to push you into standing (if you’re using an arm chair, use the arm rest to help support you to push you into standing)"
+        },
+        {
+          "id": "dx_standing_up_anteromedial_femoral_condyle_mod3",
+          "title": ". Chair height: low chairs can cause inceased pressure on your knees, if possible sit in a higher chair",
+          "type": "movement_mod",
+          "description": ". Chair height: low chairs can cause inceased pressure on your knees, if possible sit in a higher chair (low chairs can cause increased pressure on your knees, if possible sit in a higher chair next time to make standing up easier. )"
+        }
+      ]
+    },
+    "dx_rowing_machine_patella": {
+      "id": "dx_rowing_machine_patella",
+      "type": "assessment",
+      "label": "Rowing machine - Anterior",
+      "summary": "Assessment for Rowing machine with patella pain",
+      "explanation": "Deep flexion at the \"catch\"",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_rowing_machine_patella_mod1",
+          "title": "Don't slide the seat all the way forward. Stop when your shins are vertical to avoid deep knee bends",
+          "type": "movement_mod",
+          "description": "Don't slide the seat all the way forward. Stop when your shins are vertical to avoid deep knee bends. (Don't slide the seat all the way forward until it hits your heels. Stop when your shins are vertical or perpendicular to the ground. This prevents \"over-bending\" and keeps the pressure off your kneecaps.)"
+        },
+        {
+          "id": "dx_rowing_machine_patella_mod2",
+          "title": "Foot placement: If your knees feel \"pinched\" at the start of the stroke, lower your footplates by one or two notches....",
+          "type": "movement_mod",
+          "description": "Foot placement: If your knees feel \"pinched\" at the start of the stroke, lower your footplates by one or two notches. This creates a more open angle for your knees and makes it easier to sit tall."
+        },
+        {
+          "id": "dx_rowing_machine_patella_mod3",
+          "title": "Toe drive vs full foot: As you push away, drive through your entire foot—not just your toes. Imagine \"jumping\" off th...",
+          "type": "movement_mod",
+          "description": "Toe drive vs full foot: As you push away, drive through your entire foot—not just your toes. Imagine \"jumping\" off the footplates while keeping your core engaged and maintaining upright trunk posture."
+        },
+        {
+          "id": "dx_rowing_machine_patella_mod4",
+          "title": "Overall alignment/valgus: Keep your knees aimed directly over your second toes throughout the whole stroke. Don't let...",
+          "type": "movement_mod",
+          "description": "Overall alignment/valgus: Keep your knees aimed directly over your second toes throughout the whole stroke. Don't let them collapse inward or fall too far outward as you pull forward or push back."
+        },
+        {
+          "id": "dx_rowing_machine_patella_mod5",
+          "title": "Avoid full ext: When your legs are fully extended at the end of the stroke, avoid snapping or locking them straight. ...",
+          "type": "movement_mod",
+          "description": "Avoid full ext: When your legs are fully extended at the end of the stroke, avoid snapping or locking them straight. Keep a small bend in your knees to keep the tension in your muscles, not your joints."
+        }
+      ]
+    },
+    "dx_jumping_anteromedial_femoral_condyle": {
+      "id": "dx_jumping_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Jumping - focus on form rather than pain location",
+      "summary": "Assessment for Jumping with anteromedial femoral condyle pain",
+      "explanation": "Stiff landing; valgus with concentric and eccentric phase",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_jumping_anteromedial_femoral_condyle_mod1",
+          "title": "Concentric phase form: think about starting to jump as if you're performing a squat",
+          "type": "movement_mod",
+          "description": "Concentric phase form: think about starting to jump as if you're performing a squat (start by sitting your butt backwards to keep your knees from moving forward, leaning yout trunk lsightly forward, and keep your knees pointed outwards if the are collapsing in. (While in the starting position, think about starting to jump as if you're performing a squat. Sit your butt back and lean your trunk forward slightly by hinging at your hips to lower, while making sure your shins stay as vertical as possible and aligned with your 2nd-3rd toes\nFrom this position before you jump, evenly distribute your weight throughout your entire foot, then in one swift motion push the ground away from you to jump.)"
+        },
+        {
+          "id": "dx_jumping_anteromedial_femoral_condyle_mod2",
+          "title": "Landing: Land as quietly as possible by returning to the starting position",
+          "type": "movement_mod",
+          "description": "Landing: Land as quietly as possible by returning to the starting position (Bend your hips and knees to absorb the shock like a spring) - dont land with your knees and legs in a stiff position (If you notice you have a hard landing that “rattles” your knees, think about landing as quietly as possible. To do this, as you descend closer to the ground, stick your butt backwards and bring your trunk slightly forward by hinging your hips. \nAs you land slightly bend your knees to help absorb the “shock,”don't let your knees move past your toes, and keep your knees aligned with your 2nd-3rd toe. )"
+        }
+      ]
+    },
+    "dx_pivoting_patella": {
+      "id": "dx_pivoting_patella",
+      "type": "assessment",
+      "label": "Cutting/pivoting - Medial / Lateral",
+      "summary": "Assessment for Cutting/pivoting with patella pain",
+      "explanation": "High torque; rotational shear",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_pivoting_patella_mod1",
+          "title": "Instead of a sharp \"plant and twist,\" take several small steps to round out your turn",
+          "type": "movement_mod",
+          "description": "Instead of a sharp \"plant and twist,\" take several small steps to round out your turn (If you notice you plant your foot and then make a sharp twist, try taking several small steps to round out your turn to avoid large twisting forces on your knees.\nWhile doing this, sit your butt backward and bring your trunk slightly forward )"
+        }
+      ]
+    },
+    "dx_prolonged_sitting_patella": {
+      "id": "dx_prolonged_sitting_patella",
+      "type": "assessment",
+      "label": "Prolonged sitting - focus on form and positional breaks",
+      "summary": "Assessment for Prolonged sitting with patella pain",
+      "explanation": "Fluid stasis; joint stiffness; menisucus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_prolonged_sitting_patella_mod1",
+          "title": "Straighten your legs/knees whiel sitting to keep the \"oil\" moving in your joints. Or take standing breaks beofre onse...",
+          "type": "movement_mod",
+          "description": "Straighten your legs/knees whiel sitting to keep the \"oil\" moving in your joints. Or take standing breaks beofre onset of pain (If you notice onset of pain or stiffness after a certain amount of time after sitting, try to periodically straighten your legs/knees while sitting BEFORE onset of pain. Do this periodically while sitting if not able to stand.\nIf possible, take standing breaks periodically BEFORE usual onset of pain.)"
+        },
+        {
+          "id": "dx_prolonged_sitting_patella_mod2",
+          "title": "LE positiong/ergonimics: Ideally, your legs should be at a 90 degree angle while sitting with your feet touching flat...",
+          "type": "movement_mod",
+          "description": "LE positiong/ergonimics: Ideally, your legs should be at a 90 degree angle while sitting with your feet touching flat on the ground (or on a foot stool). If you usually are in a lower chair switch to a high chair if possible. Or try sitting on folded blankets or towels\nMaybe show ergonomic depiction (especially if a lot of folks are desk workers) )"
+        }
+      ]
+    },
+    "dx_prolonged_standing_patella": {
+      "id": "dx_prolonged_standing_patella",
+      "type": "assessment",
+      "label": "Prolonged standing - focus on form and positional breaks",
+      "summary": "Assessment for Prolonged standing with patella pain",
+      "explanation": "Hyperextension; valgus, varus OA",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_prolonged_standing_patella_mod1",
+          "title": "Don't lock your knees straight. Keep a tiny, invisible bend and shift your weight from foot to foot. Take seated brea...",
+          "type": "movement_mod",
+          "description": "Don't lock your knees straight. Keep a tiny, invisible bend and shift your weight from foot to foot. Take seated breaks beofre onset of pain (If you notice your knees are “locked” while standing, try standing with a slight microbend in your knees.\nIf onset of pain comes after a certain period of time, take seated rest breaks periodically BEFORE onset of pain.\nYou can also perform light exercises like body weight squats or sit to stand to relieve any potential stiffness in the knees.)"
+        }
+      ]
+    },
+    "dx_deadlifts_anteromedial_femoral_condyle": {
+      "id": "dx_deadlifts_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Deadlifts - anterior/anteromedial knee pain",
+      "summary": "Assessment for Deadlifts with anteromedial femoral condyle pain",
+      "explanation": "dynamic valgus and/or anterior knee translation; adductors",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_deadlifts_anteromedial_femoral_condyle_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knees outward and pretend you're pushing your knee against a wall through...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knees outward and pretend you're pushing your knee against a wall throughout the entire movement. Foot width: make sure your feet are placed directly under your hips, if pain persists widen them slightly. \n(If you notice your knees collapse inward, turn your toes and knees slightly outward about 20-230 degrees and think about pushing your knees outward against a wall throughout the entire position.)"
+        },
+        {
+          "id": "dx_deadlifts_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation/hip hinge: tuck your pelvis before initiating the movement, then sit your butt backwards wh...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation/hip hinge: tuck your pelvis before initiating the movement, then sit your butt backwards while maintgining vertical shin and trace the weight along the front of your shin. (If you notice your knees are moving too far forward past your knees, try to keep your shins vertical/perpendicular to the ground by starting with sitting your butt backwards (as if you were about to sit in a chair) and bringing your trunk forward and chest up.\nAs you lift the weight, keep your shins vertical by pulling the weight up in a straight line (thin about tracing your shins with the weight).\nAs you descend, reverse the movement: sit your butt backwards, and continue to trace the front of your shin in a straight line with the weight.)"
+        },
+        {
+          "id": "dx_deadlifts_anteromedial_femoral_condyle_mod3",
+          "title": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decerase weight",
+          "type": "movement_mod",
+          "description": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decerase weight (If you've tried all the previous corrections and you still notice pain or discomfort, perform the movement in a decreased range of motion. To do this, you can move the weight to a slightly higher surface like blocks.)"
+        }
+      ]
+    },
+    "dx_deadlifts_anterolateral_femoral_condyle": {
+      "id": "dx_deadlifts_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Deadlifts - Lateral/anterolateral knee pain",
+      "summary": "Assessment for Deadlifts with anterolateral femoral condyle pain",
+      "explanation": "ITB friction; varus stress; patellar tracking, increased ER, lateral patellar retinaculum, LCL impairment",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_deadlifts_anterolateral_femoral_condyle_mod1",
+          "title": "Keep your knees lined up with your second toe; don't let it bow outward or inward, make sure your knees dont move for...",
+          "type": "movement_mod",
+          "description": "Keep your knees lined up with your second toe; don't let it bow outward or inward, make sure your knees dont move forward past your toes (keep your shin perpendicular to the ground); (Throughout the movement, try to keep your knees aligned with your 2nd-3rd toes to avoid your knees collapsing inward or falling too far outward. Keep this in mind throughout the entire movement.)"
+        },
+        {
+          "id": "dx_deadlifts_anterolateral_femoral_condyle_mod2",
+          "title": "Anterior knee translation: tuck your pelvis before initiating the movement, then sit your butt backwards while mainta...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: tuck your pelvis before initiating the movement, then sit your butt backwards while maintaining vertical shins (with slight knee bend) and trace the weight along the front of your shin. (If you notice your knees are moving too far forward past your knees, try to keep your shins vertical/perpendicular to the ground by starting with sitting your butt backwards (as if you were about to sit in a chair) and bringing your trunk forward and chest up.\nAs you lift the weight, keep your shins vertical by pulling the weight up in a straight line (thin about tracing your shins with the weight).\nAs you descend, reverse the movement: sit your butt backwards, and continue to trace the front of your shin in a straight line with the weight.)"
+        },
+        {
+          "id": "dx_deadlifts_anterolateral_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly. (While deadlifting if you notice your trunk is too upright or perpendicular to the ground, bring your trunk flighty forward by hinging at your hips to start the movement. With this modification, be sure to keep your core engaged to avoid increasing load on your back.\nBe sure to push through your heels, and squeeze your glutes to lift up the weight.)"
+        },
+        {
+          "id": "dx_deadlifts_anterolateral_femoral_condyle_mod4",
+          "title": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decrease weight",
+          "type": "movement_mod",
+          "description": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decrease weight (If you've tried all the previous corrections and you still notice pain or discomfort, perform the movement in a decreased range of motion. To do this, you can move the weight to a slightly higher surface like blocks.)"
+        }
+      ]
+    },
+    "dx_deadlifts_anteromedial_femoral_condyle_2": {
+      "id": "dx_deadlifts_anteromedial_femoral_condyle_2",
+      "type": "assessment",
+      "label": "Deadlifts - Medial knee pain",
+      "summary": "Assessment for Deadlifts with anteromedial femoral condyle pain",
+      "explanation": "Dynamic valgus; MCL strain; adductor",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_deadlifts_anteromedial_femoral_condyle_2_mod1",
+          "title": "Slightly turn your front toes out and push your knee outward to prevent it from collapsing inward",
+          "type": "movement_mod",
+          "description": "Slightly turn your front toes out and push your knee outward to prevent it from collapsing inward. (If you notice your knees collapse inward, turn your toes and knees slightly outward about 20-230 degrees and think about pushing your knees outward against a wall throughout the entire position.)"
+        },
+        {
+          "id": "dx_deadlifts_anteromedial_femoral_condyle_2_mod2",
+          "title": "If you notice your knees are moving too far forward past your knees, try to keep your shins vertical/perpendicular to...",
+          "type": "movement_mod",
+          "description": "If you notice your knees are moving too far forward past your knees, try to keep your shins vertical/perpendicular to the ground by starting with sitting your butt backwards (as if you were about to sit in a chair) and bringing your trunk forward and chest up.\nAs you lift the weight, keep your shins vertical by pulling the weight up in a straight line (thin about tracing your shins with the weight).\nAs you descend, reverse the movement: sit your butt backwards, and continue to trace the front of your shin in a straight line with the weight."
+        }
+      ]
+    },
+    "dx_deadlifts_patella": {
+      "id": "dx_deadlifts_patella",
+      "type": "assessment",
+      "label": "Deadlifts - Central/deep pain (joint)",
+      "summary": "Assessment for Deadlifts with patellofemoral joint (patella) pain",
+      "explanation": "Anterior knee translation/excessive flexion, OA, Meniscus",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_deadlifts_patella_mod1",
+          "title": "Oveall form correction: first tuck your pelvis by engagin your core ans squeezing your gluted. Then, place your feet ...",
+          "type": "movement_mod",
+          "description": "Oveall form correction: first tuck your pelvis by engagin your core ans squeezing your gluted. Then, place your feet durectly beneath your hips (hip width apart). Maintain your core engagement while you sit your butt back, and keep your shins perpendicular to the ground as you grab the weight, maintain this form as you perform the entire movement. If you still have pain after aligning your form, decrease the weight and/or range of motion and perform in a range that is pain free (While in staring position, make sure your core is engaged by tucking your pelvis (bring your belly button towards your spine)\nPlace your feet hip width part, or slightly wider, \nthen sit your butt back, as if you were going to sit in a chair, by hinging at your hips. While doing this make sure you shins stay as vertical as possible as you grab the weight \nAs you lift the weight, keep your core engaged, push through your entire foot, and think about tracing the weight in a straight line along the front of your shins)"
+        }
+      ]
+    },
+    "dx_deadlifts_posteromedial_femoral_condyle": {
+      "id": "dx_deadlifts_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Deadlifts - posterior knee pain",
+      "summary": "Assessment for Deadlifts with posteromedial femoral condyle pain",
+      "explanation": "Hamstrings, gastroc, popliteus, meniscus; increased posterior chain activation",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_deadlifts_posteromedial_femoral_condyle_mod1",
+          "title": "Decrease posterior chain activatoin: if you find you are leaning more forward, adjust your trunk so that your torso i...",
+          "type": "movement_mod",
+          "description": "Decrease posterior chain activatoin: if you find you are leaning more forward, adjust your trunk so that your torso is more upright (but not fully upright). (If you notice you are leaning too far forward (your nose goes past your toes), bring your chest and trunk more upright by hinging your hips (not by arching your back)"
+        },
+        {
+          "id": "dx_deadlifts_posteromedial_femoral_condyle_mod2",
+          "title": "Deccreases ROM: perform the movement in a pain free range and/or decreased weight",
+          "type": "movement_mod",
+          "description": "Deccreases ROM: perform the movement in a pain free range and/or decreased weight (If you've tried all the previous corrections and you still notice pain or discomfort, perform the movement in a decreased range of motion. To do this, you can move the weight to a slightly higher surface like blocks.)"
+        }
+      ]
+    },
+    "dx_rdl_patella": {
+      "id": "dx_rdl_patella",
+      "type": "assessment",
+      "label": "RDL - anterior/anteromedial",
+      "summary": "Assessment for RDL with patella pain",
+      "explanation": "dynamic valgus and/or anterior knee translation; adductors",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_rdl_patella_mod1",
+          "title": "Dynamic valgus: slightly turn your toes and knees outward and pretend you're pushing your knee against a wall through...",
+          "type": "movement_mod",
+          "description": "Dynamic valgus: slightly turn your toes and knees outward and pretend you're pushing your knee against a wall throughout the entire movement. \n(If you notice your knees collapse inward, turn your toes and knees slightly outward about 20-230 degrees and think about pushing your knees outward against a wall throughout the entire position. )"
+        },
+        {
+          "id": "dx_rdl_patella_mod2",
+          "title": "Anterior knee translation/hip hinge: tuck your pelvis before initiating the movement, then sit your butt backwards wh...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation/hip hinge: tuck your pelvis before initiating the movement, then sit your butt backwards while maintgining vertical shin and trace the weight along the front of your shin. (If you notice your knees are moving too far forward past your knees, try to keep your shins vertical/perpendicular to the ground as you lower and raise the weight\nAs you lower the weight, keep your shins vertical by tracing the weight in a straight line down your shin\nAs you ascend, reverse the movement: continue to trace the front of your shin in a straight line with the weight. )"
+        },
+        {
+          "id": "dx_rdl_patella_mod3",
+          "title": "Foot width: make sure your feet are placed directly under your hips, if pain persists widen them slightly",
+          "type": "movement_mod",
+          "description": "Foot width: make sure your feet are placed directly under your hips, if pain persists widen them slightly. (Make sure your feet are placed directly under your hips, if pain persists widen them slightly.)"
+        },
+        {
+          "id": "dx_rdl_patella_mod4",
+          "title": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decerase weight",
+          "type": "movement_mod",
+          "description": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decerase weight (If you've tried all the previous corrections and you still notice pain or discomfort, perform the movement in a decreased range of motion (don't go down as far))"
+        }
+      ]
+    },
+    "dx_rdl_anteromedial_femoral_condyle": {
+      "id": "dx_rdl_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "RDL - Lateral/anterolateral knee pain",
+      "summary": "Assessment for RDL with anteromedial femoral condyle pain",
+      "explanation": "ITB friction; varus stress; patellar tracking, increased ER, lateral patellar retinaculum, LCL impairment",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_rdl_anteromedial_femoral_condyle_mod1",
+          "title": "Keep your knees lined up with your second toe; don't let it bow outward or inward, make sure your knees dont move for...",
+          "type": "movement_mod",
+          "description": "Keep your knees lined up with your second toe; don't let it bow outward or inward, make sure your knees dont move forward past your toes (keep your shin perpendicular to the ground); . (Throughout the movement, try to keep your knees aligned with your 2nd-3rd toes to avoid your knees collapsing inward or falling too far outward. Keep this in mind throughout the entire movement.)"
+        },
+        {
+          "id": "dx_rdl_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: tuck your pelvis before initiating the movement, then sit your butt backwards while mainta...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: tuck your pelvis before initiating the movement, then sit your butt backwards while maintaining vertical shins (with slight knee bend) and trace the weight along the front of your shin. (If you notice your knees are moving too far forward past your knees, try to keep your shins vertical/perpendicular to the ground as you lower and raise the weight\nAs you lower the weight, keep your shins vertical by tracing the weight in a straight line down your shin\nAs you ascend, reverse the movement: continue to trace the front of your shin in a straight line with the weight. )"
+        },
+        {
+          "id": "dx_rdl_anteromedial_femoral_condyle_mod3",
+          "title": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly",
+          "type": "movement_mod",
+          "description": "Decrease quad activation: focusing on hinging at the hips, lean yout trunk forwrd slightly (If you notice you're feeling this more in your quads or back, make sure you hinge your hips while lowering the weight by sitting your but back (as if you were going to sit in a chair behind you). \nWhen coming back up, drive through your heels and squeeze your glutes. \nWhile performing this motion, make sure your shins are vertical/perpendicular to the floor)"
+        },
+        {
+          "id": "dx_rdl_anteromedial_femoral_condyle_mod4",
+          "title": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decrease weight",
+          "type": "movement_mod",
+          "description": "ROM: if all of the above has been corrected, perform movement in a pain free range of motion and/or decrease weight (If you've tried all the previous corrections and you still notice pain or discomfort, perform the movement in a decreased range of motion (don't go down as far)"
+        }
+      ]
+    },
+    "q_location_split_squats": {
+      "id": "q_location_split_squats",
+      "type": "question",
+      "label": "Pain location for Split Squats",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        },
+        {
+          "value": "patellar_tendon",
+          "label": "Patellar Tendon"
+        },
+        {
+          "value": "anterolateral_femoral_condyle",
+          "label": "Anterolateral Femoral Condyle"
+        },
+        {
+          "value": "posteromedial_femoral_condyle",
+          "label": "Posteromedial Femoral Condyle"
+        },
+        {
+          "value": "patella",
+          "label": "Patella"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_split_squats_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patellar_tendon"
+          },
+          "next_node_id": "dx_split_squats_patellar_tendon"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anterolateral_femoral_condyle"
+          },
+          "next_node_id": "dx_split_squats_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "posteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_split_squats_posteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_split_squats_patella"
+        }
+      ]
+    },
+    "q_location_forward_lunge": {
+      "id": "q_location_forward_lunge",
+      "type": "question",
+      "label": "Pain location for Forward lunge",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        },
+        {
+          "value": "anterolateral_femoral_condyle",
+          "label": "Anterolateral Femoral Condyle"
+        },
+        {
+          "value": "patella",
+          "label": "Patella"
+        },
+        {
+          "value": "posteromedial_femoral_condyle",
+          "label": "Posteromedial Femoral Condyle"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_forward_lunge_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anterolateral_femoral_condyle"
+          },
+          "next_node_id": "dx_forward_lunge_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_forward_lunge_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "posteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_forward_lunge_posteromedial_femoral_condyle"
+        }
+      ]
+    },
+    "q_location_backward_lunge": {
+      "id": "q_location_backward_lunge",
+      "type": "question",
+      "label": "Pain location for Backward lunge",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        },
+        {
+          "value": "anterolateral_femoral_condyle",
+          "label": "Anterolateral Femoral Condyle"
+        },
+        {
+          "value": "patella",
+          "label": "Patella"
+        },
+        {
+          "value": "posteromedial_femoral_condyle",
+          "label": "Posteromedial Femoral Condyle"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_backward_lunge_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anterolateral_femoral_condyle"
+          },
+          "next_node_id": "dx_backward_lunge_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_backward_lunge_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "posteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_backward_lunge_posteromedial_femoral_condyle"
+        }
+      ]
+    },
+    "q_location_side_lunge": {
+      "id": "q_location_side_lunge",
+      "type": "question",
+      "label": "Pain location for Side lunge",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        },
+        {
+          "value": "anterolateral_femoral_condyle",
+          "label": "Anterolateral Femoral Condyle"
+        },
+        {
+          "value": "patella",
+          "label": "Patella"
+        },
+        {
+          "value": "posteromedial_femoral_condyle",
+          "label": "Posteromedial Femoral Condyle"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_side_lunge_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anterolateral_femoral_condyle"
+          },
+          "next_node_id": "dx_side_lunge_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_side_lunge_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "posteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_side_lunge_posteromedial_femoral_condyle"
+        }
+      ]
+    },
+    "q_location_squatting_bodyweight": {
+      "id": "q_location_squatting_bodyweight",
+      "type": "question",
+      "label": "Pain location for Squatting/deep squatting (light or no weight)",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        },
+        {
+          "value": "anterolateral_femoral_condyle",
+          "label": "Anterolateral Femoral Condyle"
+        },
+        {
+          "value": "posteromedial_femoral_condyle",
+          "label": "Posteromedial Femoral Condyle"
+        },
+        {
+          "value": "patella",
+          "label": "Patella"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_squatting_bodyweight_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anterolateral_femoral_condyle"
+          },
+          "next_node_id": "dx_squatting_bodyweight_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "posteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_squatting_bodyweight_posteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_squatting_bodyweight_patella"
+        }
+      ]
+    },
+    "q_location_squatting_barbell": {
+      "id": "q_location_squatting_barbell",
+      "type": "question",
+      "label": "Pain location for Squatting (heavy weight, barbell)",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        },
+        {
+          "value": "anterolateral_femoral_condyle",
+          "label": "Anterolateral Femoral Condyle"
+        },
+        {
+          "value": "posteromedial_femoral_condyle",
+          "label": "Posteromedial Femoral Condyle"
+        },
+        {
+          "value": "patella",
+          "label": "Patella"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_squatting_barbell_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anterolateral_femoral_condyle"
+          },
+          "next_node_id": "dx_squatting_barbell_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "posteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_squatting_barbell_posteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_squatting_barbell_patella"
+        }
+      ]
+    },
+    "q_location_deadlifts": {
+      "id": "q_location_deadlifts",
+      "type": "question",
+      "label": "Pain location for Deadlifts",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        },
+        {
+          "value": "anterolateral_femoral_condyle",
+          "label": "Anterolateral Femoral Condyle"
+        },
+        {
+          "value": "patella",
+          "label": "Patella"
+        },
+        {
+          "value": "posteromedial_femoral_condyle",
+          "label": "Posteromedial Femoral Condyle"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_deadlifts_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anterolateral_femoral_condyle"
+          },
+          "next_node_id": "dx_deadlifts_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_deadlifts_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "posteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_deadlifts_posteromedial_femoral_condyle"
+        }
+      ]
+    },
+    "q_location_rdl": {
+      "id": "q_location_rdl",
+      "type": "question",
+      "label": "Pain location for RDL",
+      "prompt": "Where exactly do you feel the pain?",
+      "answer_type": "choice",
+      "save_to": "symptom_location",
+      "options": [
+        {
+          "value": "patella",
+          "label": "Patella"
+        },
+        {
+          "value": "anteromedial_femoral_condyle",
+          "label": "Anteromedial Femoral Condyle"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "patella"
+          },
+          "next_node_id": "dx_rdl_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "symptom_location",
+            "value": "anteromedial_femoral_condyle"
+          },
+          "next_node_id": "dx_rdl_anteromedial_femoral_condyle"
+        }
+      ]
+    },
+    "q_activity": {
+      "id": "q_activity",
+      "type": "question",
+      "label": "Triggering activity",
+      "prompt": "Which activity triggers your knee pain the most?",
+      "answer_type": "choice",
+      "save_to": "triggering_activity",
+      "options": [
+        {
+          "value": "split_squats",
+          "label": "Split Squats"
+        },
+        {
+          "value": "forward_lunge",
+          "label": "Forward lunge"
+        },
+        {
+          "value": "backward_lunge",
+          "label": "Backward lunge"
+        },
+        {
+          "value": "side_lunge",
+          "label": "Side lunge"
+        },
+        {
+          "value": "running_level",
+          "label": "Running (level ground)"
+        },
+        {
+          "value": "running_uneven",
+          "label": "Running (level, uneven ground)"
+        },
+        {
+          "value": "running_uphill",
+          "label": "Running (uphill)"
+        },
+        {
+          "value": "running_downhill",
+          "label": "Running (downhill)"
+        },
+        {
+          "value": "walking_level",
+          "label": "Hiking/walking (level ground)"
+        },
+        {
+          "value": "walking_uphill",
+          "label": "Hiking/walking (uphill)"
+        },
+        {
+          "value": "squatting_bodyweight",
+          "label": "Squatting/deep squatting (light or no weight)"
+        },
+        {
+          "value": "squatting_barbell",
+          "label": "Squatting (heavy weight, barbell)"
+        },
+        {
+          "value": "stairs_up",
+          "label": "Ascending stairs"
+        },
+        {
+          "value": "stairs_down",
+          "label": "Descending stairs"
+        },
+        {
+          "value": "half_kneeling",
+          "label": "Half kneeling (focus on overall positioning/comfort)"
+        },
+        {
+          "value": "tall_kneeling",
+          "label": "Tall kneeling"
+        },
+        {
+          "value": "full_kneeling",
+          "label": "Full kneeling"
+        },
+        {
+          "value": "bending_down",
+          "label": "Bending down (focus on teaching bending mechancis as a whole)"
+        },
+        {
+          "value": "sitting_down",
+          "label": "Sitting down (essentially take from squatting)"
+        },
+        {
+          "value": "standing_up",
+          "label": "Standing up"
+        },
+        {
+          "value": "rowing_machine",
+          "label": "Rowing machine"
+        },
+        {
+          "value": "jumping",
+          "label": "Jumping"
+        },
+        {
+          "value": "pivoting",
+          "label": "Cutting/pivoting"
+        },
+        {
+          "value": "prolonged_sitting",
+          "label": "Prolonged sitting"
+        },
+        {
+          "value": "prolonged_standing",
+          "label": "Prolonged standing"
+        },
+        {
+          "value": "deadlifts",
+          "label": "Deadlifts"
+        },
+        {
+          "value": "rdl",
+          "label": "RDL"
+        }
+      ],
+      "next": [
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "split_squats"
+          },
+          "next_node_id": "q_location_split_squats"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "forward_lunge"
+          },
+          "next_node_id": "q_location_forward_lunge"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "backward_lunge"
+          },
+          "next_node_id": "q_location_backward_lunge"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "side_lunge"
+          },
+          "next_node_id": "q_location_side_lunge"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "running_level"
+          },
+          "next_node_id": "dx_running_level_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "running_uneven"
+          },
+          "next_node_id": "dx_running_uneven_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "running_uphill"
+          },
+          "next_node_id": "dx_running_uphill_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "running_downhill"
+          },
+          "next_node_id": "dx_running_downhill_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "walking_level"
+          },
+          "next_node_id": "dx_walking_level_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "walking_uphill"
+          },
+          "next_node_id": "dx_walking_uphill_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "squatting_bodyweight"
+          },
+          "next_node_id": "q_location_squatting_bodyweight"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "squatting_barbell"
+          },
+          "next_node_id": "q_location_squatting_barbell"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "stairs_up"
+          },
+          "next_node_id": "dx_stairs_up_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "stairs_down"
+          },
+          "next_node_id": "dx_stairs_down_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "half_kneeling"
+          },
+          "next_node_id": "dx_half_kneeling_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "tall_kneeling"
+          },
+          "next_node_id": "dx_tall_kneeling_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "full_kneeling"
+          },
+          "next_node_id": "dx_full_kneeling_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "bending_down"
+          },
+          "next_node_id": "dx_bending_down_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "sitting_down"
+          },
+          "next_node_id": "dx_sitting_down_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "standing_up"
+          },
+          "next_node_id": "dx_standing_up_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "rowing_machine"
+          },
+          "next_node_id": "dx_rowing_machine_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "jumping"
+          },
+          "next_node_id": "dx_jumping_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "pivoting"
+          },
+          "next_node_id": "dx_pivoting_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "prolonged_sitting"
+          },
+          "next_node_id": "dx_prolonged_sitting_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "prolonged_standing"
+          },
+          "next_node_id": "dx_prolonged_standing_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "deadlifts"
+          },
+          "next_node_id": "q_location_deadlifts"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "rdl"
+          },
+          "next_node_id": "q_location_rdl"
+        }
+      ]
+    }
+  }
+}

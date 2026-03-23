@@ -9,7 +9,7 @@ const log = createLogger('startup');
 
 // --- Validate and load decision tree at startup ---
 try {
-  const tree = loadTree('sample-tree');
+  const tree = loadTree('v1-tree');
   const result = AssessmentTreeSchema.safeParse(tree);
   if (!result.success) {
     log.error('Decision tree validation failed at startup', {
