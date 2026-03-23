@@ -12,17 +12,46 @@
 export const VALID_SIDES = ['left', 'right', 'both'] as const;
 
 export const VALID_ACTIVITIES = [
-  'running',
-  'squatting',
-  'lunging',
+  // Lunges
+  'split_squats',
+  'forward_lunge',
+  'backward_lunge',
+  'side_lunge',
+  // Squats
+  'squatting_bodyweight',
+  'squatting_barbell',
+  // Running
+  'running_level',
+  'running_uneven',
+  'running_uphill',
+  'running_downhill',
+  // Walking / hiking
+  'walking_level',
+  'walking_uphill',
+  'walking_downhill',
+  // Stairs
   'stairs_up',
   'stairs_down',
+  // Kneeling
+  'half_kneeling',
+  'tall_kneeling',
+  'full_kneeling',
+  // Gym / weighted
+  'deadlifts',
+  'rdl',
+  'rowing_machine',
+  // Functional
   'jumping',
   'cycling',
-  'walking',
-  'sitting',
-  'kneeling',
   'pivoting',
+  'bending_down',
+  'sitting_down',
+  'standing_up',
+  'twisting_loaded',
+  // Prolonged positions
+  'prolonged_sitting',
+  'prolonged_standing',
+  // Catch-all
   'other',
 ] as const;
 

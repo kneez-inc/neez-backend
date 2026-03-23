@@ -9,7 +9,7 @@ export const AssessRequestSchema = z.object({
   session_id: z.string().uuid().optional(),
   message: z.string().min(1).optional(),
   feedback: z.number().int().min(1).max(5).optional(),
-  version: z.string().default('sample-tree'),
+  version: z.string().default('v1-tree'),
 });
 
 export const TreeRequestSchema = z.object({
