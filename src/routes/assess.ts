@@ -9,13 +9,38 @@ import {
   processMessage,
   processFeedback,
 } from '../engine/state-machine.js';
-import { MockLLMAdapter } from '../engine/llm-adapter.js';
+import { createLLMAdapter, MockLLMAdapter } from '../engine/llm-adapter.js';
+import type { LLMAdapter } from '../engine/llm-adapter.js';
+import type { ConversationMessage } from '../types/messages.js';
+import { config } from '../config.js';
 import { createLogger } from '../logger.js';
 
 const log = createLogger('assess');
 
-// TODO: wire up real LLM adapter via createLLMAdapter(config.LLM_PROVIDER, config.GEMINI_API_KEY)
-const llm = new MockLLMAdapter();
+// Use real LLM in production/dev when API key is available; mock for tests or missing key
+let llm: LLMAdapter;
+if (config.NODE_ENV === 'test' || !config.GEMINI_API_KEY) {
+  llm = new MockLLMAdapter();
+  log.warn('Using MockLLMAdapter (keyword matching only)', { reason: config.NODE_ENV === 'test' ? 'test environment' : 'no GEMINI_API_KEY' });
+} else {
+  llm = createLLMAdapter(config.LLM_PROVIDER, config.GEMINI_API_KEY);
+  log.info('Using real LLM adapter', { provider: config.LLM_PROVIDER });
+}
+
+// Per-session conversation history (in-memory cache, same lifecycle as session state)
+const sessionHistory = new Map<string, ConversationMessage[]>();
+
+function getHistory(sessionId: string): ConversationMessage[] {
+  if (!sessionHistory.has(sessionId)) {
+    sessionHistory.set(sessionId, []);
+  }
+  return sessionHistory.get(sessionId)!;
+}
+
+function addToHistory(sessionId: string, role: 'user' | 'assistant', content: string): void {
+  const history = getHistory(sessionId);
+  history.push({ role, content, timestamp: new Date().toISOString() });
+}
 
 export const assessRouter = Router();
 
@@ -42,7 +67,9 @@ assessRouter.post('/', async (req: Request, res: Response) => {
       log.info('Session created', { userId, sessionId: state.sessionId, version });
 
       if (message) {
-        const result = await processMessage(state, message, tree, llm, []);
+        addToHistory(state.sessionId, 'user', message);
+        const result = await processMessage(state, message, tree, llm, getHistory(state.sessionId));
+        addToHistory(state.sessionId, 'assistant', result.reply);
         log.info('Initial message processed', {
           userId,
           sessionId: result.state.sessionId,
@@ -81,7 +108,7 @@ assessRouter.post('/', async (req: Request, res: Response) => {
     // --- Feedback path ---
     if (feedback !== undefined) {
       log.info('Processing feedback', { userId, sessionId: session_id, feedback, status: state.status });
-      const result = await processFeedback(state, feedback, llm, []);
+      const result = await processFeedback(state, feedback, llm, getHistory(session_id));
       log.info('Feedback processed', {
         userId,
         sessionId: session_id,
@@ -114,7 +141,9 @@ assessRouter.post('/', async (req: Request, res: Response) => {
     }
 
     log.info('Processing message', { userId, sessionId: session_id, status: state.status });
-    const result = await processMessage(state, message, tree, llm, []);
+    addToHistory(session_id, 'user', message);
+    const result = await processMessage(state, message, tree, llm, getHistory(session_id));
+    addToHistory(session_id, 'assistant', result.reply);
     log.info('Message processed', {
       userId,
       sessionId: session_id,

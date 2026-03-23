@@ -161,7 +161,7 @@ describe('LLM fallback resilience', () => {
     const { MockLLMAdapter } = await import('../src/engine/llm-adapter.js');
     const mock = new MockLLMAdapter();
     const { text } = await mock.generateClarification(['triggering_activity'], []);
-    assert.ok(text.includes('triggering_activity'));
+    assert.ok(text.includes('which activity triggers the pain'));
     assert.ok(text.length > 10);
   });
 
@@ -181,10 +181,10 @@ describe('LLM fallback resilience', () => {
     const mock = new MockLLMAdapter();
     const { text } = await mock.suggestAlternatives(
       { symptom_side: null, triggering_activity: 'other', symptom_location: null, symptom_description: null },
-      ['squatting', 'running'],
+      ['squatting_bodyweight', 'running_level'],
     );
     assert.ok(text.includes('other'));
-    assert.ok(text.includes('squatting'));
+    assert.ok(text.includes('squatting_bodyweight'));
   });
 });
 

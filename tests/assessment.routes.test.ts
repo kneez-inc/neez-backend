@@ -86,7 +86,7 @@ describe('POST /assess integration', () => {
       const body = await res.json();
 
       assert.equal(body.success, true);
-      assert.equal(body.data.entities.triggering_activity, 'squatting');
+      assert.equal(body.data.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(body.data.status, 'gathering'); // missing location -> clarification
     } finally {
       await closeServer(server);
@@ -102,7 +102,7 @@ describe('POST /assess integration', () => {
       const r1 = await post(baseUrl, { message: 'My left knee hurts when squatting' });
       const b1 = await r1.json();
       assert.equal(b1.data.status, 'gathering');
-      assert.equal(b1.data.entities.triggering_activity, 'squatting');
+      assert.equal(b1.data.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(b1.data.entities.symptom_side, 'left');
       const sessionId = b1.data.session_id;
 

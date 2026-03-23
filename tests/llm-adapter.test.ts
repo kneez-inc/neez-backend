@@ -14,7 +14,7 @@ describe('MockLLMAdapter', () => {
       );
 
       assert.equal(entities.symptom_side, 'left');
-      assert.equal(entities.triggering_activity, 'squatting');
+      assert.equal(entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(entities.symptom_location, 'patella');
       assert.equal(entities.symptom_description, 'sharp');
     });
@@ -41,7 +41,7 @@ describe('MockLLMAdapter', () => {
         'Pain when jogging on the inner knee',
         [],
       );
-      assert.equal(entities.triggering_activity, 'running');
+      assert.equal(entities.triggering_activity, 'running_level');
       assert.equal(entities.symptom_location, 'anteromedial_tibial_plateau');
     });
 
@@ -86,14 +86,14 @@ describe('MockLLMAdapter', () => {
       };
 
       const { text } = await mock.suggestAlternatives(entities, [
-        'squatting',
-        'running',
+        'squatting_bodyweight',
+        'running_level',
         'stairs_down',
       ]);
 
       assert.ok(text.includes('cycling'));
-      assert.ok(text.includes('squatting'));
-      assert.ok(text.includes('running'));
+      assert.ok(text.includes('squatting_bodyweight'));
+      assert.ok(text.includes('running_level'));
       assert.ok(text.includes('stairs_down'));
     });
 
@@ -105,9 +105,9 @@ describe('MockLLMAdapter', () => {
         symptom_description: null,
       };
 
-      const { text } = await mock.suggestAlternatives(entities, ['squatting']);
+      const { text } = await mock.suggestAlternatives(entities, ['squatting_bodyweight']);
       assert.ok(text.includes('that activity'));
-      assert.ok(text.includes('squatting'));
+      assert.ok(text.includes('squatting_bodyweight'));
     });
   });
 
@@ -117,8 +117,8 @@ describe('MockLLMAdapter', () => {
         ['symptom_location', 'triggering_activity'],
         [],
       );
-      assert.ok(text.includes('symptom_location'));
-      assert.ok(text.includes('triggering_activity'));
+      assert.ok(text.includes('where exactly the pain is'));
+      assert.ok(text.includes('which activity triggers the pain'));
     });
   });
 

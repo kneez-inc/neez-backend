@@ -4,11 +4,11 @@
  * Uses an inline tree whose condition values match the MockLLMAdapter's
  * keyword extraction, giving deterministic end-to-end coverage:
  *
- *   Mock maps: "squatting" -> squatting, "kneecap" -> patella,
- *   "inner knee" -> anteromedial_tibial_plateau, "running" -> running,
+ *   Mock maps: "squatting" -> squatting_bodyweight, "kneecap" -> patella,
+ *   "inner knee" -> anteromedial_tibial_plateau, "running" -> running_level,
  *   "cycling" -> cycling (not in tree -> no_coverage)
  *
- *   Tree branches: squatting|running -> patella|anteromedial_tibial_plateau -> assessment
+ *   Tree branches: squatting_bodyweight|running_level -> patella|anteromedial_tibial_plateau -> assessment
  */
 import assert from 'node:assert/strict';
 import { describe, it, beforeEach } from 'node:test';
@@ -37,8 +37,8 @@ const tree: AssessmentTree = {
       answer_type: 'choice',
       save_to: 'triggering_activity',
       next: [
-        { condition: { type: 'equals', key: 'triggering_activity', value: 'squatting' }, next_node_id: 'q_location_squat' },
-        { condition: { type: 'equals', key: 'triggering_activity', value: 'running' }, next_node_id: 'q_location_run' },
+        { condition: { type: 'equals', key: 'triggering_activity', value: 'squatting_bodyweight' }, next_node_id: 'q_location_squat' },
+        { condition: { type: 'equals', key: 'triggering_activity', value: 'running_level' }, next_node_id: 'q_location_run' },
       ],
     },
     q_location_squat: {
@@ -125,15 +125,15 @@ describe('Integration: full assessment flows', () => {
       // Message 1: provides activity but no location
       const r1 = await processMessage(state, 'Pain when squatting', tree, llm, []);
       assert.equal(r1.state.status, 'gathering');
-      assert.equal(r1.state.entities.triggering_activity, 'squatting');
+      assert.equal(r1.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(r1.state.entities.symptom_location, null);
-      assert.ok(r1.reply.includes('symptom_location'), 'clarification should mention missing entity');
+      assert.ok(r1.reply.includes('where exactly the pain is'), 'clarification should mention missing entity in friendly language');
       assert.equal(r1.modification, undefined);
 
       // Message 2: provides location
       const r2 = await processMessage(r1.state, 'On my kneecap', tree, llm, []);
       assert.equal(r2.state.status, 'recommending');
-      assert.equal(r2.state.entities.triggering_activity, 'squatting');
+      assert.equal(r2.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(r2.state.entities.symptom_location, 'patella');
       assert.ok(r2.modification);
       assert.equal(r2.modification.id, 'mod_1');
@@ -154,7 +154,7 @@ describe('Integration: full assessment flows', () => {
       );
       assert.equal(result.state.status, 'recommending');
       assert.equal(result.state.entities.symptom_side, 'left');
-      assert.equal(result.state.entities.triggering_activity, 'squatting');
+      assert.equal(result.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(result.state.entities.symptom_location, 'patella');
       assert.equal(result.state.entities.symptom_description, 'sharp');
       assert.ok(result.modification);
@@ -166,7 +166,7 @@ describe('Integration: full assessment flows', () => {
 
       const r1 = await processMessage(state, 'Pain when running on the inner knee', tree, llm, []);
       assert.equal(r1.state.status, 'recommending');
-      assert.equal(r1.state.entities.triggering_activity, 'running');
+      assert.equal(r1.state.entities.triggering_activity, 'running_level');
       assert.equal(r1.state.entities.symptom_location, 'anteromedial_tibial_plateau');
       assert.ok(r1.modification);
       assert.equal(r1.modification.id, 'mod_7');
@@ -185,13 +185,13 @@ describe('Integration: full assessment flows', () => {
       assert.equal(r2.state.status, 'gathering');
       assert.equal(r2.state.entities.symptom_side, 'right');
       assert.equal(r2.state.entities.symptom_description, 'sharp');
-      assert.equal(r2.state.entities.triggering_activity, 'squatting');
+      assert.equal(r2.state.entities.triggering_activity, 'squatting_bodyweight');
 
       const r3 = await processMessage(r2.state, 'On my kneecap', tree, llm, []);
       assert.equal(r3.state.status, 'recommending');
       assert.equal(r3.state.entities.symptom_side, 'right');
       assert.equal(r3.state.entities.symptom_description, 'sharp');
-      assert.equal(r3.state.entities.triggering_activity, 'squatting');
+      assert.equal(r3.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(r3.state.entities.symptom_location, 'patella');
       assert.ok(r3.modification);
     });
@@ -383,7 +383,7 @@ describe('Integration: full assessment flows', () => {
       assert.ok(result.reply.includes('cycling'));
       // Should mention at least one covered activity
       assert.ok(
-        result.reply.includes('squatting') || result.reply.includes('running'),
+        result.reply.includes('squatting_bodyweight') || result.reply.includes('running_level'),
         'reply should suggest covered activities',
       );
     });
@@ -397,7 +397,7 @@ describe('Integration: full assessment flows', () => {
 
       // User switches to squatting — location (patella) is preserved from merge
       const r2 = await processMessage(r1.state, 'What about squatting?', tree, llm, []);
-      assert.equal(r2.state.entities.triggering_activity, 'squatting');
+      assert.equal(r2.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(r2.state.entities.symptom_location, 'patella');
       assert.equal(r2.state.status, 'recommending');
       assert.ok(r2.modification);
