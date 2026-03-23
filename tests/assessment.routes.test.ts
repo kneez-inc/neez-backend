@@ -81,7 +81,7 @@ describe('POST /assess integration', () => {
     const { server, baseUrl } = await startServer();
     try {
       const res = await post(baseUrl, {
-        message: 'Pain when squatting',
+        message: 'Pain when doing bodyweight squats',
       });
       const body = await res.json();
 
@@ -98,8 +98,8 @@ describe('POST /assess integration', () => {
   it('full flow: message -> clarification -> recommendation', async () => {
     const { server, baseUrl } = await startServer();
     try {
-      // Step 1: partial info -> gathering (clarification)
-      const r1 = await post(baseUrl, { message: 'My left knee hurts when squatting' });
+      // Step 1: partial info with specific activity -> gathering (clarification)
+      const r1 = await post(baseUrl, { message: 'My left knee hurts when doing bodyweight squats' });
       const b1 = await r1.json();
       assert.equal(b1.data.status, 'gathering');
       assert.equal(b1.data.entities.triggering_activity, 'squatting_bodyweight');
@@ -107,8 +107,6 @@ describe('POST /assess integration', () => {
       const sessionId = b1.data.session_id;
 
       // Step 2: provide location -> the mock maps "kneecap" -> "patella"
-      // The sample tree checks for "anterior" not "patella", so this goes no_coverage
-      // That's expected with the mock adapter
       const r2 = await post(baseUrl, { session_id: sessionId, message: 'On my kneecap' });
       const b2 = await r2.json();
       assert.equal(b2.success, true);

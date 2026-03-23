@@ -88,6 +88,14 @@ Normalization examples:
 - "rowing" / "on the rower" / "rowing machine" / "erg" → "rowing_machine"
 - "cutting" / "changing direction" / "pivoting" → "pivoting"
 - "twisting" / "rotating with weight" → "twisting_loaded"
+- "hero pose" / "virasana" → "yoga_hero"
+- "warrior pose" / "virabhadrasana" → "yoga_warrior"
+- "eagle pose" / "garudasana" → "yoga_eagle"
+- "triangle pose" / "trikonasana" → "yoga_triangle"
+- "revolved chair pose" / "parivrtta utkatasana" → "yoga_revolved_chair"
+- "pigeon pose" / "eka pada rajakapotasana" → "yoga_pigeon"
+
+IMPORTANT: If the user says something ambiguous like just "squat", "lunge", "running", "yoga", or "kneeling" without specifying the exact type, still normalize to the most common variant (e.g., "squat" → "squatting_bodyweight"). The system will handle disambiguation separately.
 
 ### symptom_location
 Valid values: ${VALID_LOCATIONS.join(', ')}
@@ -404,6 +412,18 @@ const ACTIVITY_KEYWORDS: Record<string, string> = {
   'standing up': 'standing_up',
   'prolonged sitting': 'prolonged_sitting',
   'prolonged standing': 'prolonged_standing',
+  // Yoga
+  'hero pose': 'yoga_hero',
+  'virasana': 'yoga_hero',
+  'warrior pose': 'yoga_warrior',
+  'virabhadrasana': 'yoga_warrior',
+  'eagle pose': 'yoga_eagle',
+  'garudasana': 'yoga_eagle',
+  'triangle pose': 'yoga_triangle',
+  'trikonasana': 'yoga_triangle',
+  'revolved chair': 'yoga_revolved_chair',
+  'chair pose': 'yoga_revolved_chair',
+  'pigeon pose': 'yoga_pigeon',
 };
 
 const SIDE_KEYWORDS: Record<string, string> = {

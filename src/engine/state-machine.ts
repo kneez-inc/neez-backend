@@ -14,6 +14,8 @@ import type {
 import type { ExtractedEntities } from '../types/entities.js';
 import type { ConversationMessage } from '../types/messages.js';
 import type { LLMAdapter } from './llm-adapter.js';
+import type { QuickReplyOption } from '../types/api.js';
+import { ACTIVITY_GROUPS } from '../types/controlled-vocabulary.js';
 import { traverseTree, getAvailableActivities } from './traversal.js';
 
 const log = createLogger('state-machine');
@@ -91,6 +93,7 @@ export interface ProcessResult {
   reply: string;
   state: AssessmentState;
   modification?: Recommendation;
+  options?: QuickReplyOption[];
 }
 
 const NULL_ENTITIES: ExtractedEntities = {
@@ -163,6 +166,71 @@ function getMissingEntities(entities: ExtractedEntities): string[] {
   return missing;
 }
 
+/**
+ * Check if the extracted triggering_activity is an ambiguous group keyword
+ * (e.g., the LLM returned "squatting_bodyweight" but the user just said "squat"
+ * without specifying type). We detect this by checking the user message against
+ * known ambiguous terms and seeing if there's a group with multiple options.
+ */
+function getDisambiguationOptions(
+  userMessage: string,
+  activity: string | null,
+  tree: AssessmentTree,
+): QuickReplyOption[] | null {
+  if (!activity) return null;
+
+  const lower = userMessage.toLowerCase();
+
+  // Check each activity group to see if the user's message matches the group trigger
+  // but doesn't clearly specify a sub-type
+  for (const [groupKey, options] of Object.entries(ACTIVITY_GROUPS)) {
+    // Only check if the extracted activity is one of this group's values
+    const groupValues = options.map((o) => o.value);
+    if (!groupValues.includes(activity)) continue;
+
+    // Check if the user's message is ambiguous (uses generic term without specifying sub-type)
+    const specificTerms: Record<string, string[]> = {
+      squat: ['barbell', 'back squat', 'heavy', 'bodyweight', 'body weight', 'deep squat', 'goblet', 'front squat'],
+      lunge: ['forward', 'backward', 'reverse', 'side', 'lateral', 'split'],
+      run: ['uphill', 'downhill', 'trail', 'uneven', 'flat', 'level', 'hill'],
+      walk: ['uphill', 'downhill', 'hill', 'flat', 'level'],
+      kneel: ['half', 'tall', 'full', 'one knee', 'both knee', 'sitting on'],
+      deadlift: ['romanian', 'rdl', 'stiff leg', 'conventional'],
+      yoga: ['hero', 'warrior', 'eagle', 'triangle', 'chair', 'pigeon', 'revolved'],
+      stair: ['up', 'down', 'ascending', 'descending', 'climbing'],
+    };
+
+    const triggers = specificTerms[groupKey];
+    if (!triggers) continue;
+
+    // If the user mentioned the general category but none of the specific terms, disambiguate
+    const hasGroupKeyword = lower.includes(groupKey) ||
+      (groupKey === 'squat' && (lower.includes('squat') || lower.includes('squatting'))) ||
+      (groupKey === 'run' && (lower.includes('run') || lower.includes('running') || lower.includes('jog'))) ||
+      (groupKey === 'walk' && (lower.includes('walk') || lower.includes('hiking') || lower.includes('hike'))) ||
+      (groupKey === 'kneel' && (lower.includes('kneel') || lower.includes('kneeling'))) ||
+      (groupKey === 'deadlift' && lower.includes('deadlift')) ||
+      (groupKey === 'yoga' && lower.includes('yoga')) ||
+      (groupKey === 'stair' && (lower.includes('stair') || lower.includes('steps')));
+
+    if (!hasGroupKeyword) continue;
+
+    const hasSpecificTerm = triggers.some((term) => lower.includes(term));
+    if (hasSpecificTerm) continue;
+
+    // Filter to only options that exist in the current tree
+    const treeActivities = getAvailableActivities(tree);
+    const availableOptions = options.filter((o) => treeActivities.includes(o.value));
+
+    // Only disambiguate if there are 2+ options in the tree
+    if (availableOptions.length >= 2) {
+      return availableOptions;
+    }
+  }
+
+  return null;
+}
+
 // --- Process user message ---
 
 export async function processMessage(
@@ -182,7 +250,25 @@ export async function processMessage(
   const merged = mergeEntities(state.entities, extracted);
   let updated: AssessmentState = { ...state, entities: merged, resolvedEntities: merged };
 
-  // 3. Check for missing required entities
+  // 3. Check for activity disambiguation (e.g., user said "squat" without specifying type)
+  const disambigOptions = getDisambiguationOptions(userMessage, merged.triggering_activity, tree);
+  if (disambigOptions) {
+    log.info('Activity ambiguous, presenting options', {
+      sessionId: state.sessionId,
+      activity: merged.triggering_activity,
+      optionCount: disambigOptions.length,
+    });
+    // Clear the ambiguous activity so the user's selection replaces it
+    updated = { ...updated, entities: { ...merged, triggering_activity: null }, status: 'gathering' };
+    saveSession(updated);
+    return {
+      reply: 'Can you be more specific about which type? Pick the one that best describes what you were doing:',
+      state: updated,
+      options: disambigOptions,
+    };
+  }
+
+  // 4. Check for missing required entities
   const missing = getMissingEntities(merged);
   if (missing.length > 0) {
     log.info('Missing entities, requesting clarification', { sessionId: state.sessionId, missing });
@@ -192,10 +278,10 @@ export async function processMessage(
     return { reply: text, state: updated };
   }
 
-  // 4. All entities resolved -> traverse decision tree
+  // 5. All entities resolved -> traverse decision tree
   const result = traverseTree(tree, merged);
 
-  // 5. Tree returns modifications -> serve first unserved one
+  // 6. Tree returns modifications -> serve first unserved one
   if (result !== null) {
     log.info('Tree traversal succeeded', {
       sessionId: state.sessionId,
@@ -217,7 +303,7 @@ export async function processMessage(
     return { reply: text, state: updated, modification: firstMod };
   }
 
-  // 6. Tree returns null (no coverage)
+  // 7. Tree returns null (no coverage)
   log.info('No coverage for entities', { sessionId: state.sessionId, entities: merged });
   const availableActivities = getAvailableActivities(tree);
   const { text } = await llm.suggestAlternatives(merged, availableActivities);

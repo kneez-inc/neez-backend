@@ -1748,6 +1748,192 @@
         }
       ]
     },
+    "dx_yoga_hero_patella": {
+      "id": "dx_yoga_hero_patella",
+      "type": "assessment",
+      "label": "Hero pose - focus on gnereal mods;",
+      "summary": "Assessment for Hero pose with patellar/anterior knee pain; central or posterior pain pain",
+      "explanation": "(High pressure on the kneecap (patellofemoral compression) or \"pinching\" in the joint crease (meniscal compression))",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_yoga_hero_patella_mod1",
+          "title": "Reduce flexion/knee bend: Place one or two yoga blocks between your feet and sit your sit-bones directly on them. Thi...",
+          "type": "movement_mod",
+          "description": "Reduce flexion/knee bend: Place one or two yoga blocks between your feet and sit your sit-bones directly on them. This stops the knee from bending too sharply while keeping your spine tall."
+        },
+        {
+          "id": "dx_yoga_hero_patella_mod2",
+          "title": "Joint space/slight distraction: Place a thin, rolled-up washcloth or small pillow deep into the \"crease\" behind your ...",
+          "type": "movement_mod",
+          "description": "Joint space/slight distraction: Place a thin, rolled-up washcloth or small pillow deep into the \"crease\" behind your knees before you sit back. This gently \"opens\" the joint and reduces that pinching feeling."
+        },
+        {
+          "id": "dx_yoga_hero_patella_mod3",
+          "title": "core and pelvis: Keep your core engaged so your tailbone points down by pulling your belly button towards your spine....",
+          "type": "movement_mod",
+          "description": "core and pelvis: Keep your core engaged so your tailbone points down by pulling your belly button towards your spine. This prevents your quads from pulling too hard on your kneecaps."
+        }
+      ]
+    },
+    "dx_yoga_warrior_anteromedial_femoral_condyle": {
+      "id": "dx_yoga_warrior_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Warrior pose - focus on general mods",
+      "summary": "Assessment for Warrior pose with anteromedial femoral condyle pain",
+      "explanation": "(MCL strain or kneecap tracking issues (front leg); rotational shear (back leg); The front knee often \"caves in\" (valgus), while the back knee can suffer from \"twisting\" forces (torque).)",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_yoga_warrior_anteromedial_femoral_condyle_mod1",
+          "title": "Valgus: Ensure your front knee is aimed directly over your second or third toe. If it \"peeks\" inward, nudge it back o...",
+          "type": "movement_mod",
+          "description": "Valgus: Ensure your front knee is aimed directly over your second or third toe. If it \"peeks\" inward, nudge it back out until your shin is vertical like a pillar."
+        },
+        {
+          "id": "dx_yoga_warrior_anteromedial_femoral_condyle_mod2",
+          "title": "Anterior knee translation: Pay attention to your front knee, if you notice your knee is past your toes and most of yo...",
+          "type": "movement_mod",
+          "description": "Anterior knee translation: Pay attention to your front knee, if you notice your knee is past your toes and most of your weight is on the front leg, bring your knee backwards by shifting more weight onto the back leg to have a more equal weight distribution. Think about keeping your front shin vertical or perpendicular to the ground."
+        },
+        {
+          "id": "dx_yoga_warrior_anteromedial_femoral_condyle_mod3",
+          "title": "Posterior knee pain: If your back knee hurts, turn your back toes more toward the front of the mat. This untwists the...",
+          "type": "movement_mod",
+          "description": "Posterior knee pain: If your back knee hurts, turn your back toes more toward the front of the mat. This untwists the knee and lets your hip take the load.\nWeight shift: if you notice you have more weight on the back knee, shift your weight towards the front knee to more equally distribute."
+        },
+        {
+          "id": "dx_yoga_warrior_anteromedial_femoral_condyle_mod4",
+          "title": "Glutes: Firmly press through the outer edge of your back foot and the heel of your front foot. Engage your core to st...",
+          "type": "movement_mod",
+          "description": "Glutes: Firmly press through the outer edge of your back foot and the heel of your front foot. Engage your core to stay centered and balanced."
+        }
+      ]
+    },
+    "dx_yoga_eagle_anterolateral_femoral_condyle": {
+      "id": "dx_yoga_eagle_anterolateral_femoral_condyle",
+      "type": "assessment",
+      "label": "Eagle pose - focus on general mods",
+      "summary": "Assessment for Eagle pose with anterolateral femoral condyle pain",
+      "explanation": "(This is a \"high-torque\" pose where the legs are squeezed and twisted together; Rotational stress on the meniscus or lateral collateral ligament (LCL) from forcing the foot hook)",
+      "region_id": "anterolateral_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_yoga_eagle_anterolateral_femoral_condyle_mod1",
+          "title": "Stability",
+          "type": "movement_mod",
+          "description": "Stability: (While in the pose, be sure to maintain core engagement by ticking your pelvis backward to bring your belly button towards your spine. To increase stability, squeeze your inner thighs together)"
+        },
+        {
+          "id": "dx_yoga_eagle_anterolateral_femoral_condyle_mod2",
+          "title": "proper hinge/core engagment: While in the pose, be sure to maintain core engagement by ticking your pelvis backward t...",
+          "type": "movement_mod",
+          "description": "proper hinge/core engagment: While in the pose, be sure to maintain core engagement by ticking your pelvis backward to bring your belly button towards your spine. From here, make sure your butt is sitting backwards as if you were to begin the motion of sitting in a chair."
+        },
+        {
+          "id": "dx_yoga_eagle_anterolateral_femoral_condyle_mod3",
+          "title": "BLE WB instead of SL: If standing on one leg in this position is too painful after the previous modifications, instea...",
+          "type": "movement_mod",
+          "description": "BLE WB instead of SL: If standing on one leg in this position is too painful after the previous modifications, instead of hooking your foot behind your calf, cross your thighs and touch your toes to the floor like a kickstand."
+        }
+      ]
+    },
+    "dx_yoga_triangle_anteromedial_femoral_condyle": {
+      "id": "dx_yoga_triangle_anteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Triangle pose (hypreextension) - focus on general mods",
+      "summary": "Assessment for Triangle pose (hypreextension) with anteromedial femoral condyle pain",
+      "explanation": "(The leading leg is often \"locked out,\" putting immense pressure on the back of the joint; hyperextension (locking the knee) or straining the posterior capsule/hamstring tendons.)",
+      "region_id": "anteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_yoga_triangle_anteromedial_femoral_condyle_mod1",
+          "title": "Reduce hyperextension: If you notice your front knee is “locked” out, slightly bend the knee and maintain this micro ...",
+          "type": "movement_mod",
+          "description": "Reduce hyperextension: If you notice your front knee is “locked” out, slightly bend the knee and maintain this micro bend during the duration of the pose \nWhile maintaining the micro bend, think about engaging the quad muscle to increase stability\nIf the above options did not help, try reaching your hand to land on top of a yoga block (or something similar) to decrease the range of motion."
+        },
+        {
+          "id": "dx_yoga_triangle_anteromedial_femoral_condyle_mod2",
+          "title": "Back leg ankle/knee/toe positioning: Try pointing the toes of your back knee slightly more forward to decrease the am...",
+          "type": "movement_mod",
+          "description": "Back leg ankle/knee/toe positioning: Try pointing the toes of your back knee slightly more forward to decrease the amount of rotation put on the knee."
+        }
+      ]
+    },
+    "dx_yoga_revolved_chair_patella": {
+      "id": "dx_yoga_revolved_chair_patella",
+      "type": "assessment",
+      "label": "Revolved chair pose - focus on general mods",
+      "summary": "Assessment for Revolved chair pose with patellofemoral joint (patella) pain",
+      "explanation": "(As the spine twists, one knee often \"shoots forward,\" creating an uneven shear force; Asymmetrical loading or torsional stress on the \"trailing\" knee)",
+      "region_id": "patella",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_yoga_revolved_chair_patella_mod1",
+          "title": "Knee/foot alugnment and symmetry: Look down at your knees. If one is sticking out further than the other, pull that h...",
+          "type": "movement_mod",
+          "description": "Knee/foot alugnment and symmetry: Look down at your knees. If one is sticking out further than the other, pull that hip back until the knees are perfectly level. Squeezing a block between your thighs can help.\nPain in one LE: if you have pain in one knee and having your knees equal does not help, try placing the non-painful foot slightly backward. \nAnother option would be to slightly widen your stance if your feet are so close that they are touching"
+        },
+        {
+          "id": "dx_yoga_revolved_chair_patella_mod2",
+          "title": "Posteior weight shift: Try shifting your weight back into your heels so you can wiggle your toes",
+          "type": "movement_mod",
+          "description": "Posteior weight shift: Try shifting your weight back into your heels so you can wiggle your toes."
+        },
+        {
+          "id": "dx_yoga_revolved_chair_patella_mod3",
+          "title": "Anteiror knee trasnlation: If you notice your knees move past your toes in this pose, bring them slightly backward by...",
+          "type": "movement_mod",
+          "description": "Anteiror knee trasnlation: If you notice your knees move past your toes in this pose, bring them slightly backward by focusing on sitting your butt back and slightly lifting your chest."
+        },
+        {
+          "id": "dx_yoga_revolved_chair_patella_mod4",
+          "title": "Core engagement: While in this pose make sure to engage your core before you rotate by tilting your pelvis backwards ...",
+          "type": "movement_mod",
+          "description": "Core engagement: While in this pose make sure to engage your core before you rotate by tilting your pelvis backwards and bringing your belly button towards your spine. When twisting, twist with using your core instead of your knees."
+        }
+      ]
+    },
+    "dx_yoga_pigeon_posteromedial_femoral_condyle": {
+      "id": "dx_yoga_pigeon_posteromedial_femoral_condyle",
+      "type": "assessment",
+      "label": "Pigeon pose - focus on general mods",
+      "summary": "Assessment for Pigeon pose with posteromedial femoral condyle pain",
+      "explanation": "(If the hip is tight, the body tries to get the \"stretch\" by twisting the knee joint instead; Rotational torque on the collateral ligaments or \"hinging\" at the joint line)",
+      "region_id": "posteromedial_femoral_condyle",
+      "confidence": "high",
+      "recommendations": [
+        {
+          "id": "dx_yoga_pigeon_posteromedial_femoral_condyle_mod1",
+          "title": "squaring/alinging hips: While in this position, make sure your hips are level",
+          "type": "movement_mod",
+          "description": "squaring/alinging hips: While in this position, make sure your hips are level (the hip of the straight leg is not dipping too much). If necessary, place a rolled towel or blanket under the hip if the straight leg for support."
+        },
+        {
+          "id": "dx_yoga_pigeon_posteromedial_femoral_condyle_mod2",
+          "title": "reduce knee flexion: Try decreasing how much your front knee is bent until you find a comfortable position with reduc...",
+          "type": "movement_mod",
+          "description": "reduce knee flexion: Try decreasing how much your front knee is bent until you find a comfortable position with reduced pain."
+        },
+        {
+          "id": "dx_yoga_pigeon_posteromedial_femoral_condyle_mod3",
+          "title": "Ankle adjustment: Keep your front foot \"flexed\"",
+          "type": "movement_mod",
+          "description": "Ankle adjustment: Keep your front foot \"flexed\" (toes pulled back toward your shin). This engages the muscles around the knee and prevents it from twisting sideways."
+        },
+        {
+          "id": "dx_yoga_pigeon_posteromedial_femoral_condyle_mod4",
+          "title": "Back LE adjustment or cushioning: Engage/squeeze the quad muscle of your back knee to create stability, but make sure...",
+          "type": "movement_mod",
+          "description": "Back LE adjustment or cushioning: Engage/squeeze the quad muscle of your back knee to create stability, but make sure there is a micro bend (the knee is not locked out)\nCushioning: place a small cushion or rolled towel under the knee of the straight leg to reduce the pressure placed on your knee cap."
+        }
+      ]
+    },
     "q_location_split_squats": {
       "id": "q_location_split_squats",
       "type": "question",
@@ -2331,6 +2517,30 @@
         {
           "value": "rdl",
           "label": "RDL"
+        },
+        {
+          "value": "yoga_hero",
+          "label": "Hero pose"
+        },
+        {
+          "value": "yoga_warrior",
+          "label": "Warrior pose"
+        },
+        {
+          "value": "yoga_eagle",
+          "label": "Eagle pose"
+        },
+        {
+          "value": "yoga_triangle",
+          "label": "Triangle pose (hypreextension)"
+        },
+        {
+          "value": "yoga_revolved_chair",
+          "label": "Revolved chair pose"
+        },
+        {
+          "value": "yoga_pigeon",
+          "label": "Pigeon pose"
         }
       ],
       "next": [
@@ -2549,6 +2759,54 @@
             "value": "rdl"
           },
           "next_node_id": "q_location_rdl"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "yoga_hero"
+          },
+          "next_node_id": "dx_yoga_hero_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "yoga_warrior"
+          },
+          "next_node_id": "dx_yoga_warrior_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "yoga_eagle"
+          },
+          "next_node_id": "dx_yoga_eagle_anterolateral_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "yoga_triangle"
+          },
+          "next_node_id": "dx_yoga_triangle_anteromedial_femoral_condyle"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "yoga_revolved_chair"
+          },
+          "next_node_id": "dx_yoga_revolved_chair_patella"
+        },
+        {
+          "condition": {
+            "type": "equals",
+            "key": "triggering_activity",
+            "value": "yoga_pigeon"
+          },
+          "next_node_id": "dx_yoga_pigeon_posteromedial_femoral_condyle"
         }
       ]
     }

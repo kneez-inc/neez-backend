@@ -48,6 +48,13 @@ ACTIVITY_MAP = {
     "Deadlifts": "deadlifts",
     "RDL": "rdl",
     "Twisting while carrying a load": "twisting_loaded",
+    # Yoga
+    "Hero pose": "yoga_hero",
+    "Warrior pose": "yoga_warrior",
+    "Eagle pose": "yoga_eagle",
+    "Triangle pose (hypreextension)": "yoga_triangle",
+    "Revolved chair pose": "yoga_revolved_chair",
+    "Pigeon pose": "yoga_pigeon",
 }
 
 # ── Mapping: spreadsheet pain_location → controlled vocabulary location ──
@@ -59,6 +66,7 @@ LOCATION_MAP = {
     "Patellofemoral joint (Patella)": "patella",
     "Posteromedial femoral condyle": "posteromedial_femoral_condyle",
     "Posterior femoral condyle (medial)": "posteromedial_femoral_condyle",
+    "patellar/anterior knee pain; central or posterior pain": "patella",
 }
 
 

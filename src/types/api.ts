@@ -36,12 +36,18 @@ export type ApiError = {
 
 export type ApiResponse<T> = ApiSuccess<T> | ApiError;
 
+export type QuickReplyOption = {
+  value: string;
+  label: string;
+};
+
 export type AssessResponseData = {
   session_id: string;
   status: AssessmentStatus;
   reply: string;
   entities: ExtractedEntities;
   modification: Recommendation | null;
+  options: QuickReplyOption[] | null;
 };
 
 export type TreeResponseData = {

@@ -84,6 +84,7 @@ assessRouter.post('/', async (req: Request, res: Response) => {
             reply: result.reply,
             entities: result.state.entities,
             modification: result.modification ?? null,
+            options: result.options ?? null,
           },
         });
         return;
@@ -97,6 +98,7 @@ assessRouter.post('/', async (req: Request, res: Response) => {
           reply: 'Tell me about your knee pain — what activity triggers it and where does it hurt?',
           entities: state.entities,
           modification: null,
+          options: null,
         },
       });
       return;
@@ -125,6 +127,7 @@ assessRouter.post('/', async (req: Request, res: Response) => {
           reply: result.reply,
           entities: result.state.entities,
           modification: result.modification ?? null,
+          options: null,
         },
       });
       return;
@@ -160,6 +163,7 @@ assessRouter.post('/', async (req: Request, res: Response) => {
         reply: result.reply,
         entities: result.state.entities,
         modification: result.modification ?? null,
+        options: result.options ?? null,
       },
     });
   } catch (err) {
