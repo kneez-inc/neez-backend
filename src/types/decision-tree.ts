@@ -18,6 +18,9 @@ export const RecommendationSchema = z.object({
   type: z.enum(['movement_mod', 'exercise', 'education', 'referral', 'other']),
   description: z.string(),
   video_id: z.string().optional(),
+  steps: z.string().optional(),
+  why: z.string().optional(),
+  tags: z.array(z.string()).optional(),
 });
 
 export const QuestionOptionSchema = z.object({
