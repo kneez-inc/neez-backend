@@ -81,12 +81,12 @@ describe('POST /assess integration', () => {
     const { server, baseUrl } = await startServer();
     try {
       const res = await post(baseUrl, {
-        message: 'Pain when squatting',
+        message: 'Pain when doing bodyweight squats',
       });
       const body = await res.json();
 
       assert.equal(body.success, true);
-      assert.equal(body.data.entities.triggering_activity, 'squatting');
+      assert.equal(body.data.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(body.data.status, 'gathering'); // missing location -> clarification
     } finally {
       await closeServer(server);
@@ -98,17 +98,15 @@ describe('POST /assess integration', () => {
   it('full flow: message -> clarification -> recommendation', async () => {
     const { server, baseUrl } = await startServer();
     try {
-      // Step 1: partial info -> gathering (clarification)
-      const r1 = await post(baseUrl, { message: 'My left knee hurts when squatting' });
+      // Step 1: partial info with specific activity -> gathering (clarification)
+      const r1 = await post(baseUrl, { message: 'My left knee hurts when doing bodyweight squats' });
       const b1 = await r1.json();
       assert.equal(b1.data.status, 'gathering');
-      assert.equal(b1.data.entities.triggering_activity, 'squatting');
+      assert.equal(b1.data.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(b1.data.entities.symptom_side, 'left');
       const sessionId = b1.data.session_id;
 
       // Step 2: provide location -> the mock maps "kneecap" -> "patella"
-      // The sample tree checks for "anterior" not "patella", so this goes no_coverage
-      // That's expected with the mock adapter
       const r2 = await post(baseUrl, { session_id: sessionId, message: 'On my kneecap' });
       const b2 = await r2.json();
       assert.equal(b2.success, true);
@@ -260,7 +258,7 @@ describe('POST /assess integration', () => {
 
   // --- Missing input ---
 
-  it('returns 400 when existing session gets neither message nor feedback', async () => {
+  it('returns welcome options when existing session gets neither message nor feedback', async () => {
     const { server, baseUrl } = await startServer();
     try {
       // Create session first
@@ -268,13 +266,15 @@ describe('POST /assess integration', () => {
       const b1 = await r1.json();
       const sessionId = b1.data.session_id;
 
-      // Send with session_id but no message or feedback
+      // Send with session_id but no message or feedback -> welcome/init response
       const res = await post(baseUrl, { session_id: sessionId });
       const body = await res.json();
 
-      assert.equal(res.status, 400);
-      assert.equal(body.success, false);
-      assert.equal(body.error.code, 'MISSING_INPUT');
+      assert.equal(res.status, 200);
+      assert.equal(body.success, true);
+      assert.equal(body.data.status, 'gathering');
+      assert.ok(Array.isArray(body.data.options));
+      assert.ok(body.data.options.length > 0);
     } finally {
       await closeServer(server);
     }

@@ -48,6 +48,13 @@ ACTIVITY_MAP = {
     "Deadlifts": "deadlifts",
     "RDL": "rdl",
     "Twisting while carrying a load": "twisting_loaded",
+    # Yoga
+    "Hero pose": "yoga_hero",
+    "Warrior pose": "yoga_warrior",
+    "Eagle pose": "yoga_eagle",
+    "Triangle pose (hypreextension)": "yoga_triangle",
+    "Revolved chair pose": "yoga_revolved_chair",
+    "Pigeon pose": "yoga_pigeon",
 }
 
 # ── Mapping: spreadsheet pain_location → controlled vocabulary location ──
@@ -59,6 +66,7 @@ LOCATION_MAP = {
     "Patellofemoral joint (Patella)": "patella",
     "Posteromedial femoral condyle": "posteromedial_femoral_condyle",
     "Posterior femoral condyle (medial)": "posteromedial_femoral_condyle",
+    "patellar/anterior knee pain; central or posterior pain": "patella",
 }
 
 
@@ -87,6 +95,30 @@ def extract_mod_title(mod_text: str) -> str:
     return title
 
 
+def parse_steps(steps_str: str) -> list[dict]:
+    """Parse a steps string into structured [{title, text}] objects.
+
+    Input:  "Setup: Stand with feet apart\\nThe Movement: Lower your hips back"
+    Output: [{"title": "Setup", "text": "Stand with feet apart"},
+             {"title": "The Movement", "text": "Lower your hips back"}]
+    """
+    result = []
+    for line in steps_str.split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        # Split on first colon to separate title from text
+        colon_idx = line.find(":")
+        if colon_idx > 0:
+            title = line[:colon_idx].strip()
+            text = line[colon_idx + 1:].strip()
+            result.append({"title": title, "text": text})
+        else:
+            # No colon — treat the whole line as text with a generic title
+            result.append({"title": "Tip", "text": line})
+    return result
+
+
 def parse_spreadsheet(filepath: str) -> list[dict]:
     """Parse the Excel spreadsheet into a list of row dicts."""
     wb = openpyxl.load_workbook(filepath)
@@ -103,16 +135,25 @@ def parse_spreadsheet(filepath: str) -> list[dict]:
         impairment_sources = row[3] or ""
         modifications_clinical = row[4] or ""
 
-        # Extract modifications and their video IDs (columns 5-18, paired)
+        # Extract modifications (6 columns per mod: text, video_id, title, steps, why, tags)
         mods = []
-        for i in range(5, min(len(row), 19), 2):
+        MOD_STRIDE = 6
+        for i in range(5, min(len(row), 47), MOD_STRIDE):
             mod_text = row[i]
             video_id = row[i + 1] if (i + 1) < len(row) else None
+            title = row[i + 2] if (i + 2) < len(row) else None
+            steps = row[i + 3] if (i + 3) < len(row) else None
+            why = row[i + 4] if (i + 4) < len(row) else None
+            tags = row[i + 5] if (i + 5) < len(row) else None
 
             if mod_text and str(mod_text).strip():
                 mods.append({
                     "text": str(mod_text).strip(),
                     "video_id": str(video_id).strip() if video_id else None,
+                    "title": str(title).strip() if title else None,
+                    "steps": str(steps).strip() if steps else None,
+                    "why": str(why).strip() if why else None,
+                    "tags": [t.strip() for t in str(tags).split(",")] if tags else None,
                 })
 
         rows.append({
@@ -166,7 +207,8 @@ def build_tree(rows: list[dict]) -> dict:
         recommendations = []
         for mod_idx, mod in enumerate(row["mods"], start=1):
             rec_id = f"{assessment_id}_mod{mod_idx}"
-            title = extract_mod_title(mod["text"])
+            # Use structured title if available, fall back to extracting from text
+            title = mod["title"] if mod["title"] else extract_mod_title(mod["text"])
 
             rec = {
                 "id": rec_id,
@@ -176,6 +218,12 @@ def build_tree(rows: list[dict]) -> dict:
             }
             if mod["video_id"]:
                 rec["video_id"] = mod["video_id"]
+            if mod["steps"]:
+                rec["steps"] = parse_steps(mod["steps"])
+            if mod["why"]:
+                rec["why_it_works"] = mod["why"]
+            if mod["tags"]:
+                rec["tags"] = mod["tags"]
 
             recommendations.append(rec)
 

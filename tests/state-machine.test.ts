@@ -77,7 +77,7 @@ describe('state-machine', () => {
 
       // squatting is extracted but no location -> should ask for clarification
       assert.equal(result.state.status, 'gathering');
-      assert.equal(result.state.entities.triggering_activity, 'squatting');
+      assert.equal(result.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(result.state.entities.symptom_location, null);
     });
 
@@ -86,13 +86,13 @@ describe('state-machine', () => {
 
       // First message: activity
       const r1 = await processMessage(state, 'Pain when squatting', tree, llm, []);
-      assert.equal(r1.state.entities.triggering_activity, 'squatting');
+      assert.equal(r1.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(r1.state.entities.symptom_location, null);
       assert.equal(r1.state.status, 'gathering');
 
       // Second message: location — the mock maps "front of knee" -> "patella"
       const r2 = await processMessage(r1.state, 'front of the knee', tree, llm, []);
-      assert.equal(r2.state.entities.triggering_activity, 'squatting');
+      assert.equal(r2.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(r2.state.entities.symptom_location, 'patella');
       // patella doesn't match the sample tree's "anterior" condition, so no_coverage
       assert.equal(r2.state.status, 'no_coverage');
@@ -125,7 +125,7 @@ describe('state-machine', () => {
       // So this will be no_coverage again with mock adapter
       // This is expected — the mock is keyword-based, not tree-aware
       const r2 = await processMessage(r1.state, 'What about running? Inner knee pain', tree, llm, []);
-      assert.equal(r2.state.entities.triggering_activity, 'running');
+      assert.equal(r2.state.entities.triggering_activity, 'running_level');
       // With mock, location won't match tree conditions, so stays no_coverage
       // In production, the real LLM would normalize correctly
       assert.ok(['no_coverage', 'recommending'].includes(r2.state.status));
@@ -141,7 +141,7 @@ describe('state-machine', () => {
       // side and description preserved from first message
       assert.equal(r2.state.entities.symptom_side, 'left');
       assert.equal(r2.state.entities.symptom_description, 'sharp');
-      assert.equal(r2.state.entities.triggering_activity, 'squatting');
+      assert.equal(r2.state.entities.triggering_activity, 'squatting_bodyweight');
     });
   });
 
@@ -160,8 +160,8 @@ describe('state-machine', () => {
           answer_type: 'choice',
           save_to: 'triggering_activity',
           next: [
-            { condition: { type: 'equals', key: 'triggering_activity', value: 'squatting' }, next_node_id: 'q_location' },
-            { condition: { type: 'equals', key: 'triggering_activity', value: 'running' }, next_node_id: 'q_location' },
+            { condition: { type: 'equals', key: 'triggering_activity', value: 'squatting_bodyweight' }, next_node_id: 'q_location' },
+            { condition: { type: 'equals', key: 'triggering_activity', value: 'running_level' }, next_node_id: 'q_location' },
           ],
         },
         q_location: {
@@ -224,7 +224,7 @@ describe('state-machine', () => {
       );
 
       assert.equal(result.state.status, 'recommending');
-      assert.equal(result.state.entities.triggering_activity, 'squatting');
+      assert.equal(result.state.entities.triggering_activity, 'squatting_bodyweight');
       assert.equal(result.state.entities.symptom_location, 'patella');
       assert.ok(result.modification);
       assert.equal(result.modification.id, 'mod_1');
@@ -367,7 +367,7 @@ describe('state-machine', () => {
       // squatting extracted, but location from previous (anteromedial_tibial_plateau) is merged
       // so we have both entities -> traversal attempted
       assert.ok(['no_coverage', 'recommending', 'gathering'].includes(r2.state.status));
-      assert.equal(r2.state.entities.triggering_activity, 'squatting');
+      assert.equal(r2.state.entities.triggering_activity, 'squatting_bodyweight');
     });
   });
 });

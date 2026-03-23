@@ -61,10 +61,41 @@ Valid values: ${VALID_ACTIVITIES.join(', ')}
 Normalization examples:
 - "going downstairs" / "walking down steps" / "descending stairs" → "stairs_down"
 - "going upstairs" / "climbing stairs" → "stairs_up"
-- "doing squats" / "squatting down" / "deep knee bends" → "squatting"
-- "jogging" / "sprinting" → "running"
+- "doing squats" / "squatting down" / "deep knee bends" / "bodyweight squats" → "squatting_bodyweight"
+- "barbell squats" / "back squats" / "heavy squats" → "squatting_barbell"
+- "jogging" / "sprinting" / "running on flat ground" → "running_level"
+- "running uphill" / "running up a hill" → "running_uphill"
+- "running downhill" → "running_downhill"
+- "trail running" / "running on uneven ground" → "running_uneven"
 - "biking" / "spinning" / "on the bike" → "cycling"
-- "getting up from a chair" / "standing up" → "sitting"
+- "split squats" / "bulgarian split squat" → "split_squats"
+- "forward lunges" / "lunging forward" → "forward_lunge"
+- "reverse lunges" / "backward lunges" → "backward_lunge"
+- "side lunges" / "lateral lunges" → "side_lunge"
+- "walking" / "hiking on flat ground" → "walking_level"
+- "hiking uphill" / "walking uphill" → "walking_uphill"
+- "hiking downhill" / "walking downhill" → "walking_downhill"
+- "deadlifting" / "conventional deadlift" → "deadlifts"
+- "Romanian deadlift" / "RDL" / "stiff leg deadlift" → "rdl"
+- "getting up from a chair" / "standing up" → "standing_up"
+- "sitting down" / "lowering into a chair" → "sitting_down"
+- "sitting for a long time" / "sitting at desk" → "prolonged_sitting"
+- "standing for a long time" → "prolonged_standing"
+- "kneeling on one knee" / "half kneeling" → "half_kneeling"
+- "kneeling tall" / "kneeling upright" → "tall_kneeling"
+- "kneeling fully" / "sitting on heels" → "full_kneeling"
+- "bending over" / "bending down to pick something up" → "bending_down"
+- "rowing" / "on the rower" / "rowing machine" / "erg" → "rowing_machine"
+- "cutting" / "changing direction" / "pivoting" → "pivoting"
+- "twisting" / "rotating with weight" → "twisting_loaded"
+- "hero pose" / "virasana" → "yoga_hero"
+- "warrior pose" / "virabhadrasana" → "yoga_warrior"
+- "eagle pose" / "garudasana" → "yoga_eagle"
+- "triangle pose" / "trikonasana" → "yoga_triangle"
+- "revolved chair pose" / "parivrtta utkatasana" → "yoga_revolved_chair"
+- "pigeon pose" / "eka pada rajakapotasana" → "yoga_pigeon"
+
+IMPORTANT: If the user says something ambiguous like just "squat", "lunge", "running", "yoga", or "kneeling" without specifying the exact type, still normalize to the most common variant (e.g., "squat" → "squatting_bodyweight"). The system will handle disambiguation separately.
 
 ### symptom_location
 Valid values: ${VALID_LOCATIONS.join(', ')}
@@ -108,6 +139,19 @@ const NULL_ENTITIES: ExtractedEntities = {
 };
 
 const ZERO_TOKENS: TokenUsage = { prompt: 0, completion: 0 };
+
+const ENTITY_FRIENDLY_NAMES: Record<string, string> = {
+  symptom_location: 'where exactly the pain is',
+  symptom_side: 'which knee is affected (left, right, or both)',
+  triggering_activity: 'which activity triggers the pain',
+  symptom_description: 'what the pain feels like',
+};
+
+function humanizeEntities(entities: string[]): string {
+  return entities
+    .map((e) => ENTITY_FRIENDLY_NAMES[e] ?? e)
+    .join(' and ');
+}
 
 function formatHistory(messages: ConversationMessage[]): string {
   return messages
@@ -159,7 +203,7 @@ export class GeminiAdapter implements LLMAdapter {
 
   constructor(apiKey: string) {
     const genAI = new GoogleGenerativeAI(apiKey);
-    this.model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+    this.model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   }
 
   private async call(systemPrompt: string, userPrompt: string): Promise<{ text: string; tokensUsed: TokenUsage }> {
@@ -241,7 +285,7 @@ export class GeminiAdapter implements LLMAdapter {
     } catch (err) {
       log.error('Clarification generation failed, using fallback', { error: (err as Error).message });
       return {
-        text: `Could you tell me more about your ${missingEntities.join(' and ')}?`,
+        text: `Could you tell me more about ${humanizeEntities(missingEntities)}?`,
         tokensUsed: { ...ZERO_TOKENS },
       };
     }
@@ -299,35 +343,87 @@ export class GeminiAdapter implements LLMAdapter {
 // --- Mock Adapter (for testing) ---
 
 const ACTIVITY_KEYWORDS: Record<string, string> = {
-  squat: 'squatting',
-  squats: 'squatting',
-  squatting: 'squatting',
-  run: 'running',
-  running: 'running',
-  jog: 'running',
-  jogging: 'running',
+  // Squats
+  'barbell squat': 'squatting_barbell',
+  'back squat': 'squatting_barbell',
+  'heavy squat': 'squatting_barbell',
+  squat: 'squatting_bodyweight',
+  squats: 'squatting_bodyweight',
+  squatting: 'squatting_bodyweight',
+  // Running
+  'running uphill': 'running_uphill',
+  'running downhill': 'running_downhill',
+  'trail running': 'running_uneven',
+  run: 'running_level',
+  running: 'running_level',
+  jog: 'running_level',
+  jogging: 'running_level',
+  // Stairs
   stairs: 'stairs_down',
   downstairs: 'stairs_down',
   'going downstairs': 'stairs_down',
   'down stairs': 'stairs_down',
   upstairs: 'stairs_up',
   'up stairs': 'stairs_up',
+  // Lunges
+  'split squat': 'split_squats',
+  'split squats': 'split_squats',
+  'forward lunge': 'forward_lunge',
+  'backward lunge': 'backward_lunge',
+  'reverse lunge': 'backward_lunge',
+  'side lunge': 'side_lunge',
+  'lateral lunge': 'side_lunge',
+  lunge: 'forward_lunge',
+  lunging: 'forward_lunge',
+  // Walking / hiking
+  'hiking uphill': 'walking_uphill',
+  'walking uphill': 'walking_uphill',
+  'hiking downhill': 'walking_downhill',
+  'walking downhill': 'walking_downhill',
+  walk: 'walking_level',
+  walking: 'walking_level',
+  hiking: 'walking_level',
+  // Gym
+  'romanian deadlift': 'rdl',
+  rdl: 'rdl',
+  deadlift: 'deadlifts',
+  deadlifts: 'deadlifts',
+  rowing: 'rowing_machine',
+  rower: 'rowing_machine',
+  erg: 'rowing_machine',
+  // Kneeling
+  'half kneeling': 'half_kneeling',
+  'tall kneeling': 'tall_kneeling',
+  'full kneeling': 'full_kneeling',
+  kneel: 'half_kneeling',
+  kneeling: 'half_kneeling',
+  // Functional
   jump: 'jumping',
   jumping: 'jumping',
   cycle: 'cycling',
   cycling: 'cycling',
   bike: 'cycling',
   biking: 'cycling',
-  walk: 'walking',
-  walking: 'walking',
-  sit: 'sitting',
-  sitting: 'sitting',
-  kneel: 'kneeling',
-  kneeling: 'kneeling',
-  lunge: 'lunging',
-  lunging: 'lunging',
   pivot: 'pivoting',
   pivoting: 'pivoting',
+  'bending down': 'bending_down',
+  'bending over': 'bending_down',
+  'sitting down': 'sitting_down',
+  'standing up': 'standing_up',
+  'prolonged sitting': 'prolonged_sitting',
+  'prolonged standing': 'prolonged_standing',
+  // Yoga
+  'hero pose': 'yoga_hero',
+  'virasana': 'yoga_hero',
+  'warrior pose': 'yoga_warrior',
+  'virabhadrasana': 'yoga_warrior',
+  'eagle pose': 'yoga_eagle',
+  'garudasana': 'yoga_eagle',
+  'triangle pose': 'yoga_triangle',
+  'trikonasana': 'yoga_triangle',
+  'revolved chair': 'yoga_revolved_chair',
+  'chair pose': 'yoga_revolved_chair',
+  'pigeon pose': 'yoga_pigeon',
 };
 
 const SIDE_KEYWORDS: Record<string, string> = {
@@ -414,7 +510,7 @@ export class MockLLMAdapter implements LLMAdapter {
     missingEntities: string[],
     _context: ConversationMessage[],
   ): Promise<{ text: string; tokensUsed: TokenUsage }> {
-    const text = `Could you tell me more about your ${missingEntities.join(' and ')}?`;
+    const text = `Could you tell me more about ${humanizeEntities(missingEntities)}?`;
     return { text, tokensUsed: { ...ZERO_TOKENS } };
   }
 

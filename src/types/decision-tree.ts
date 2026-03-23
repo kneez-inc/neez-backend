@@ -12,12 +12,21 @@ export const BranchRuleSchema = z.object({
   next_node_id: z.string(),
 });
 
+export const RecommendationStepSchema = z.object({
+  title: z.string(),
+  text: z.string(),
+});
+
 export const RecommendationSchema = z.object({
   id: z.string(),
   title: z.string(),
   type: z.enum(['movement_mod', 'exercise', 'education', 'referral', 'other']),
   description: z.string(),
   video_id: z.string().optional(),
+  steps: z.array(RecommendationStepSchema).optional(),
+  why_it_works: z.string().optional(),
+  best_for: z.string().optional(),
+  tags: z.array(z.string()).optional(),
 });
 
 export const QuestionOptionSchema = z.object({

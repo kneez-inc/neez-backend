@@ -51,9 +51,91 @@ export const VALID_ACTIVITIES = [
   // Prolonged positions
   'prolonged_sitting',
   'prolonged_standing',
+  // Yoga
+  'yoga_hero',
+  'yoga_warrior',
+  'yoga_eagle',
+  'yoga_triangle',
+  'yoga_revolved_chair',
+  'yoga_pigeon',
   // Catch-all
   'other',
 ] as const;
+
+/**
+ * Activity groups for disambiguation.
+ *
+ * When the user says something ambiguous like "squat", the system
+ * presents these options as tappable buttons in the chat UI.
+ * Each group maps a general term to specific activities with user-friendly labels.
+ */
+export const ACTIVITY_GROUPS: Record<string, { value: string; label: string }[]> = {
+  squat: [
+    { value: 'squatting_bodyweight', label: 'Bodyweight squat' },
+    { value: 'squatting_barbell', label: 'Barbell / back squat' },
+  ],
+  lunge: [
+    { value: 'forward_lunge', label: 'Forward lunge' },
+    { value: 'backward_lunge', label: 'Backward / reverse lunge' },
+    { value: 'side_lunge', label: 'Side / lateral lunge' },
+    { value: 'split_squats', label: 'Split squat' },
+  ],
+  run: [
+    { value: 'running_level', label: 'Running on flat ground' },
+    { value: 'running_uphill', label: 'Running uphill' },
+    { value: 'running_downhill', label: 'Running downhill' },
+    { value: 'running_uneven', label: 'Trail / uneven ground' },
+  ],
+  walk: [
+    { value: 'walking_level', label: 'Walking / hiking on flat ground' },
+    { value: 'walking_uphill', label: 'Hiking uphill' },
+    { value: 'walking_downhill', label: 'Hiking downhill' },
+  ],
+  kneel: [
+    { value: 'half_kneeling', label: 'Half kneeling (one knee)' },
+    { value: 'tall_kneeling', label: 'Tall kneeling (both knees)' },
+    { value: 'full_kneeling', label: 'Full kneeling (sitting on heels)' },
+  ],
+  deadlift: [
+    { value: 'deadlifts', label: 'Conventional deadlift' },
+    { value: 'rdl', label: 'Romanian deadlift (RDL)' },
+  ],
+  yoga: [
+    { value: 'yoga_hero', label: 'Hero pose' },
+    { value: 'yoga_warrior', label: 'Warrior pose' },
+    { value: 'yoga_eagle', label: 'Eagle pose' },
+    { value: 'yoga_triangle', label: 'Triangle pose' },
+    { value: 'yoga_revolved_chair', label: 'Revolved chair pose' },
+    { value: 'yoga_pigeon', label: 'Pigeon pose' },
+  ],
+  stair: [
+    { value: 'stairs_up', label: 'Going upstairs' },
+    { value: 'stairs_down', label: 'Going downstairs' },
+  ],
+};
+
+/**
+ * Human-friendly labels for anatomical location values.
+ * Used when presenting pain location options as buttons in the chat UI.
+ */
+export const LOCATION_LABELS: Record<string, string> = {
+  anteromedial_femoral_condyle: 'Inner / front of knee',
+  anterolateral_femoral_condyle: 'Outer / front of knee',
+  posteromedial_femoral_condyle: 'Inner / back of knee',
+  posterolateral_femoral_condyle: 'Outer / back of knee',
+  patella: 'Kneecap / front center',
+  patellar_tendon: 'Below the kneecap',
+  supra_patellofemoral_joint: 'Above the kneecap',
+  superomedial_patellofemoral_joint: 'Upper inner kneecap',
+  inferolateral_patellofemoral_joint: 'Lower outer kneecap',
+  inferomedial_patellofemoral_joint: 'Lower inner kneecap',
+  superolateral_patellofemoral_joint: 'Upper outer kneecap',
+  suprapatellar_pouch: 'Above the kneecap (deep)',
+  anteromedial_tibial_plateau: 'Inner shin near knee',
+  posteromedial_tibial_plateau: 'Inner back near knee',
+  anterolateral_tibial_plateau: 'Outer shin near knee',
+  posterolateral_tibial_plateau: 'Outer back near knee',
+};
 
 export const VALID_LOCATIONS = [
   'superomedial_patellofemoral_joint',
