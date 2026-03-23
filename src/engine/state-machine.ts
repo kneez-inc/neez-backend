@@ -177,16 +177,17 @@ function getDisambiguationOptions(
   activity: string | null,
   tree: AssessmentTree,
 ): QuickReplyOption[] | null {
-  if (!activity) return null;
-
-  const lower = userMessage.toLowerCase();
+  const lower = userMessage.toLowerCase().trim();
 
   // Check each activity group to see if the user's message matches the group trigger
   // but doesn't clearly specify a sub-type
   for (const [groupKey, options] of Object.entries(ACTIVITY_GROUPS)) {
-    // Only check if the extracted activity is one of this group's values
+    // Check if the extracted activity is one of this group's values,
+    // OR if the user sent a bare group keyword (e.g., tapped "Yoga" button)
     const groupValues = options.map((o) => o.value);
-    if (!groupValues.includes(activity)) continue;
+    const isExtractedFromGroup = activity !== null && groupValues.includes(activity);
+    const isBareGroupKeyword = lower === groupKey || lower === groupKey + 's';
+    if (!isExtractedFromGroup && !isBareGroupKeyword) continue;
 
     // Check if the user's message is ambiguous (uses generic term without specifying sub-type)
     const specificTerms: Record<string, string[]> = {

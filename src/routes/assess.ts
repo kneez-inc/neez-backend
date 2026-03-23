@@ -12,6 +12,8 @@ import {
 import { createLLMAdapter, MockLLMAdapter } from '../engine/llm-adapter.js';
 import type { LLMAdapter } from '../engine/llm-adapter.js';
 import type { ConversationMessage } from '../types/messages.js';
+import type { QuickReplyOption } from '../types/api.js';
+import { ACTIVITY_GROUPS } from '../types/controlled-vocabulary.js';
 import { config } from '../config.js';
 import { createLogger } from '../logger.js';
 
@@ -90,15 +92,31 @@ assessRouter.post('/', async (req: Request, res: Response) => {
         return;
       }
 
+      // Build welcome options from activity groups
+      const WELCOME_LABELS: Record<string, string> = {
+        squat: 'Squats',
+        lunge: 'Lunges',
+        run: 'Running',
+        walk: 'Walking / Hiking',
+        stair: 'Stairs',
+        kneel: 'Kneeling',
+        deadlift: 'Deadlifts',
+        yoga: 'Yoga',
+      };
+      const welcomeOptions: QuickReplyOption[] = Object.entries(ACTIVITY_GROUPS)
+        .filter(([key]) => key in WELCOME_LABELS)
+        .map(([key]) => ({ value: key, label: WELCOME_LABELS[key] }));
+      welcomeOptions.push({ value: 'other', label: 'Something else' });
+
       res.json({
         success: true,
         data: {
           session_id: state.sessionId,
           status: state.status,
-          reply: 'Tell me about your knee pain — what activity triggers it and where does it hurt?',
+          reply: "Let's move at your pace. What activity is giving your knees trouble?",
           entities: state.entities,
           modification: null,
-          options: null,
+          options: welcomeOptions,
         },
       });
       return;
