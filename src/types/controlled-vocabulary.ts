@@ -114,6 +114,29 @@ export const ACTIVITY_GROUPS: Record<string, { value: string; label: string }[]>
   ],
 };
 
+/**
+ * Human-friendly labels for anatomical location values.
+ * Used when presenting pain location options as buttons in the chat UI.
+ */
+export const LOCATION_LABELS: Record<string, string> = {
+  anteromedial_femoral_condyle: 'Inner / front of knee',
+  anterolateral_femoral_condyle: 'Outer / front of knee',
+  posteromedial_femoral_condyle: 'Inner / back of knee',
+  posterolateral_femoral_condyle: 'Outer / back of knee',
+  patella: 'Kneecap / front center',
+  patellar_tendon: 'Below the kneecap',
+  supra_patellofemoral_joint: 'Above the kneecap',
+  superomedial_patellofemoral_joint: 'Upper inner kneecap',
+  inferolateral_patellofemoral_joint: 'Lower outer kneecap',
+  inferomedial_patellofemoral_joint: 'Lower inner kneecap',
+  superolateral_patellofemoral_joint: 'Upper outer kneecap',
+  suprapatellar_pouch: 'Above the kneecap (deep)',
+  anteromedial_tibial_plateau: 'Inner shin near knee',
+  posteromedial_tibial_plateau: 'Inner back near knee',
+  anterolateral_tibial_plateau: 'Outer shin near knee',
+  posterolateral_tibial_plateau: 'Outer back near knee',
+};
+
 export const VALID_LOCATIONS = [
   'superomedial_patellofemoral_joint',
   'inferomedial_patellofemoral_joint',

@@ -15,7 +15,7 @@ import type { ExtractedEntities } from '../types/entities.js';
 import type { ConversationMessage } from '../types/messages.js';
 import type { LLMAdapter } from './llm-adapter.js';
 import type { QuickReplyOption } from '../types/api.js';
-import { ACTIVITY_GROUPS } from '../types/controlled-vocabulary.js';
+import { ACTIVITY_GROUPS, LOCATION_LABELS } from '../types/controlled-vocabulary.js';
 import { traverseTree, getAvailableActivities } from './traversal.js';
 
 const log = createLogger('state-machine');
@@ -232,6 +232,33 @@ function getDisambiguationOptions(
   return null;
 }
 
+/**
+ * Get location options from the tree for a specific activity.
+ * Returns button options if the tree has a location question for this activity,
+ * or null if the activity goes directly to an assessment (single location).
+ */
+function getLocationOptions(
+  activity: string,
+  tree: AssessmentTree,
+): QuickReplyOption[] | null {
+  const locationNodeId = `q_location_${activity}`;
+  const node = tree.nodes[locationNodeId];
+
+  if (!node || node.type !== 'question') return null;
+
+  const questionNode = node as QuestionNode;
+  if (!questionNode.options || questionNode.options.length < 2) return null;
+
+  const options: QuickReplyOption[] = questionNode.options.map((opt) => ({
+    value: opt.value,
+    label: LOCATION_LABELS[opt.value] ?? opt.label,
+  }));
+
+  options.push({ value: 'other', label: 'Somewhere else' });
+
+  return options;
+}
+
 // --- Process user message ---
 
 export async function processMessage(
@@ -273,6 +300,18 @@ export async function processMessage(
   const missing = getMissingEntities(merged);
   if (missing.length > 0) {
     log.info('Missing entities, requesting clarification', { sessionId: state.sessionId, missing });
+
+    // If only symptom_location is missing and we have an activity, show location buttons
+    if (missing.length === 1 && missing[0] === 'symptom_location' && merged.triggering_activity) {
+      const locationOptions = getLocationOptions(merged.triggering_activity, tree);
+      if (locationOptions) {
+        const { text } = await llm.generateClarification(missing, conversationHistory);
+        updated = { ...updated, status: 'gathering' };
+        saveSession(updated);
+        return { reply: text, state: updated, options: locationOptions };
+      }
+    }
+
     const { text } = await llm.generateClarification(missing, conversationHistory);
     updated = { ...updated, status: 'gathering' };
     saveSession(updated);
