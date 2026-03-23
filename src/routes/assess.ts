@@ -151,12 +151,28 @@ assessRouter.post('/', async (req: Request, res: Response) => {
       return;
     }
 
-    // --- Message path ---
+    // --- No message or feedback: return welcome/init response ---
     if (!message) {
-      log.warn('Missing message for existing session', { userId, sessionId: session_id });
-      res.status(400).json({
-        success: false,
-        error: { code: 'MISSING_INPUT', message: 'Either message or feedback is required' },
+      const WELCOME_LABELS: Record<string, string> = {
+        squat: 'Squats', lunge: 'Lunges', run: 'Running',
+        walk: 'Walking / Hiking', stair: 'Stairs', kneel: 'Kneeling',
+        deadlift: 'Deadlifts', yoga: 'Yoga',
+      };
+      const welcomeOptions: QuickReplyOption[] = Object.entries(ACTIVITY_GROUPS)
+        .filter(([key]) => key in WELCOME_LABELS)
+        .map(([key]) => ({ value: key, label: WELCOME_LABELS[key] }));
+      welcomeOptions.push({ value: 'other', label: 'Something else' });
+
+      res.json({
+        success: true,
+        data: {
+          session_id,
+          status: state.status,
+          reply: "Let's move at your pace. What activity is giving your knees trouble?",
+          entities: state.entities,
+          modification: null,
+          options: welcomeOptions,
+        },
       });
       return;
     }

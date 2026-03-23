@@ -258,7 +258,7 @@ describe('POST /assess integration', () => {
 
   // --- Missing input ---
 
-  it('returns 400 when existing session gets neither message nor feedback', async () => {
+  it('returns welcome options when existing session gets neither message nor feedback', async () => {
     const { server, baseUrl } = await startServer();
     try {
       // Create session first
@@ -266,13 +266,15 @@ describe('POST /assess integration', () => {
       const b1 = await r1.json();
       const sessionId = b1.data.session_id;
 
-      // Send with session_id but no message or feedback
+      // Send with session_id but no message or feedback -> welcome/init response
       const res = await post(baseUrl, { session_id: sessionId });
       const body = await res.json();
 
-      assert.equal(res.status, 400);
-      assert.equal(body.success, false);
-      assert.equal(body.error.code, 'MISSING_INPUT');
+      assert.equal(res.status, 200);
+      assert.equal(body.success, true);
+      assert.equal(body.data.status, 'gathering');
+      assert.ok(Array.isArray(body.data.options));
+      assert.ok(body.data.options.length > 0);
     } finally {
       await closeServer(server);
     }
